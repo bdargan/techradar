@@ -6,4 +6,10 @@ Inspired by the O'Reilly's Radara and the http://www.thoughtworks.com/radar/.
 
 While I like the TW Radar and what they produce generally. I find it needs tailoring to the specific circumstances that one's company/clients are involved in.
 
+Data is provided in a radial format.
 
+Eg. {name:'Cool Tech', r:50, t:30}
+
+Where r = radius, or length and t or theta, is the degrees in radians. with 0/360 degrees being the typical right hand x line rotating in an anti-clockwise direction.
+
+See http://en.wikipedia.org/wiki/Polar_coordinates for more details.
