@@ -3,17 +3,31 @@ function init(h,w) {
       .width(w)
       .height(h)
       .canvas('radar')
+      // .add(pv.Panel)
      .add(pv.Dot)
-         .data(radar_data)
-         .left(function(d) { var x = polar_to_raster(d.pc.r, d.pc.t)[0];   console.log("name:" + d.name + ", x:" + x); return x;})
-         .bottom(function(d) { var y = polar_to_raster(d.pc.r, d.pc.t)[1]; console.log("name:" + d.name + ", y:" + y); return y;})
+       .def("active", false)
+       .data(radar_data)
+       .left(function(d) { var x = polar_to_raster(d.pc.r, d.pc.t)[0];
+              console.log("name:" + d.name + ", x:" + x); return x;})
+         .bottom(function(d) { var y = polar_to_raster(d.pc.r, d.pc.t)[1];                                 
+                  console.log("name:" + d.name + ", y:" + y); return y;})
          .title(function(d) { return d.name;})
          .angle(45)
-         .shape(function(d) {return (d.movement === 't' ? "triangle" : "circle");})
          .fillStyle("#aec7e8")
+         .shape(function(d) {return (d.movement === 't' ? "triangle" : "circle");})
+         // .event("mouseover", function() {this.fillStyle("orange");})
+         // .event("mouseout", function() {this.fillStyle("#aec7e8");})         
          .anchor("top").add(pv.Label)
              .text(function(d) {return this.index + 1 + ".";}) 
              .textBaseline("left");
+
+             // .fillStyle("#aec7e8")
+
+             // .add(pv.Panel)
+             //   .def("active", false)
+             // .fillStyle(function() {this.parent.active() ? "orange" : "#aec7e8";})
+             //   .event("mouseover", function() {this.parent.active(true);})
+             //   .event("mouseout", function() {this.parent.active(false);})         
 
 function draw_legend(quad, left, top) {
 
