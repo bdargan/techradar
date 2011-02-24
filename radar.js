@@ -69,11 +69,11 @@ for (var i = 0; i < radar_quadrants.length; i++) {
          .left(45)
          .top(18)
          .fillStyle("#aec7e8") 
-         .text("Technique")
+         .text(radar_quadrants[0].name)
          .font("18px sans-serif");
   
     radar.add(pv.Dot) 
-        .data(radar_data.slice(0,17)) 
+        .data(radar_data.slice(radar_quadrants[0].start,radar_quadrants[0].end)) 
         .left(5) 
         .top(function() {return (36 + this.index * 18);}) 
         .size(8) 
@@ -87,12 +87,12 @@ for (var i = 0; i < radar_quadrants.length; i++) {
          .left(5)
          .top(h/2 + 18)
          .fillStyle("#aec7e8") 
-         .text("Platforms")
+         .text(radar_quadrants[2].name)
          .font("18px sans-serif");
 
 
     radar.add(pv.Dot) 
-        .data(radar_data.slice(46,71)) 
+        .data(radar_data.slice(radar_quadrants[2].start,radar_quadrants[2].end)) 
         .left(5) 
         .top(function() {return (536 + this.index * 18);}) 
         .size(8) 
@@ -106,12 +106,12 @@ for (var i = 0; i < radar_quadrants.length; i++) {
   radar.anchor("left").add(pv.Label)
        .left(w-200+30)  
        .top(18)
-       .text("Tools")
+       .text(radar_quadrants[1].name)
        .font("18px sans-serif");
       
 
   radar.add(pv.Dot) 
-        .data(radar_data.slice(17,35)) 
+        .data(radar_data.slice(radar_data.slice(radar_quadrants[1].start,radar_quadrants[1].end))) 
         .left(w-200+30) 
         .top(function() {return (36 + this.index * 18);}) 
         .size(8)
@@ -125,11 +125,11 @@ for (var i = 0; i < radar_quadrants.length; i++) {
        .left(w-200+30)
        .top(h/2 + 18)
        .fillStyle("#aec7e8") 
-       .text("Languages")
+       .text(radar_quadrants[3].name)
        .font("18px sans-serif");
 
     radar.add(pv.Dot) 
-        .data(radar_data.slice(35,46)) 
+        .data(radar_data.slice(radar_data.slice(radar_quadrants[3].start,radar_quadrants[3].end))) 
         .left(w-200+30) 
         .top(function() {return (536 + this.index * 18);}) 
         .size(8) 
