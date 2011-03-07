@@ -72,10 +72,10 @@ var radar_data = [{"name":"Database based Integration", "pc":{"r":350,"t":135},"
 
 //left to right -> top to bottom
 var radar_quadrants = [
-{"name":"Tools", "start":17, "end":35},
 {"name":"Techniques", "start":0, "end":17},
-{"name":"Platforms", "start":35, "end":46},
-{"name":"Languages", "start":47, "end":70}
+{"name":"Tools", "start":17, "end":35},
+{"name":"Languages", "start":47, "end":70},
+{"name":"Platforms", "start":35, "end":46}
 ];
 //
 var radar_arcs = [{'s':100,'name':'Adopt'},{'s':200,'name':'Trial'},{'s':300,'name':'Assess'},{'s':400,'name':'Hold'}];
