@@ -1,13 +1,26 @@
 Make your own Technology Radar.
 
-Inspired by the O'Reilly's Radara and the http://www.thoughtworks.com/radar/.
+Inspired by the ThoughtWorks Tech Radar: http://www.thoughtworks.com/radar/.
 
-While I like the TW Radar and what they produce generally. I find it needs tailoring to the specific circumstances that one's company/clients are involved in.
+While I love the TW Radar, it is produced to be of a general nature for all their clients.
+
+For me I want to tweak it to the specific circumstances of one's company or clients.
+
+Especially to create flexible types of Radars: Quadrants and sectors.
+
+Pretty basic functionality, uses json and Protovis to generate SVG.
 
 Data is provided in a radial format.
 
 Eg. {name:'Cool Tech', r:50, t:30}
+Appears in the Top Right Quadrant, in the inner most "Adopt" Sector.
 
-Where r = radius, or length and t or theta, is the degrees in radians. with 0/360 degrees being the typical right hand x line rotating in an anti-clockwise direction.
+Eg. {name:'Bright Shiny Toy 5', r:390, t:30}
+Appears in the Top Right Quadrant, in the outer most "Hold" Sector.
+
+Eg. {name:'Augmented Reality Tek', r:150, t:225}
+Appears in the Lower Left Quadrant, in the second "Trial" Sector.
+
+Where r = radius, and t = theta; the degrees in radians. with 0/360 degrees being the typical right hand x line rotating in an anti-clockwise direction.
 
 See http://en.wikipedia.org/wiki/Polar_coordinates for more details.
