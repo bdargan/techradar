@@ -90,7 +90,6 @@ for (var i = 0; i < radar_quadrants.length; i++) {
          .text(radar_quadrants[2].name)
          .font("18px sans-serif");
 
-
     radar.add(pv.Dot) 
         .data(radar_data.slice(radar_quadrants[2].start,radar_quadrants[2].end)) 
         .left(5) 
@@ -100,7 +99,7 @@ for (var i = 0; i < radar_quadrants.length; i++) {
         .angle(45)
         .shape(function(d) {return (d.movement === 't' ? "triangle" : "circle");})        
         .fillStyle("#aec7e8") 
-      .anchor("right").add(pv.Label).text(function(d) {return this.index + 47 + ". " + d.name;} );
+      .anchor("right").add(pv.Label).text(function(d) {return this.index + 1 + radar_quadrants[2].start + ". " + d.name;} );
 
 
   radar.anchor("left").add(pv.Label)
@@ -111,7 +110,7 @@ for (var i = 0; i < radar_quadrants.length; i++) {
       
 
   radar.add(pv.Dot) 
-        .data(radar_data.slice(radar_data.slice(radar_quadrants[1].start,radar_quadrants[1].end))) 
+        .data(radar_data.slice(radar_quadrants[1].start,radar_quadrants[1].end)) 
         .left(w-200+30) 
         .top(function() {return (36 + this.index * 18);}) 
         .size(8)
@@ -119,7 +118,7 @@ for (var i = 0; i < radar_quadrants.length; i++) {
         .shape(function(d) {return (d.movement === 't' ? "triangle" : "circle");})         
         .strokeStyle(null) 
         .fillStyle("#aec7e8")         
-        .anchor("right").add(pv.Label).text(function(d) {return this.index + 18 + ". " + d.name;} );
+        .anchor("right").add(pv.Label).text(function(d) {return this.index + 1 + radar_quadrants[1].start + ". " + d.name;} );
 
   radar.anchor("left").add(pv.Label)
        .left(w-200+30)
@@ -129,7 +128,7 @@ for (var i = 0; i < radar_quadrants.length; i++) {
        .font("18px sans-serif");
 
     radar.add(pv.Dot) 
-        .data(radar_data.slice(radar_data.slice(radar_quadrants[3].start,radar_quadrants[3].end))) 
+        .data(radar_data.slice(radar_quadrants[3].start,radar_quadrants[3].end)) 
         .left(w-200+30) 
         .top(function() {return (536 + this.index * 18);}) 
         .size(8) 
@@ -137,7 +136,7 @@ for (var i = 0; i < radar_quadrants.length; i++) {
         .angle(45)
         .shape(function(d) {return (d.movement === 't' ? "triangle" : "circle");})        
         .fillStyle("#aec7e8") 
-        .anchor("right").add(pv.Label).text(function(d) {return this.index + 36 + ". " + d.name;} );
+        .anchor("right").add(pv.Label).text(function(d) {return this.index + 1 + radar_quadrants[3].start + ". " + d.name;} );
 
 radar.add(pv.Dot)
        .data(radar_arcs)
