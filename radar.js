@@ -1,4 +1,8 @@
 function init(h,w) {
+
+ document.getElementById('title').text = radar_title;
+
+  
  var radar = new pv.Panel()
       .width(w)
       .height(h)
@@ -93,7 +97,7 @@ for (var i = 0; i < radar_quadrants.length; i++) {
     radar.add(pv.Dot) 
         .data(radar_data.slice(radar_quadrants[2].start,radar_quadrants[2].end)) 
         .left(5) 
-        .top(function() {return (536 + this.index * 18);}) 
+        .top(function() {return ((h/2) + 36 + this.index * 18);}) 
         .size(8) 
         .strokeStyle(null) 
         .angle(45)
@@ -130,7 +134,7 @@ for (var i = 0; i < radar_quadrants.length; i++) {
     radar.add(pv.Dot) 
         .data(radar_data.slice(radar_quadrants[3].start,radar_quadrants[3].end)) 
         .left(w-200+30) 
-        .top(function() {return (536 + this.index * 18);}) 
+        .top(function() {return ((h/2) + 36 + this.index * 18);}) 
         .size(8) 
         .strokeStyle(null) 
         .angle(45)
@@ -138,17 +142,20 @@ for (var i = 0; i < radar_quadrants.length; i++) {
         .fillStyle("#aec7e8") 
         .anchor("right").add(pv.Label).text(function(d) {return this.index + 1 + radar_quadrants[3].start + ". " + d.name;} );
 
+//arcs
 radar.add(pv.Dot)
        .data(radar_arcs)
        .left(w/2)
        .bottom(h/2)
-       .radius(function(d){return d.s;})
+       .radius(function(d){return d.r;})
        .strokeStyle("#ccc")
        .anchor("top")       
        .add(pv.Label).text(function(d) { return d.name;});
 
+
+//quadrant lines
 radar.add(pv.Line)
-        .data([100,h-100])
+        .data([(h/2-radar_arcs[3].r),h-(h/2-radar_arcs[3].r)])
         .lineWidth(1)
         .left(w/2)        
         .bottom(function(d) {return d;})       
