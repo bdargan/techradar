@@ -1,7 +1,8 @@
 
 function polar_to_cartesian(r,t) {  
-  var x = r * Math.cos((t*3.14/180));
-  var y = r * Math.sin((t*3.14/180));
+  //radians to degrees, requires the t*pi/180
+  var x = r * Math.cos((t*Math.PI/180));
+  var y = r * Math.sin((t*Math.PI/180));
   return [x,y];
 }
 

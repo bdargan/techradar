@@ -74,8 +74,10 @@ var radar_data = [{"name":"Database based Integration", "pc":{"r":350,"t":135},"
 var radar_quadrants = [
 {"name":"Techniques", "start":0, "end":17},
 {"name":"Tools", "start":17, "end":35},
-{"name":"Languages", "start":47, "end":70},
-{"name":"Platforms", "start":35, "end":46}
+{"name":"Platforms", "start":47, "end":70},
+{"name":"Languages", "start":35, "end":46}
 ];
 //
-var radar_arcs = [{'s':100,'name':'Adopt'},{'s':200,'name':'Trial'},{'s':300,'name':'Assess'},{'s':400,'name':'Hold'}];
+var radar_arcs = [{'r':100,'name':'Adopt'},{'r':200,'name':'Trial'},{'r':300,'name':'Assess'},{'r':400,'name':'Hold'}];
+
+var radar_title = "ThoughtWorks Technology Radar (Aug 2010)";
