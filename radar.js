@@ -1,29 +1,46 @@
 function init(h,w) {
 
- document.getElementById('title').text = radar_title;
+document.getElementById('title').text = radar_title;
 
+var radar_arcs = [{'r':100,'name':'Adopt'},{'r':200,'name':'Trial'},{'r':300,'name':'Assess'},{'r':400,'name':'Hold'}];
   
  var radar = new pv.Panel()
       .width(w)
       .height(h)
       .canvas('radar')
-      // .add(pv.Panel)
-     .add(pv.Dot)
+
+// arcs
+radar.add(pv.Dot)
+       .data(radar_arcs)
+       .left(w/2)
+       .bottom(h/2)
+       .radius(function(d){return d.r;})
+       .strokeStyle("#ccc")
+       .anchor("top")       
+       .add(pv.Label).text(function(d) { return d.name;});
+
+// blips
+var total_index=1;
+for (var i = 0; i < radar_data.length; i++) {
+  radar.add(pv.Dot)
+       .size(70)
        .def("active", false)
-       .data(radar_data)
+       .data(radar_data[i].items)
        .left(function(d) { var x = polar_to_raster(d.pc.r, d.pc.t)[0];
               console.log("name:" + d.name + ", x:" + x); return x;})
          .bottom(function(d) { var y = polar_to_raster(d.pc.r, d.pc.t)[1];                                 
                   console.log("name:" + d.name + ", y:" + y); return y;})
          .title(function(d) { return d.name;})
          .angle(45)
-         .fillStyle("#aec7e8")
+         .strokeStyle(radar_data[i].color)
+         .fillStyle(radar_data[i].color)
          .shape(function(d) {return (d.movement === 't' ? "triangle" : "circle");})
          // .event("mouseover", function() {this.fillStyle("orange");})
          // .event("mouseout", function() {this.fillStyle("#aec7e8");})         
-         .anchor("top").add(pv.Label)
-             .text(function(d) {return this.index + 1 + ".";}) 
-             .textBaseline("left");
+         .anchor("center").add(pv.Label)
+             .text(function(d) {return total_index++;}) 
+             .textBaseline("middle")
+             .textStyle("white");
 
              // .fillStyle("#aec7e8")
 
@@ -32,6 +49,9 @@ function init(h,w) {
              // .fillStyle(function() {this.parent.active() ? "orange" : "#aec7e8";})
              //   .event("mouseover", function() {this.parent.active(true);})
              //   .event("mouseout", function() {this.parent.active(false);})         
+}
+
+
 
 function draw_legend(quad, left, top) {
 
@@ -69,15 +89,16 @@ for (var i = 0; i < radar_quadrants.length; i++) {
   
 } */            
 
+var radar_quadrant_ctr=1;
     radar.add(pv.Label)
          .left(45)
          .top(18)
          .fillStyle("#aec7e8") 
-         .text(radar_quadrants[0].name)
+         .text(radar_data[0].quadrant)
          .font("18px sans-serif");
   
     radar.add(pv.Dot) 
-        .data(radar_data.slice(radar_quadrants[0].start,radar_quadrants[0].end)) 
+        .data(radar_data[0].items) 
         .left(5) 
         .top(function() {return (36 + this.index * 18);}) 
         .size(8) 
@@ -85,36 +106,17 @@ for (var i = 0; i < radar_quadrants.length; i++) {
         .angle(45)
         .shape(function(d) {return (d.movement === 't' ? "triangle" : "circle");})        
         .fillStyle("#aec7e8") 
-      .anchor("right").add(pv.Label).text(function(d) {return this.index + 1 + ". " + d.name;} );
-
-    radar.anchor("left").add(pv.Label)
-         .left(5)
-         .top(h/2 + 18)
-         .fillStyle("#aec7e8") 
-         .text(radar_quadrants[2].name)
-         .font("18px sans-serif");
-
-    radar.add(pv.Dot) 
-        .data(radar_data.slice(radar_quadrants[2].start,radar_quadrants[2].end)) 
-        .left(5) 
-        .top(function() {return ((h/2) + 36 + this.index * 18);}) 
-        .size(8) 
-        .strokeStyle(null) 
-        .angle(45)
-        .shape(function(d) {return (d.movement === 't' ? "triangle" : "circle");})        
-        .fillStyle("#aec7e8") 
-      .anchor("right").add(pv.Label).text(function(d) {return this.index + 1 + radar_quadrants[2].start + ". " + d.name;} );
-
+      .anchor("right").add(pv.Label).text(function(d) {return radar_quadrant_ctr++ + ". " + d.name;} );
 
   radar.anchor("left").add(pv.Label)
        .left(w-200+30)  
        .top(18)
-       .text(radar_quadrants[1].name)
+       .text(radar_data[1].quadrant)
        .font("18px sans-serif");
       
 
   radar.add(pv.Dot) 
-        .data(radar_data.slice(radar_quadrants[1].start,radar_quadrants[1].end)) 
+        .data(radar_data[1].items) 
         .left(w-200+30) 
         .top(function() {return (36 + this.index * 18);}) 
         .size(8)
@@ -122,17 +124,35 @@ for (var i = 0; i < radar_quadrants.length; i++) {
         .shape(function(d) {return (d.movement === 't' ? "triangle" : "circle");})         
         .strokeStyle(null) 
         .fillStyle("#aec7e8")         
-        .anchor("right").add(pv.Label).text(function(d) {return this.index + 1 + radar_quadrants[1].start + ". " + d.name;} );
+        .anchor("right").add(pv.Label).text(function(d) {return radar_quadrant_ctr++ + ". " + d.name;} );
+
+    radar.anchor("left").add(pv.Label)
+         .left(5)
+         .top(h/2 + 18)
+         .fillStyle("#aec7e8") 
+         .text(radar_data[2].quadrant)
+         .font("18px sans-serif");
+
+    radar.add(pv.Dot) 
+        .data(radar_data[2].items) 
+        .left(5) 
+        .top(function() {return ((h/2) + 36 + this.index * 18);}) 
+        .size(8) 
+        .strokeStyle(null) 
+        .angle(45)
+        .shape(function(d) {return (d.movement === 't' ? "triangle" : "circle");})        
+        .fillStyle("#aec7e8") 
+      .anchor("right").add(pv.Label).text(function(d) {return radar_quadrant_ctr++ + ". " + d.name;} );
 
   radar.anchor("left").add(pv.Label)
        .left(w-200+30)
        .top(h/2 + 18)
        .fillStyle("#aec7e8") 
-       .text(radar_quadrants[3].name)
+       .text(radar_data[3].quadrant)
        .font("18px sans-serif");
 
     radar.add(pv.Dot) 
-        .data(radar_data.slice(radar_quadrants[3].start,radar_quadrants[3].end)) 
+        .data(radar_data[3].items) 
         .left(w-200+30) 
         .top(function() {return ((h/2) + 36 + this.index * 18);}) 
         .size(8) 
@@ -140,17 +160,7 @@ for (var i = 0; i < radar_quadrants.length; i++) {
         .angle(45)
         .shape(function(d) {return (d.movement === 't' ? "triangle" : "circle");})        
         .fillStyle("#aec7e8") 
-        .anchor("right").add(pv.Label).text(function(d) {return this.index + 1 + radar_quadrants[3].start + ". " + d.name;} );
-
-//arcs
-radar.add(pv.Dot)
-       .data(radar_arcs)
-       .left(w/2)
-       .bottom(h/2)
-       .radius(function(d){return d.r;})
-       .strokeStyle("#ccc")
-       .anchor("top")       
-       .add(pv.Label).text(function(d) { return d.name;});
+        .anchor("right").add(pv.Label).text(function(d) {return radar_quadrant_ctr++ + ". " + d.name;} );
 
 
 //quadrant lines
