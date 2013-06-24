@@ -1,8 +1,7 @@
 function init(h,w) {
+  $('#title').text(radar_title);
 
-document.getElementById('title').text = radar_title;
-
-var radar_arcs = [{'r':100,'name':'Adopt'},{'r':200,'name':'Trial'},{'r':300,'name':'Assess'},{'r':400,'name':'Hold'}];
+  var radar_arcs = [{'r':100,'name':'Adopt'},{'r':200,'name':'Trial'},{'r':300,'name':'Assess'},{'r':400,'name':'Hold'}];
   
  var radar = new pv.Panel()
       .width(w)
