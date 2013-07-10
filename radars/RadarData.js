@@ -45,9 +45,13 @@ var radar_arcs = [
 // - Hold: things that are getting attention in the industry, but not ready for use; sometimes they are not mature enough yet, sometimes they are irredeemably flawed
 //      Note: there's no "avoid" ring, but throw things in the hold ring that people shouldn't use.
 
-                 
+var h = 1160;
+var w = 1200;
+
 var radar_data = [
     { "quadrant": "Techniques",
+        "left" : 45,
+        "top" : 18,
         "color" : "#8FA227",
         "items" : [ 
             {"name":"Database based Integration", "pc":{"r":350,"t":135},"movement":"t", "blipSize":700},
@@ -70,6 +74,8 @@ var radar_data = [
         ]
     },
     { "quadrant": "Tools",
+        "left": w-200+30,
+        "top" : 18,
         "color" : "#587486",
         "items" : [ 
             {"name":"ESB", "pc":{"r":390,"t":20},"movement":"t"},   
@@ -93,6 +99,8 @@ var radar_data = [
         ]
     },
     { "quadrant": "Platforms",
+        "left" :45,
+         "top" : (h/2 + 18),
         "color" : "#DC6F1D",
         "items" : [
             {"name":"Rich internet applications", "pc":{"r":390,"t":265},"movement":"c"},   
@@ -123,6 +131,8 @@ var radar_data = [
     },
     { "quadrant": "Languages",
         "color" : "#B70062",
+        "left"  : (w-200+30),
+        "top" :   (h/2 + 18),
         "items" : [ 
             {"name":"Java language end of life", "pc":{"r":290,"t":355},"movement":"c"},   
             {"name":"F#", "pc":{"r":270,"t":330},"movement":"c"},   
