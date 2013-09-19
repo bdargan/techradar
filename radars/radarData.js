@@ -35,9 +35,10 @@ var makeCoords = function(depth, angle) {
 }
 
 var Quadrants = {
-  Engineering: 270,
-  Technology: 30,
-  Operations: 150
+  Techniques: 0,
+  Tools:      90,
+  Platforms:  180,
+  Languages:  270
 };
 
 var offset = function(base) {
@@ -63,7 +64,7 @@ var kill = function(ness) {
 var element = function(name, depth, baseAngle, percentageAngle, url) {
   var result = {
     "name": name,
-    "pc":   makeCoords(depth,baseAngle + (120 * percentageAngle / 100))
+    "pc":   makeCoords(depth,baseAngle + (90 * percentageAngle / 100))
   };
 
   if (url) {
@@ -73,12 +74,12 @@ var element = function(name, depth, baseAngle, percentageAngle, url) {
   return result;
 }
 
-var engineering = function(name,depth,position,url) {
-  return element(name, depth, Quadrants.Engineering, position, url);
+var techniques = function(name,depth,position,url) {
+  return element(name, depth, Quadrants.Techniques, position, url);
 };
 
-var technology = function(name,depth,position,url) {
-  return element(name, depth, Quadrants.Technology, position, url);
+var languages = function(name,depth,position,url) {
+  return element(name, depth, Quadrants.Languages, position, url);
 };
 
 var operations = function(name,depth,position,url) {
@@ -86,37 +87,41 @@ var operations = function(name,depth,position,url) {
 };
 
 var radar_data = [
-    { "quadrant": "Engineering Practices",
+    { "quadrant": "Techniques",
         "left" : 45,
         "top" : 18,
         "color" : "#8FA227",
         "items" : [ 
-          engineering("Peer Code Review", jfdi(50), 30),
-          engineering("Continuous Integration", jfdi(40), 60),
-          engineering("Boy Scout Rule", jfdi(40), 80),
-          engineering("Collective Code Ownership", jfdi(40), 90),
-          engineering("Configuration as Code", jfdi(70), 10),
-          engineering("Visible Architecture", validate(100), 50),
-          engineering("Test Driven Development", validate(20), 20),
-          engineering("Pair Programming", validate(60), 70),
-          engineering("Behaviour Driven Development", validate(80), 65),
-          engineering("Long Lived Branches", kill(50), 50)
+          techniques("Peer Code Review", jfdi(50), 30),
+          techniques("Continuous Integration", jfdi(40), 60),
+          techniques("Boy Scout Rule", jfdi(40), 80),
+          techniques("Collective Code Ownership", jfdi(40), 90),
+          techniques("Configuration as Code", jfdi(70), 10),
+          techniques("Continuous Deployment", validate(80), 25),
+          techniques("Visible Architecture", validate(70), 50),
+          techniques("Test Driven Development", validate(20), 20),
+          techniques("Pair Programming", validate(60), 70),
+          techniques("Deliberate Development", validate(40), 50),
+          techniques("Behaviour Driven Development", validate(80), 65),
+          techniques("Long Lived Branches", kill(50), 50)
         ]
     },
-    { "quadrant": "Technology Stack", 
+    { "quadrant": "Languages", 
         "left": w-200+30,
         "top" : 18,
         "color" : "#587486",
         "items" : [ 
-          technology("C#", jfdi(20), 20), 
-          technology("JavaScript", jfdi(40), 90),
-          technology("ASP.NET", jfdi(60), 70),
-          technology("TypeScript", validate(50), 80),
-          technology("Clojure", explore(50), 20),
-          technology("Scala", explore(50), 70),
-          technology("WinForms", kill(50), 30),
-          technology("WPF", kill(50), 90), 
-          technology("Classic ASP", kill(50), 10)
+          languages("C#", jfdi(20), 20), 
+          languages("JavaScript", jfdi(40), 90),
+          languages("ASP.NET", jfdi(60), 70),
+          languages("NuGet", jfdi(50), 60),
+          languages("TypeScript", validate(50), 80),
+          languages("Ruby-on-Rails", validate(50), 40),
+          languages("Clojure", explore(50), 20),
+          languages("Scala", explore(50), 70),
+          languages("WinForms", kill(50), 30),
+          languages("WPF", kill(50), 90), 
+          languages("Classic ASP", kill(50), 10)
         ]
     },
     { "quadrant": "Tools", 
@@ -134,6 +139,13 @@ var radar_data = [
           operations("Feature Usage Reporting", kill(50), 50),
           operations("Mercurial", kill(30), 20),
           operations("Subversion", kill(30), 90)
+        ]
+    },
+    { "quadrant": "Platforms",
+        "left": (w-200+30),
+        "top": (h/2 + 18),
+        "color": "Purple",
+        "items":  [
         ]
     }
 ];
