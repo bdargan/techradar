@@ -18,13 +18,14 @@ radar.add(pv.Dot)
 
 var numberOfQuadrants = radar_data.length;
 var step = 360/radar_data.length;
+var outerWidth = radar_arcs[radar_arcs.length-1].r;
 
 for (var i=0;i<=numberOfQuadrants;++i) {
    radar.add(pv.Line)
      .data([0,step*i])
      .lineWidth(1)
-     .top(function(d) { return d===0 ? h/2 : h/2 + Math.cos(pv.radians(d)) * 400; })
-     .left(function(d) { return d===0 ? w/2 : w/2 + Math.sin(pv.radians(d)) * 400; })
+     .top(function(d) { return d===0 ? h/2 : h/2 + Math.cos(pv.radians(d)) * outerWidth; })
+     .left(function(d) { return d===0 ? w/2 : w/2 + Math.sin(pv.radians(d)) * outerWidth; })
      .strokeStyle("#bbb");
 }
 
