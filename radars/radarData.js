@@ -60,10 +60,10 @@ var kill = function(ness) {
   return offset(300)(ness);
 };
 
-var element = function(name, depth, angle, url) {
+var element = function(name, depth, baseAngle, percentageAngle, url) {
   var result = {
     "name": name,
-    "pc":   makeCoords(depth,angle)
+    "pc":   makeCoords(depth,baseAngle + (120 * percentageAngle / 100))
   };
 
   if (url) {
@@ -74,15 +74,15 @@ var element = function(name, depth, angle, url) {
 }
 
 var engineering = function(name,depth,position,url) {
-  return element(name, depth, Quadrants.Engineering + position, url);
+  return element(name, depth, Quadrants.Engineering, position, url);
 };
 
 var technology = function(name,depth,position,url) {
-  return element(name, depth, Quadrants.Technology + position, url);
+  return element(name, depth, Quadrants.Technology, position, url);
 };
 
 var operations = function(name,depth,position,url) {
-  return element(name, depth, Quadrants.Operations + position, url);
+  return element(name, depth, Quadrants.Operations, position, url);
 };
 
 var radar_data = [
@@ -95,9 +95,12 @@ var radar_data = [
           engineering("Continuous Integration", jfdi(40), 60),
           engineering("Boy Scout Rule", jfdi(40), 80),
           engineering("Collective Code Ownership", jfdi(40), 90),
+          engineering("Configuration as Code", jfdi(70), 10),
+          engineering("Visible Architecture", validate(100), 50),
           engineering("Test Driven Development", validate(20), 20),
           engineering("Pair Programming", validate(60), 70),
-          engineering("Behaviour Driven Development", validate(80), 65)
+          engineering("Behaviour Driven Development", validate(80), 65),
+          engineering("Long Lived Branches", kill(50), 50)
         ]
     },
     { "quadrant": "Technology Stack", 
@@ -107,20 +110,30 @@ var radar_data = [
         "items" : [ 
           technology("C#", jfdi(20), 20), 
           technology("JavaScript", jfdi(40), 90),
-          technology("TypeScript", explore(50), 80),
+          technology("ASP.NET", jfdi(60), 70),
+          technology("TypeScript", validate(50), 80),
+          technology("Clojure", explore(50), 20),
+          technology("Scala", explore(50), 70),
           technology("WinForms", kill(50), 30),
-          technology("WPF", kill(50), 90)
+          technology("WPF", kill(50), 90), 
+          technology("Classic ASP", kill(50), 10)
         ]
     },
-    { "quadrant": "Operations / Tools", 
+    { "quadrant": "Tools", 
         "left" :45,
          "top" : (h/2 + 18),
         "color" : "#DC6F1D",
         "items" : [
           operations("Visual Studio", jfdi(10), 60),
           operations("nCrunch", jfdi(50), 30, 'http://www.ncrunch.net'),
+          operations("Git", jfdi(30), 90, 'http://www.github.com/'),
           operations("IntelliJ", validate(50), 60),
-          operations("WebStorm", explore(50), 60)
+          operations("WebStorm", explore(50), 60),
+          operations("Graphite", validate(50), 90),
+          operations("Riemann", explore(50), 30),
+          operations("Feature Usage Reporting", kill(50), 50),
+          operations("Mercurial", kill(30), 20),
+          operations("Subversion", kill(30), 90)
         ]
     }
 ];
