@@ -1,14 +1,10 @@
-//This is the title for your window tab, and your Radar
-document.title = "Stephen's Technology Radar";
+document.title = "Red Gate Technology Radar (straw man edition)";
 
-
-//This is the concentic circles that want on your radar
 var radar_arcs = [
                    {'r':100,'name':'Adopt'}
                   ,{'r':200,'name':'Trial'}
                   ,{'r':300,'name':'Assess'}
                   ,{'r':400,'name':'Hold'}
-                 // ,{'r':500,'name':'Possible Extra if you want it'}
                  ];
 
 //This is your raw data
@@ -54,7 +50,7 @@ var radar_data = [
         "top" : 18,
         "color" : "#8FA227",
         "items" : [ 
-            {"name":"Database based Integration", "pc":{"r":350,"t":135},"movement":"t", "blipSize":700},
+            /*{"name":"Database based Integration", "pc":{"r":350,"t":135},"movement":"t"},
             {"name":"Scrum certification", "pc":{"r":350,"t":95},"movement":"c", "url":"http://www.google.com"},
             {"name":"Incremental data warehousing", "pc":{"r":250,"t":165},"movement":"c"},    
             {"name":"DevOps", "pc":{"r":250,"t":110},"movement":"c"},    
@@ -70,7 +66,7 @@ var radar_data = [
             {"name":"Emergent design", "pc":{"r":80,"t":100},"movement":"c"},   
             {"name":"Evolutionary database", "pc":{"r":70,"t":170},"movement":"c"},   
             {"name":"Platform roadmaps", "pc":{"r":30,"t":100},"movement":"c"},   
-            {"name":"Build pipelines", "pc":{"r":30,"t":160},"movement":"c"} 
+            {"name":"Build pipelines", "pc":{"r":30,"t":160},"movement":"c"} */
         ]
     },
     { "quadrant": "Tools",
@@ -78,7 +74,7 @@ var radar_data = [
         "top" : 18,
         "color" : "#587486",
         "items" : [ 
-            {"name":"ESB", "pc":{"r":390,"t":20},"movement":"t"},   
+            /*{"name":"ESB", "pc":{"r":390,"t":20},"movement":"t"},   
             {"name":"Intentional Programming", "pc":{"r":310,"t":10},"movement":"c"},   
             {"name":"Cross mobile platforms", "pc":{"r":280,"t":85},"movement":"c"},   
             {"name":"Github", "pc":{"r":280,"t":70},"movement":"c"},   
@@ -95,7 +91,7 @@ var radar_data = [
             {"name":"Git", "pc":{"r":130,"t":15},"movement":"c"},   
             {"name":"Squid", "pc":{"r":80,"t":85},"movement":"c"},   
             {"name":"ASP.NET MVC", "pc":{"r":80,"t":10},"movement":"c"},   
-            {"name":"Subversion", "pc":{"r":30,"t":30},"movement":"c"}
+            {"name":"Subversion", "pc":{"r":30,"t":30},"movement":"c"}*/
         ]
     },
     { "quadrant": "Platforms",
@@ -103,7 +99,7 @@ var radar_data = [
          "top" : (h/2 + 18),
         "color" : "#DC6F1D",
         "items" : [
-            {"name":"Rich internet applications", "pc":{"r":390,"t":265},"movement":"c"},   
+            /*{"name":"Rich internet applications", "pc":{"r":390,"t":265},"movement":"c"},   
             {"name":"GWT", "pc":{"r":390,"t":250},"movement":"c"},   
             {"name":"IE8", "pc":{"r":390,"t":230},"movement":"c"},   
             {"name":"WS-* beyond basic profile", "pc":{"r":390,"t":190},"movement":"c"},   
@@ -126,9 +122,9 @@ var radar_data = [
             {"name":"KVM", "pc":{"r":70,"t":260},"movement":"t"},   
             {"name":"Atom", "pc":{"r":70,"t":245},"movement":"t"},   
             {"name":"ALT.NET", "pc":{"r":90,"t":190},"movement":"c"},   
-            {"name":"IE6 End of Life", "pc":{"r":30,"t":225},"movement":"c"}
+            {"name":"IE6 End of Life", "pc":{"r":30,"t":225},"movement":"c"}*/
         ]
-    },
+    }/*,
     { "quadrant": "Languages",
         "color" : "#B70062",
         "left"  : (w-200+30),
@@ -146,5 +142,5 @@ var radar_data = [
             {"name":"Javascript as a 1st class language", "pc":{"r":90,"t":275},"movement":"c"},   
             {"name":"Ruby", "pc":{"r":30,"t":282},"movement":"c"}
         ]
-    }
+    }*/
 ];
