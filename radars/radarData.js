@@ -79,10 +79,10 @@ var radar_data = [
         "top" : 18,
         "color" : "#8FA227",
         "items" : [ 
-          techniques("Peer Code Review", jfdi(50), 30),
-          techniques("Continuous Integration", jfdi(40), 60),
-          techniques("Boy Scout Rule", jfdi(40), 80),
-          techniques("Collective Code Ownership", jfdi(40), 90),
+          techniques("Peer Code Review", jfdi(50), 30, 'http://en.wikipedia.org/wiki/Code_review'),
+          techniques("Continuous Integration", jfdi(40), 60, 'http://www.martinfowler.com/articles/continuousIntegration.html'),
+          techniques("Boy Scout Rule", jfdi(40), 80, 'http://programmer.97things.oreilly.com/wiki/index.php/The_Boy_Scout_Rule'),
+          techniques("Collective Code Ownership", jfdi(40), 90, 'http://www.extremeprogramming.org/rules/collective.html'),
           techniques("Configuration as Code", jfdi(70), 10),
           techniques("Automatic Syntax Enforcement ", jfdi(80), 30),
 
