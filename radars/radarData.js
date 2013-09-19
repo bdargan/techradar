@@ -41,7 +41,7 @@ var radar_data = [
         "color" : "#8FA227",
         "items" : [ 
           {"name": "Continuous Integration", "pc": makeCoords(200,30) },      
-          {"name": "Continuous Integration", "pc": makeCoords(200,270) },      
+          {"name": "Continuous Integration", "pc": makeCoords(200,270) }     
         ]
     },
     { "quadrant": "Technology Stack", // running from 150 - 30 
