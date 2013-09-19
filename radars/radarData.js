@@ -34,6 +34,12 @@ var makeCoords = function(depth, angle) {
   };
 }
 
+var Quadrants = {
+  Engineering: 270,
+  Technology: 30,
+  Operations: 150
+};
+
 var offset = function(base) {
   return function(ness) { return base + (100 - ness/100*100); };
 };
@@ -54,8 +60,6 @@ var kill = function(ness) {
   return offset(300)(ness);
 };
 
-
-
 var element = function(name, depth, angle, url) {
   var result = {
     "name": name,
@@ -69,41 +73,44 @@ var element = function(name, depth, angle, url) {
   return result;
 }
 
-var engineeringAngleMin = 30;
-var engineeringAngleMax = 270;
+var engineering = function(name,depth,position,url) {
+  return element(name, depth, Quadrants.Engineering + position, url);
+};
 
-var technologyAngleMin = 30;
-var technologyAngleMax = 150;
+var technology = function(name,depth,position,url) {
+  return element(name, depth, Quadrants.Technology + position, url);
+};
 
-var operationsAngleMin = 150;
-var operationsAngleMax = 270;
+var operations = function(name,depth,position,url) {
+  return element(name, depth, Quadrants.Operations + position, url);
+};
 
 var radar_data = [
-    { "quadrant": "Engineering Practices", // running from 30 to 270
+    { "quadrant": "Engineering Practices",
         "left" : 45,
         "top" : 18,
         "color" : "#8FA227",
         "items" : [ 
-          element("Marker #1", explore(50), engineeringAngleMin),
-          element("Marker #2", explore(50), engineeringAngleMax)
+          engineering("Marker #1", explore(50), 0),
+          engineering("Marker #2", explore(50), 120)
         ]
     },
-    { "quadrant": "Technology Stack", // running from 150 - 30 
+    { "quadrant": "Technology Stack", 
         "left": w-200+30,
         "top" : 18,
         "color" : "#587486",
         "items" : [ 
-          element("Marker #3", jfdi(0), technologyAngleMax), 
-          element("Marker #4", jfdi(0), technologyAngleMin) 
+          technology("Marker #3", jfdi(0), 120), 
+          technology("Marker #4", jfdi(0), 0) 
         ]
     },
-    { "quadrant": "Operations", // running from 150 to 270
+    { "quadrant": "Operations", 
         "left" :45,
          "top" : (h/2 + 18),
         "color" : "#DC6F1D",
         "items" : [
-          element("Marker #5", explore(100), operationsAngleMax),
-          element("Marker #6", explore(100), operationsAngleMin)
+          operations("Marker #5", explore(100), 120),
+          operations("Marker #6", explore(100), 0)
         ]
     }
 ];
