@@ -18,10 +18,10 @@ var makeCoords = function(depth, angle) {
 }
 
 var Quadrants = {
-  Techniques: 0,
-  Tools:      90,
-  Platforms:  180,
-  Languages:  270
+  Languages:  0,
+  Techniques: 90,
+  Tools:      180,
+  Platforms:  270
 };
 
 var offset = function(base) {
@@ -65,12 +65,12 @@ var languages = function(name,depth,position,url) {
   return element(name, depth, Quadrants.Languages, position, url);
 };
 
-var operations = function(name,depth,position,url) {
-  return element(name, depth, Quadrants.Operations, position, url);
+var tools = function(name,depth,position,url) {
+  return element(name, depth, Quadrants.Tools, position, url);
 };
 
 var platforms = function(name,depth,position,url) {
-  return elements(name, depth, Quadrants.Platforms, position, url);
+  return element(name, depth, Quadrants.Platforms, position, url);
 };
 
 var radar_data = [
@@ -84,12 +84,15 @@ var radar_data = [
           techniques("Boy Scout Rule", jfdi(40), 80),
           techniques("Collective Code Ownership", jfdi(40), 90),
           techniques("Configuration as Code", jfdi(70), 10),
+          techniques("Automatic Syntax Enforcement ", jfdi(80), 30),
           techniques("Continuous Deployment", validate(80), 25),
           techniques("Visible Architecture", validate(70), 50),
           techniques("Test Driven Development", validate(20), 20),
           techniques("Pair Programming", validate(60), 70),
           techniques("Deliberate Development", validate(40), 50),
           techniques("Behaviour Driven Development", validate(80), 65),
+          techniques("Functional Programming", explore(50), 50),
+          techniques("Mob Programming", explore(50), 75),
           techniques("Long Lived Branches", kill(50), 50)
         ]
     },
@@ -100,15 +103,12 @@ var radar_data = [
         "items" : [ 
           languages("C#", jfdi(20), 20), 
           languages("JavaScript", jfdi(40), 90),
-          languages("ASP.NET", jfdi(60), 70),
           languages("NuGet", jfdi(50), 60),
           languages("TypeScript", validate(50), 80),
           languages("Ruby-on-Rails", validate(50), 40),
           languages("Clojure", explore(50), 20),
           languages("Scala", explore(50), 70),
-          languages("WinForms", kill(50), 30),
-          languages("WPF", kill(50), 90), 
-          languages("Classic ASP", kill(50), 10)
+          languages("CoffeeScript", kill(50), 50)
         ]
     },
     { "quadrant": "Tools", 
@@ -116,16 +116,19 @@ var radar_data = [
          "top" : (h/2 + 18),
         "color" : "#DC6F1D",
         "items" : [
-          operations("Visual Studio", jfdi(10), 60),
-          operations("nCrunch", jfdi(50), 30, 'http://www.ncrunch.net'),
-          operations("Git", jfdi(30), 90, 'http://www.github.com/'),
-          operations("IntelliJ", validate(50), 60),
-          operations("WebStorm", explore(50), 60),
-          operations("Graphite", validate(50), 90),
-          operations("Riemann", explore(50), 30),
-          operations("Feature Usage Reporting", kill(50), 50),
-          operations("Mercurial", kill(30), 20),
-          operations("Subversion", kill(30), 90)
+          tools("Visual Studio", jfdi(10), 60),
+          tools("nCrunch", jfdi(50), 30, 'http://www.ncrunch.net'),
+          tools("Git", jfdi(30), 90, 'http://www.github.com/'),
+          tools("ASP.NET", jfdi(60), 70),
+          tools("IntelliJ", validate(50), 60),
+          tools("WebStorm", explore(50), 60),
+          tools("Graphite", validate(50), 90),
+          tools("Riemann", explore(50), 30),
+          tools("Feature Usage Reporting", kill(50), 50),
+          tools("Mercurial", kill(30), 20),
+          tools("Subversion", kill(30), 90),
+          tools("WinForms", kill(50), 30),
+          tools("WPF", kill(50), 90), 
         ]
     },
     { "quadrant": "Platforms",
@@ -133,6 +136,16 @@ var radar_data = [
         "top": (h/2 + 18),
         "color": "Purple",
         "items":  [
+          platforms("Azure", jfdi(10), 60),
+          platforms("EC2", jfdi(20), 30),
+          platforms("IIS", jfdi(30), 85),
+          platforms("Linux", validate(40), 50),
+          platforms("Mongo", validate(60), 75),
+          platforms("Redis", validate(80), 25),
+          platforms("MySQL", validate(20), 20),
+          platforms("PostgreSQL", validate(95), 40),
+          platforms("Datamoic", explore(50), 50),
+          platforms("Apache Cordova", explore(25), 25)
         ]
     }
 ];
