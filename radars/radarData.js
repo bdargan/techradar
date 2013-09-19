@@ -1,10 +1,10 @@
 document.title = "Red Gate Technology Radar (straw man edition)";
 
 var radar_arcs = [
-                   {'r':100,'name':'Adopt'}
-                  ,{'r':200,'name':'Trial'}
-                  ,{'r':300,'name':'Assess'}
-                  ,{'r':400,'name':'Hold'}
+                   {'r':100,'name':'JFDI'}     // well proven, safe choice
+                  ,{'r':200,'name':'Validate'} // worked on small example, known good, does it meet our needs?
+                  ,{'r':300,'name':'Explore'}  // new ideas on the periphery we should investigate and assess 
+                  ,{'r':400,'name':'Kill'}     // in the past a JFDI, but not suitable for any new projects
                  ];
 
 //This is your raw data
@@ -20,31 +20,29 @@ var radar_arcs = [
 //     - 0 degrees is due east
 //
 // Coarse-grained quadrants
-// - Techniques: elements of a software development process, such as experience design; and ways of structuring software, such micro-services.
-// - Tools: components, such as databases, software development tools, such as versions control systems; or more generic categories of tools, such as the notion of polyglot persistance.
-// - Platforms: things that we build software on top of: mobile technologies like Android, virtual platforms like the JVM, or generic kinds of platforms like hybrid clouds
-// - Programming Languages and Frameworks
-//
+// - Engineering Practices
+// - Technology Stack
+// - Running Software
 
 var h = 1160;
 var w = 1200;
 
 var radar_data = [
-    { "quadrant": "Techniques",
+    { "quadrant": "Engineering Practices",
         "left" : 45,
         "top" : 18,
         "color" : "#8FA227",
         "items" : [ 
         ]
     },
-    { "quadrant": "Tools",
+    { "quadrant": "Technology Stack",
         "left": w-200+30,
         "top" : 18,
         "color" : "#587486",
         "items" : [ 
         ]
     },
-    { "quadrant": "Platforms",
+    { "quadrant": "Running Software",
         "left" :45,
          "top" : (h/2 + 18),
         "color" : "#DC6F1D",
