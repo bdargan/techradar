@@ -22,31 +22,37 @@ var radar_arcs = [
 // Coarse-grained quadrants
 // - Engineering Practices
 // - Technology Stack
-// - Running Software
+// - Operations
 
 var h = 1160;
 var w = 1200;
 
 var radar_data = [
-    { "quadrant": "Engineering Practices",
+    { "quadrant": "Engineering Practices", // running from 30 to 270
         "left" : 45,
         "top" : 18,
         "color" : "#8FA227",
         "items" : [ 
+          {"name": "Continuous Integration", "pc": {"r": 200, "t": 30} },      
+          {"name": "Continuous Integration", "pc": {"r": 200, "t": 270} },      
         ]
     },
-    { "quadrant": "Technology Stack",
+    { "quadrant": "Technology Stack", // running from 150 - 30 
         "left": w-200+30,
         "top" : 18,
         "color" : "#587486",
         "items" : [ 
+          {"name": "C#", "pc": {"r": 300, "t": 150} }, // FAR BOUND OF TECHNOLOGY STACK
+          {"name": "C#", "pc": {"r": 300, "t": 30} } // FAR BOUND OF TECHNOLOGY STACK
         ]
     },
-    { "quadrant": "Running Software",
+    { "quadrant": "Operations", // running from 150 to 270
         "left" :45,
          "top" : (h/2 + 18),
         "color" : "#DC6F1D",
         "items" : [
+          {"name": "something", "pc": {"r": 400, "t": 150} }, // START BOUND OF OPERATIONS
+          {"name": "something else", "pc": {"r": 400, "t": 270} } // FAR BOUND OF OPERATIONS
         ]
     }
 ];
