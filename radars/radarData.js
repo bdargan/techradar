@@ -91,8 +91,13 @@ var radar_data = [
         "top" : 18,
         "color" : "#8FA227",
         "items" : [ 
-          engineering("Marker #1", explore(50), 0),
-          engineering("Marker #2", explore(50), 120)
+          engineering("Peer Code Review", jfdi(50), 30),
+          engineering("Continuous Integration", jfdi(40), 60),
+          engineering("Boy Scout Rule", jfdi(40), 90),
+          engineering("Collective Code Ownership", jfdi(40), 110),
+          engineering("Test Driven Development", validate(20), 20),
+          engineering("Pair Programming", validate(60), 70),
+          engineering("Behaviour Driven Development", validate(80), 65)
         ]
     },
     { "quadrant": "Technology Stack", 
@@ -100,17 +105,22 @@ var radar_data = [
         "top" : 18,
         "color" : "#587486",
         "items" : [ 
-          technology("Marker #3", jfdi(0), 120), 
-          technology("Marker #4", jfdi(0), 0) 
+          technology("C#", jfdi(20), 20), 
+          technology("JavaScript", jfdi(40), 100),
+          technology("TypeScript", explore(50), 80),
+          technology("WinForms", kill(50), 30),
+          technology("WPF", kill(50), 90)
         ]
     },
-    { "quadrant": "Operations", 
+    { "quadrant": "Operations / Tools", 
         "left" :45,
          "top" : (h/2 + 18),
         "color" : "#DC6F1D",
         "items" : [
-          operations("Marker #5", explore(100), 120),
-          operations("Marker #6", explore(100), 0)
+          operations("Visual Studio", jfdi(10), 60),
+          operations("nCrunch", jfdi(50), 30, 'http://www.ncrunch.net'),
+          operations("IntelliJ", validate(50), 60),
+          operations("WebStorm", explore(50), 60)
         ]
     }
 ];
