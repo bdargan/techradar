@@ -93,8 +93,8 @@ var radar_data = [
         "items" : [ 
           engineering("Peer Code Review", jfdi(50), 30),
           engineering("Continuous Integration", jfdi(40), 60),
-          engineering("Boy Scout Rule", jfdi(40), 90),
-          engineering("Collective Code Ownership", jfdi(40), 110),
+          engineering("Boy Scout Rule", jfdi(40), 80),
+          engineering("Collective Code Ownership", jfdi(40), 90),
           engineering("Test Driven Development", validate(20), 20),
           engineering("Pair Programming", validate(60), 70),
           engineering("Behaviour Driven Development", validate(80), 65)
@@ -106,7 +106,7 @@ var radar_data = [
         "color" : "#587486",
         "items" : [ 
           technology("C#", jfdi(20), 20), 
-          technology("JavaScript", jfdi(40), 100),
+          technology("JavaScript", jfdi(40), 90),
           technology("TypeScript", explore(50), 80),
           technology("WinForms", kill(50), 30),
           technology("WPF", kill(50), 90)
