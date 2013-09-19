@@ -34,6 +34,28 @@ var makeCoords = function(depth, angle) {
   };
 }
 
+var offset = function(base) {
+  return function(ness) { return base + (100 - ness/100*100); };
+};
+
+var jfdi = function(ness) {
+  return offset(0)(ness);
+};
+
+var validate = function(ness) {
+  return offset(100)(ness);
+};
+
+var explore = function(ness) {
+  return offset(200)(ness);
+};
+
+var kill = function(ness) {
+  return offset(300)(ness);
+};
+
+
+
 var element = function(name, depth, angle, url) {
   var result = {
     "name": name,
@@ -47,14 +69,23 @@ var element = function(name, depth, angle, url) {
   return result;
 }
 
+var engineeringAngleMin = 30;
+var engineeringAngleMax = 270;
+
+var technologyAngleMin = 30;
+var technologyAngleMax = 150;
+
+var operationsAngleMin = 150;
+var operationsAngleMax = 270;
+
 var radar_data = [
     { "quadrant": "Engineering Practices", // running from 30 to 270
         "left" : 45,
         "top" : 18,
         "color" : "#8FA227",
         "items" : [ 
-          element("Marker #1", 200, 30),
-          element("Marker #2", 200, 270)
+          element("Marker #1", explore(50), engineeringAngleMin),
+          element("Marker #2", explore(50), engineeringAngleMax)
         ]
     },
     { "quadrant": "Technology Stack", // running from 150 - 30 
@@ -62,8 +93,8 @@ var radar_data = [
         "top" : 18,
         "color" : "#587486",
         "items" : [ 
-          element("Marker #3", 300, 150),
-          element("Marker #4", 300, 30) 
+          element("Marker #3", jfdi(0), technologyAngleMax), 
+          element("Marker #4", jfdi(0), technologyAngleMin) 
         ]
     },
     { "quadrant": "Operations", // running from 150 to 270
@@ -71,8 +102,8 @@ var radar_data = [
          "top" : (h/2 + 18),
         "color" : "#DC6F1D",
         "items" : [
-          element("Marker #5", 400, 150),
-          element("Marker #6", 400, 270)
+          element("Marker #5", explore(100), operationsAngleMax),
+          element("Marker #6", explore(100), operationsAngleMin)
         ]
     }
 ];
