@@ -27,14 +27,21 @@ var radar_arcs = [
 var h = 1160;
 var w = 1200;
 
+var makeCoords = function(depth, angle) {
+  return {
+    "r": depth,
+    "t": angle
+  };
+}
+
 var radar_data = [
     { "quadrant": "Engineering Practices", // running from 30 to 270
         "left" : 45,
         "top" : 18,
         "color" : "#8FA227",
         "items" : [ 
-          {"name": "Continuous Integration", "pc": {"r": 200, "t": 30} },      
-          {"name": "Continuous Integration", "pc": {"r": 200, "t": 270} },      
+          {"name": "Continuous Integration", "pc": makeCoords(200,30) },      
+          {"name": "Continuous Integration", "pc": makeCoords(200,270) },      
         ]
     },
     { "quadrant": "Technology Stack", // running from 150 - 30 
@@ -42,8 +49,8 @@ var radar_data = [
         "top" : 18,
         "color" : "#587486",
         "items" : [ 
-          {"name": "C#", "pc": {"r": 300, "t": 150} }, // FAR BOUND OF TECHNOLOGY STACK
-          {"name": "C#", "pc": {"r": 300, "t": 30} } // FAR BOUND OF TECHNOLOGY STACK
+          {"name": "C#", "pc": makeCoords(300,150) }, // FAR BOUND OF TECHNOLOGY STACK
+          {"name": "C#", "pc": makeCoords(300,30)  }  // FAR BOUND OF TECHNOLOGY STACK
         ]
     },
     { "quadrant": "Operations", // running from 150 to 270
@@ -51,8 +58,8 @@ var radar_data = [
          "top" : (h/2 + 18),
         "color" : "#DC6F1D",
         "items" : [
-          {"name": "something", "pc": {"r": 400, "t": 150} }, // START BOUND OF OPERATIONS
-          {"name": "something else", "pc": {"r": 400, "t": 270} } // FAR BOUND OF OPERATIONS
+          {"name": "something", "pc": makeCoords(400,150) }, // START BOUND OF OPERATIONS
+          {"name": "something else", "pc": makeCoords(400,270) } // FAR BOUND OF OPERATIONS
         ]
     }
 ];
