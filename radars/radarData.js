@@ -7,23 +7,6 @@ var radar_arcs = [
                   ,{'r':400,'name':'Kill'}     // in the past a JFDI, but not suitable for any new projects
                  ];
 
-//This is your raw data
-//
-// Key
-// url:
-// StringValue : This is optional, If you add it then your blips will be clickable to some URL
-//
-// pc: polar coordinates
-//   r = distance away from origin ("radial coordinate")
-//     - Each level is 100 points away from origin
-//     t = angle of the point from origin ("angular coordinate")
-//     - 0 degrees is due east
-//
-// Coarse-grained quadrants
-// - Engineering Practices
-// - Technology Stack
-// - Operations
-
 var h = 1160;
 var w = 1200;
 
@@ -84,6 +67,10 @@ var languages = function(name,depth,position,url) {
 
 var operations = function(name,depth,position,url) {
   return element(name, depth, Quadrants.Operations, position, url);
+};
+
+var platforms = function(name,depth,position,url) {
+  return elements(name, depth, Quadrants.Platforms, position, url);
 };
 
 var radar_data = [
