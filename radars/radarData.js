@@ -85,18 +85,23 @@ var radar_data = [
           techniques("Collective Code Ownership", jfdi(40), 90),
           techniques("Configuration as Code", jfdi(70), 10),
           techniques("Automatic Syntax Enforcement ", jfdi(80), 30),
+
+          techniques("Polyglot Programming", validate(100), 50),
           techniques("Continuous Deployment", validate(80), 25),
           techniques("Visible Architecture", validate(70), 50),
+          techniques("Immutable Servers", validate(30), 30),
+          techniques("Semantic Monitoring", validate(60), 30),
           techniques("Test Driven Development", validate(20), 20),
           techniques("Pair Programming", validate(60), 70),
           techniques("Deliberate Development", validate(40), 50),
           techniques("Behaviour Driven Development", validate(80), 65),
+
           techniques("Functional Programming", explore(50), 50),
-          techniques("Mob Programming", explore(50), 75),
-          techniques("Long Lived Branches", kill(50), 50)
+
+          techniques("Exhaustive Browser Based Testing", kill(50), 50)
         ]
     },
-    { "quadrant": "Languages", 
+    { "quadrant": "Languages and Frameworks", 
         "left": w-200+30,
         "top" : 18,
         "color" : "#587486",
@@ -104,11 +109,23 @@ var radar_data = [
           languages("C#", jfdi(20), 20), 
           languages("JavaScript", jfdi(40), 90),
           languages("NuGet", jfdi(50), 60),
+          languages("CSS Frameworks", jfdi(50), 20),
+     
+          languages("OWIN", validate(70), 60),
           languages("TypeScript", validate(50), 80),
           languages("Ruby-on-Rails", validate(50), 40),
+          languages("node.js", validate(30), 20),
+          languages("Bootstrap", validate(20), 80),
+          languages("JS MV*", validate(80), 20),
+          languages("Cucumber", validate(10), 85),
+          languages("Ruby", validate(50), 15),
+          languages("Python", validate(10), 70),
+
           languages("Clojure", explore(50), 20),
           languages("Scala", explore(50), 70),
-          languages("CoffeeScript", kill(50), 50)
+
+          languages("CoffeeScript", kill(50), 50),
+          languages("Hand-written CSS", kill(50), 75),
         ]
     },
     { "quadrant": "Tools", 
@@ -120,15 +137,23 @@ var radar_data = [
           tools("nCrunch", jfdi(50), 30, 'http://www.ncrunch.net'),
           tools("Git", jfdi(30), 90, 'http://www.github.com/'),
           tools("ASP.NET", jfdi(60), 70),
+
+          tools("Chef", validate(25), 30),
+          tools("CFEngine", validate(25), 60),
+          tools("Puppet", validate(75), 50),
           tools("IntelliJ", validate(50), 60),
-          tools("WebStorm", explore(50), 60),
           tools("Graphite", validate(50), 90),
+     
+
+          tools("WebStorm", explore(50), 60),
           tools("Riemann", explore(50), 30),
+          tools("Log Stash", explore(75), 90, 'http://logstash.net/'),
+
           tools("Feature Usage Reporting", kill(50), 50),
           tools("Mercurial", kill(30), 20),
           tools("Subversion", kill(30), 90),
           tools("WinForms", kill(50), 30),
-          tools("WPF", kill(50), 90), 
+          tools("WPF", kill(50), 60), 
         ]
     },
     { "quadrant": "Platforms",
@@ -139,13 +164,17 @@ var radar_data = [
           platforms("Azure", jfdi(10), 60),
           platforms("EC2", jfdi(20), 30),
           platforms("IIS", jfdi(30), 85),
+
           platforms("Linux", validate(40), 50),
           platforms("Mongo", validate(60), 75),
           platforms("Redis", validate(80), 25),
           platforms("MySQL", validate(20), 20),
           platforms("PostgreSQL", validate(95), 40),
+
           platforms("Datamoic", explore(50), 50),
-          platforms("Apache Cordova", explore(25), 25)
+          platforms("Apache Cordova", explore(25), 25),
+
+          platforms("Physical Machines", kill(50), 50)
         ]
     }
 ];
