@@ -49,7 +49,7 @@ for (var i = 0; i < radar_data.length; i++) {
     .title(function(d) { return d.name;})		 
     .cursor( function(d) { return ( d.url !== undefined ? "pointer" : "auto" ); })                                                            
     .event("click", function(d) { if ( d.url !== undefined ){self.location =  d.url}}) 
-    .angle(45)
+    .angle(Math.PI)  // 180 degrees in radians !
     .strokeStyle(radar_data[i].color)
     .fillStyle(radar_data[i].color)
     .shape(function(d) {return (d.movement === 't' ? "triangle" : "circle");})         
