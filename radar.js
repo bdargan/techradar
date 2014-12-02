@@ -63,7 +63,9 @@ for (var i = 0; i < radar_data.length; i++) {
 
 //Quadrant Ledgends
 var radar_quadrant_ctr=1;
-for (var i = 0; i < radar_data.length; i++) {        
+
+//TODO: re-order the items, by radius, in order to logically group by the rings.
+for (var i = 0; i < radar_data.length; i++) {
     radar.add(pv.Label)         
          .left( radar_data[i].left )         
          .top( radar_data[i].top )  
