@@ -41,10 +41,10 @@ for (var i = 0; i < radar_data.length; i++) {
     .data(radar_data[i].items)
     .size( function(d) { return ( d.blipSize !== undefined ? d.blipSize : 70 ); })
     .left(function(d) { var x = polar_to_raster(d.pc.r, d.pc.t)[0];
-                        console.log("name:" + d.name + ", x:" + x); 
+                        //console.log("name:" + d.name + ", x:" + x); 
                         return x;})
     .bottom(function(d) { var y = polar_to_raster(d.pc.r, d.pc.t)[1];                                 
-                          console.log("name:" + d.name + ", y:" + y); 
+                          //console.log("name:" + d.name + ", y:" + y); 
                           return y;})
     .title(function(d) { return d.name;})		 
     .cursor( function(d) { return ( d.url !== undefined ? "pointer" : "auto" ); })                                                            
@@ -63,28 +63,67 @@ for (var i = 0; i < radar_data.length; i++) {
 
 //Quadrant Ledgends
 var radar_quadrant_ctr=1;
+var quadrantFontSize = 18;
+var headingFontSize = 14;
+var stageHeadingCount = 0;
+var lastRadius = 0;
+var lastQuadrant='';
+var spacer = 6;
+var fontSize = 10;
 
-//TODO: re-order the items, by radius, in order to logically group by the rings.
+
+//TODO: Super fragile: re-order the items, by radius, in order to logically group by the rings.
 for (var i = 0; i < radar_data.length; i++) {
-    radar.add(pv.Label)         
-         .left( radar_data[i].left )         
-         .top( radar_data[i].top )  
-         .text(  radar_data[i].quadrant )		 
-         .strokeStyle( radar_data[i].color )
-         .fillStyle( radar_data[i].color )                    
-         .font("18px sans-serif")
-            .add( pv.Dot )            
-            .def("i", radar_data[i].top )
-            .data(radar_data[i].items)            
-            .top( function() { return ( this.i() + 18 + this.index * 18 );} )   
+    //adjust top by the number of headings.
+    if (lastQuadrant != radar_data[i].quadrant) {
+        radar.add(pv.Label)         
+            .left( radar_data[i].left )         
+            .top( radar_data[i].top )  
+            .text(  radar_data[i].quadrant )		 
+            .strokeStyle( radar_data[i].color )
+            .fillStyle( radar_data[i].color )                    
+            .font(quadrantFontSize + "px sans-serif");
+         
+        lastQuadrant = radar_data[i].quadrant;
+
+    }
+
+    var itemsByStage = _.groupBy(radar_data[i].items, function(item) {return Math.floor(item.pc.r / 100)});
+    var offsetIndex = 0;
+    for (var stageIdx in _(itemsByStage).keys()) {
+
+        if (stageIdx > 0) {
+            offsetIndex = offsetIndex + itemsByStage[stageIdx-1].length + 1; 
+            console.log("offsetIndex = " + itemsByStage[stageIdx-1].length, offsetIndex );
+        }
+
+        radar.add(pv.Label)         
+            .left( radar_data[i].left + headingFontSize )
+            .top( radar_data[i].top + quadrantFontSize + spacer + (stageIdx * headingFontSize) + (offsetIndex * fontSize) )
+            .text( radar_arcs[stageIdx].name)
+            .strokeStyle( '#cccccc' )
+            .fillStyle( '#cccccc')                    
+            .font(headingFontSize + "px Courier New");
+
+    radar.add(pv.Label)             
+        .left( radar_data[i].left )         
+        .top( radar_data[i].top + quadrantFontSize + spacer + (stageIdx * headingFontSize) + (offsetIndex * fontSize) )
+        .strokeStyle( radar_data[i].color )
+        .fillStyle( radar_data[i].color )                    
+        .add( pv.Dot )            
+            .def("i", radar_data[i].top + quadrantFontSize + spacer + (stageIdx * headingFontSize) + spacer  + (offsetIndex * fontSize) )
+            .data(itemsByStage[stageIdx])            
+            .top( function() { return ( this.i() + (this.index * fontSize) );} )   
             .shape( function(d) {return (d.movement === 't' ? "triangle" : "circle");})                 
             .cursor( function(d) { return ( d.url !== undefined ? "pointer" : "auto" ); })                                                            
             .event("click", function(d) { if ( d.url !== undefined ){self.location =  d.url}}) 
-            .size(10) 
+            .size(fontSize) 
             .angle(45)            
             .anchor("right")                
                 .add(pv.Label)                
                 .text(function(d) {return radar_quadrant_ctr++ + ". " + d.name;} );
+
+    }
 }      
        
  radar.anchor('radar');
