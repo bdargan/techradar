@@ -45,7 +45,7 @@ var radar_arcs = [
 // - Hold: things that are getting attention in the industry, but not ready for use; sometimes they are not mature enough yet, sometimes they are irredeemably flawed
 //      Note: there's no "avoid" ring, but throw things in the hold ring that people shouldn't use.
 
-var h = 1600;
+var h = 1000;
 var w = 1200;
 
 var radar_data = [
@@ -71,7 +71,7 @@ var radar_data = [
             { name: 'internal load balancing off F5^', pc: { r: 180, t: 133 }, movement: 'c' },
             {"name":"Isolated dev envs", "pc":{"r":180,"t":125},"movement":"c"},  
             {"name":"Edge Services", "pc":{"r":130,"t":160},"movement":"c"}, 
-            {"name":"Clean Code", "pc":{"r":130,"t":110},"movement":"c"},
+            {"name":"Clean Code", "pc":{"r":130,"t":120},"movement":"c"},
             {"name":"Wide and Thin Front-Ends", "pc":{"r":180,"t":160},"movement":"c"},
             {"name":"Zookeeper for App Config", "pc":{"r":130,"t":130},"movement":"c"}, 
             {"name":"Property based testing", "pc":{"r":130,"t":165},"movement":"c"},
@@ -80,6 +80,7 @@ var radar_data = [
             {"name":"Valuable, cheap tests", "pc":{"r":130,"t":150},"movement":"c"},
             {"name":"Sacrificial Architecture", "pc":{"r":80,"t":100},"movement":"c"},   
             {"name":"Sensible defaults", "pc":{"r":80,"t":150},"movement":"c"},   
+            {"name":"Dependency Injection", "pc":{"r":80,"t":130},"movement":"c"},   
             {"name":"Coding architects", "pc":{"r":90,"t":170},"movement":"c"}
 
         ]
@@ -147,7 +148,6 @@ var radar_data = [
             { name: 'Mesos',              pc: { r: 260, t: 265 },              movement: 't' },
             { name: 'Marathon',              pc: { r: 240, t: 268 },              movement: 't' },
             { name: 'Kubernetes',              pc: { r: 270, t: 236 },              movement: 't' },
-            {"name":"Wotif-Standards mvn modules ^", "pc":{"r":270,"t":215},"movement":"c"},   
             {"name":"Google App Engine", "pc":{"r":290,"t":255},"movement":"c"},   
             {"name":"Google as corporate platform", "pc":{"r":290,"t":200},"movement":"c"},   
 
@@ -173,13 +173,14 @@ var radar_data = [
         "left"  : (w-200+30),
         "top" :   (h/2 + 18),
         "items" : [ 
+            { name: 'CDI', pc: { r: 60, t: 290 },  movement: 'c' },
+            { name: 'Jersey', pc: { r: 60, t: 310 },  movement: 'c' },
+
+            { name: 'Guice', pc: { r: 60, t: 278 },  movement: 'c' },
+            { name: 'RxJava', pc: { r: 150, t: 298 },              movement: 'c',  domain: 'template' },          
+
             {"name":"Java 8", "pc":{"r":130,"t":355},"movement":"c"},   
             {"name":"Groovy ^", "pc":{"r":190,"t":280},"movement":"c"},
-            { name: 'CDI', pc: { r: 160, t: 290 },  movement: 'c' },
-            { name: 'Jersey', pc: { r: 160, t: 310 },  movement: 'c' },
-            { name: 'Spring', pc: { r: 160, t: 330 },  movement: 'c' },
-            { name: 'Guice', pc: { r: 160, t: 278 },  movement: 'c' },
-            { name: 'RxJava',              pc: { r: 150, t: 298 },              movement: 'c',  domain: 'template' },          
 
             {"name":"Swift", "pc":{"r":280,"t":300},"movement":"c"},
             {"name":"Scala - the good parts ^", "pc":{"r":290,"t":320},"movement":"c"},   
@@ -191,7 +192,7 @@ var radar_data = [
             { name: 'Web Components', pc: { r: 260, t: 330 },  movement: 'c' },
 
             { name: 'Mustache/Handlebars template',   pc: { r: 50, t: 298 },              movement: 'c',              domain: 'template' },
-
+            { name: 'Spring ^', pc: { r: 360, t: 330 },  movement: 'c' },
             {"name":"Web Objects", "pc":{"r":390,"t":290},"movement":"c"},
             {"name":"ASP Classic", "pc":{"r":375,"t":330},"movement":"c"},
             {"name":"Java 6 and earlier", "pc":{"r":390,"t":350},"movement":"c"}
