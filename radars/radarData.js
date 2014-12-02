@@ -215,6 +215,7 @@ var radar_data = [
               pc: { r: 220, t: 255 },
               movement: 'c' },
             {"name":"AWS", "pc":{"r":90,"t":250},"movement":"c"},   
+            {"name":"AWS 2014 Innovations", "pc":{"r":270,"t":195},"movement":"c"},
             {"name":"Azure", "pc":{"r":290,"t":265},"movement":"c"},   
             { name: 'Mesos',
               pc: { r: 260, t: 265 },
