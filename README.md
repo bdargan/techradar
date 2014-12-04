@@ -4,8 +4,7 @@ Inspired by the ThoughtWorks Tech Radar: http://www.thoughtworks.com/radar/.
 
 I love the ThoughtWorks Radar. But it is for all clients, averaged out across industries, organisational maturity and risk adverseness.
 
-![Technology Radar Sample]
-(https://github.com/bdargan/techradar/techradar_example.png)
+![Technology Radar Sample](/techradar_example.png?raw=true)
 
 It is a powerful talking point, but I need it to be customised for particular circumstances.
 
