@@ -99,7 +99,7 @@ var radar_data = [
         "items" : [ 
 {name: 'Scala',  pc: {r: 70,  t: 320}, movement: 'c'},
 {name: 'Haskell', pc: {r: 20, t: 320}, movement: 'c'},
-{name: 'Coq', pc: {r: 280, t: 320}, movement: 'c'},
+{name: 'Coq', pc: {r: 10, t: 320}, movement: 'c'},
 {name: 'Agda', pc: {r: 290, t: 320}, movement: 'c'},
 {name: 'Idris', pc: {r: 250, t: 320}, movement: 'c'},
 {name: 'PureScript', pc: {r: 150, t: 320}, movement: 'c'},
@@ -109,7 +109,9 @@ var radar_data = [
 {name: 'Ruby', pc: {r: 350, t: 330}, movement: 'c'},
 {name: 'Python', pc: {r: 330, t: 330}, movement: 'c'},
 {name: 'PHP', pc: {r: 340, t: 330}, movement: 'c'},
-{name: 'Ruby on Rails', pc: {r: 370, t: 330}, movement: 'c'}
+{name: 'Ruby on Rails', pc: {r: 370, t: 330}, movement: 'c'},
+{name: 'Elixir', pc: {r: 110, t: 320}, movement: 'c'},
+{name: 'Erlang', pc: {r: 310, t: 320}, movement: 'c'},
         ]
     }
 ];
