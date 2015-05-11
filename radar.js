@@ -93,11 +93,15 @@ for (var i = 0; i < radar_data.length; i++) {
     for (var stageIdx in _(itemsByStage).keys()) {
 
         if (stageIdx > 0) {
-            offsetIndex = offsetIndex + itemsByStage[stageIdx-1].length + 1; 
-            console.log("offsetIndex = " + itemsByStage[stageIdx-1].length, offsetIndex );
+            var x = itemsByStage[stageIdx-1];
+//            console.log('x =', x);
+            var l = x? x.length : 0;
+//            console.log('l =', l);
+            offsetIndex = offsetIndex + l + 1;
+//            console.log("offsetIndex = " + l, offsetIndex);
         }
 
-        radar.add(pv.Label)         
+        radar.add(pv.Label)
             .left( radar_data[i].left + headingFontSize )
             .top( radar_data[i].top + quadrantFontSize + spacer + (stageIdx * headingFontSize) + (offsetIndex * fontSize) )
             .text( radar_arcs[stageIdx].name)
