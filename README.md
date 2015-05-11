@@ -7,7 +7,7 @@ The data currently is provided in a radial format. I chose this and SVG, for the
 Eg. 
 
 ```js
-{name:'Cool Tech', r:50, t:30}
+{name: 'Cool Tech', r: 50, t: 30}
 ```
 
 Appears in the Top Right Quadrant, in the inner most "Adopt" Sector.
@@ -15,12 +15,10 @@ Appears in the Top Right Quadrant, in the inner most "Adopt" Sector.
 Eg. 
 
 ```js
-{name:'Bright Shiny Toy 5', r:390, t:30}
+{name: 'Bright Shiny Toy 5', r: 390, t: 30}
 ```
 
 Appears in the Top Right Quadrant, in the outer most "Hold" Sector.
-
-Appears in the Lower Left Quadrant, in the second "Trial" Sector.
 
 Where r = radius, and t = theta; the degrees in radians. with 0/360 degrees being the typical right hand x line rotating in an anti-clockwise direction.
 
