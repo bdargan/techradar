@@ -57,11 +57,14 @@ var radar_data = [
 {'name': 'Mathematics', pc: {r: 50, t: 130}, movement: 'c'},
 {'name': 'Property based testing', pc: {r: 70, t: 165}, movement: 'c'},
 {'name': 'Hammock Driven Development', pc:{r: 180, t: 170}, movement: 'c'},
-{'name': 'Pair Programming', pc:{r: 280, t: 130}, movement: 'c'},
-{'name': 'Lean', pc:{r: 280, t: 130}, movement: 'c'},
+{'name': 'Hole Driven Development', pc:{r: 120, t: 175}, movement: 'c'},
+{'name': 'Pair Programming', pc:{r: 280, t: 150}, movement: 'c'},
+{'name': 'Lean', pc:{r: 180, t: 130}, movement: 'c'},
 {'name': 'Lean Startup', pc:{r: 290, t: 130}, movement: 'c'},
 {'name': 'Dependency Injection', pc:{r: 380, t: 120}, movement: 'c'},
 {'name': 'Scrum', pc:{r: 310, t: 160}, movement: 'c'},
+{'name': 'Iterations', pc:{r: 360, t: 140}, movement: 'c'},
+{'name': 'Continuous Flow', pc: {r: 80, t: 130}, movement: 'c'},
         ]
     },
 
