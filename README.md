@@ -4,7 +4,7 @@ This Technology Radar has pretty simple functionality, uses json data source and
 
 The data currently is provided in a radial format. I chose this and SVG, for the scalable properties. In practice, a table based structure, that automatically lays out the points could be more useful.
 
-Eg. 
+e.g. 
 
 ```js
 {name: 'Cool Tech', r: 50, t: 30}
@@ -12,7 +12,7 @@ Eg.
 
 Appears in the Top Right Quadrant, in the inner most "Adopt" Sector.
 
-Eg. 
+e.g. 
 
 ```js
 {name: 'Bright Shiny Toy 5', r: 390, t: 30}
