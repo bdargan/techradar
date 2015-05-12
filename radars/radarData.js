@@ -94,16 +94,17 @@ var radar_data = [
 {name: 'Ubuntu',        pc: {r: 90,  t: 195}, movement: 'c'},
 {name: 'NixOS',         pc: {r: 180, t: 195}, movement: 'c'},
 {name: 'OpenStack',     pc: {r: 250, t: 265}, movement: 'c'},
+{name: 'Node.js/io.js', pc: {r: 220, t: 230}, movement: 'c'},
 {name: 'Ruby On Rails', pc: {r: 390, t: 215}, movement: 'c'},
 {name: 'Java EE',       pc: {r: 390, t: 245}, movement: 'c'},
-{ name: 'Spring',       pc: {r: 380, t: 235}, movement: 'c'},
+{name: 'Spring',        pc: {r: 380, t: 235}, movement: 'c'},
         ]
     },
     { "quadrant": "Languages",
         "color" : "#B70062",
         "left"  : (w-200+30),
         "top" :   (h/2 + 18),
-        "items" : [ 
+        "items" : [
 {name: 'Scala',         pc: {r: 70,  t: 330}, movement: 'c'},
 {name: 'Haskell',       pc: {r: 40,  t: 300}, movement: 'c'},
 {name: 'Coq',           pc: {r: 30,  t: 320}, movement: 'c'},
@@ -115,6 +116,7 @@ var radar_data = [
 {name: 'Ruby',          pc: {r: 350, t: 310}, movement: 'c'},
 {name: 'Python',        pc: {r: 330, t: 305}, movement: 'c'},
 {name: 'PHP',           pc: {r: 340, t: 300}, movement: 'c'},
+{name: 'JavaScript',    pc: {r: 310, t: 330}, movement: 'c'},
 {name: 'Elixir',        pc: {r: 310, t: 285}, movement: 'c'},
 {name: 'Erlang',        pc: {r: 110, t: 275}, movement: 'c'},
         ]
