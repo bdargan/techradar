@@ -111,7 +111,7 @@ var radar_data = [
 {name: 'Idris',         pc: {r: 250, t: 335}, movement: 'c'},
 {name: 'PureScript',    pc: {r: 150, t: 330}, movement: 'c'},
 {name: 'TypeScript',    pc: {r: 180, t: 325}, movement: 'c'},
-{name: 'Java 8',        pc: {r: 330, t: 320}, movement: 'c'},
+{name: 'Java',          pc: {r: 330, t: 320}, movement: 'c'},
 {name: 'Ruby',          pc: {r: 350, t: 310}, movement: 'c'},
 {name: 'Python',        pc: {r: 330, t: 305}, movement: 'c'},
 {name: 'PHP',           pc: {r: 340, t: 300}, movement: 'c'},
