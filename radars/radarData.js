@@ -98,7 +98,7 @@ var radar_data = [
 {name: 'Java EE',       pc: {r: 390, t: 245}, movement: 'c'},
         ]
     },
-    { "quadrant": "Languages & Frameworks",
+    { "quadrant": "Languages",
         "color" : "#B70062",
         "left"  : (w-200+30),
         "top" :   (h/2 + 18),
@@ -115,9 +115,8 @@ var radar_data = [
 {name: 'Ruby',          pc: {r: 350, t: 310}, movement: 'c'},
 {name: 'Python',        pc: {r: 330, t: 305}, movement: 'c'},
 {name: 'PHP',           pc: {r: 340, t: 300}, movement: 'c'},
-{name: 'Ruby on Rails', pc: {r: 370, t: 295}, movement: 'c'},
-{name: 'Elixir',        pc: {r: 110, t: 285}, movement: 'c'},
-{name: 'Erlang',        pc: {r: 310, t: 275}, movement: 'c'},
+{name: 'Elixir',        pc: {r: 310, t: 285}, movement: 'c'},
+{name: 'Erlang',        pc: {r: 110, t: 275}, movement: 'c'},
         ]
     }
 ];
