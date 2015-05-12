@@ -118,7 +118,7 @@ var radar_data = [
 {name: 'PHP',           pc: {r: 340, t: 300}, movement: 'c'},
 {name: 'JavaScript',    pc: {r: 310, t: 330}, movement: 'c'},
 {name: 'Elixir',        pc: {r: 310, t: 285}, movement: 'c'},
-{name: 'Erlang',        pc: {r: 110, t: 275}, movement: 'c'},
+{name: 'Erlang',        pc: {r: 110, t: 280}, movement: 'c'},
         ]
     }
 ];
