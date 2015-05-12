@@ -81,7 +81,7 @@ var radar_data = [
 { name: 'MongoDB',   pc: { r: 350, t: 10 }, movement: 'c' },
 { name: 'Ansible',   pc: { r: 250, t: 75 }, movement: 'c' },
 { name: 'Chef',      pc: { r: 280, t: 70 }, movement: 'c' },
-{ name: 'Puppet',    pc: { r: 270, t: 65 }, movement: 'c' }
+{ name: 'Puppet',    pc: { r: 270, t: 65 }, movement: 'c' },
   ]
     },
     { "quadrant": "Platforms",
@@ -96,6 +96,7 @@ var radar_data = [
 {name: 'OpenStack',     pc: {r: 250, t: 265}, movement: 'c'},
 {name: 'Ruby On Rails', pc: {r: 390, t: 215}, movement: 'c'},
 {name: 'Java EE',       pc: {r: 390, t: 245}, movement: 'c'},
+{ name: 'Spring',       pc: {r: 380, t: 235}, movement: 'c'},
         ]
     },
     { "quadrant": "Languages",
@@ -111,7 +112,6 @@ var radar_data = [
 {name: 'PureScript',    pc: {r: 150, t: 330}, movement: 'c'},
 {name: 'TypeScript',    pc: {r: 180, t: 325}, movement: 'c'},
 {name: 'Java 8',        pc: {r: 330, t: 320}, movement: 'c'},
-{name: 'Spring',        pc: {r: 380, t: 315}, movement: 'c'},
 {name: 'Ruby',          pc: {r: 350, t: 310}, movement: 'c'},
 {name: 'Python',        pc: {r: 330, t: 305}, movement: 'c'},
 {name: 'PHP',           pc: {r: 340, t: 300}, movement: 'c'},
