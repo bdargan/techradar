@@ -1,5 +1,5 @@
 //This is the title for your window tab, and your Radar
-document.title = "Alt Tech Radar (May 2015)";
+document.title = "Tech Radar (as at 21-May-2015)";
 
 //This is the concentic circles that want on your radar
 var radar_arcs = [
