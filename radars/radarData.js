@@ -107,7 +107,7 @@ var radar_data = [
         "items" : [
 {name: 'Scala',         pc: {r: 70,  t: 330}, movement: 'c'},
 {name: 'Haskell',       pc: {r: 40,  t: 300}, movement: 'c'},
-{name: 'Coq',           pc: {r: 30,  t: 320}, movement: 'c'},
+{name: 'Coq',           pc: {r: 260, t: 320}, movement: 'c'},
 {name: 'Agda',          pc: {r: 290, t: 340}, movement: 'c'},
 {name: 'Idris',         pc: {r: 250, t: 335}, movement: 'c'},
 {name: 'PureScript',    pc: {r: 150, t: 330}, movement: 'c'},
