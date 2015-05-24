@@ -1,7 +1,7 @@
 function init(h,w) {
   $('#title').text(document.title);  
 	   
- var radar = new pv.Panel()
+  var radar = new pv.Panel()
       .width(w)
       .height(h)
       .canvas('radar')
@@ -61,20 +61,20 @@ radar.add(pv.Line)
 // }
 
 
-//Quadrant Ledgends
+// Quadrant Ledgends.
 var radar_quadrant_ctr=1;
-var quadrantFontSize = 18;
-var headingFontSize = 14;
+var quadrantFontSize = 22;
+var headingFontSize = 20;
 var stageHeadingCount = 0;
 var lastRadius = 0;
 var lastQuadrant='';
 var spacer = 6;
-var fontSize = 10;
+var fontSize = 16;
 var total_index = 1;
 
-//TODO: Super fragile: re-order the items, by radius, in order to logically group by the rings.
+// TODO: Super fragile: re-order the items, by radius, in order to logically group by the rings.
 for (var i = 0; i < radar_data.length; i++) {
-    //adjust top by the number of headings.
+    // Adjust top by the number of headings.
     if (lastQuadrant != radar_data[i].quadrant) {
         radar.add(pv.Label)         
             .left( radar_data[i].left )         
@@ -94,11 +94,8 @@ for (var i = 0; i < radar_data.length; i++) {
 
         if (stageIdx > 0) {
             var x = itemsByStage[stageIdx-1];
-//            console.log('x =', x);
             var l = x? x.length : 0;
-//            console.log('l =', l);
             offsetIndex = offsetIndex + l + 1;
-//            console.log("offsetIndex = " + l, offsetIndex);
         }
 
         radar.add(pv.Label)
@@ -153,8 +150,8 @@ for (var i = 0; i < radar_data.length; i++) {
 
     }
 }      
-       
- radar.anchor('radar');
- radar.render();
-     
-  };
+
+  radar.anchor('radar');
+  radar.render();
+
+};
