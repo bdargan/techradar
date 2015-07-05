@@ -62,12 +62,12 @@ radar.add(pv.Line)
 
 
 // Quadrant Ledgends.
-var radar_quadrant_ctr=1;
+var radar_quadrant_ctr = 1;
 var quadrantFontSize = 22;
 var headingFontSize = 20;
 var stageHeadingCount = 0;
 var lastRadius = 0;
-var lastQuadrant='';
+var lastQuadrant = '';
 var spacer = 6;
 var fontSize = 16;
 var total_index = 1;
