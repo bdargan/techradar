@@ -19,7 +19,7 @@ radar.add(pv.Dot)
 // Quadrant lines -- vertical.
 radar.add(pv.Line)
         .data([(h/2-radar_arcs[radar_arcs.length-1].r),h-(h/2-radar_arcs[radar_arcs.length-1].r)])
-        .lineWidth(1)
+        .lineWidth(1.5)
         .left(w/2)
         .bottom(function(d) {return d;})
         .strokeStyle("#bbb");
@@ -27,7 +27,7 @@ radar.add(pv.Line)
 // Quadrant lines -- horizontal.
 radar.add(pv.Line)
         .data([(w/2-radar_arcs[radar_arcs.length-1].r),w-(w/2-radar_arcs[radar_arcs.length-1].r)])
-        .lineWidth(1)
+        .lineWidth(1.5)
         .bottom(h/2)
         .left(function(d) {return d;})
         .strokeStyle("#bbb");
@@ -82,6 +82,7 @@ for (var i = 0; i < radar_data.length; i++) {
             .text(radar_data[i].quadrant)
             .strokeStyle(radar_data[i].color)
             .fillStyle(radar_data[i].color)
+            .lineWidth(1.5) // XXX
             .font(quadrantFontSize + "px sans-serif");
 
         lastQuadrant = radar_data[i].quadrant;
