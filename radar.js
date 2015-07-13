@@ -1,7 +1,7 @@
 function init(h,w) {
   $('#title').text(document.title);  
-	   
- var radar = new pv.Panel()
+
+  var radar = new pv.Panel()
       .width(w)
       .height(h)
       .canvas('radar')
@@ -13,23 +13,23 @@ radar.add(pv.Dot)
        .bottom(h/2)
        .radius(function(d){return d.r;})
        .strokeStyle("#ccc")
-       .anchor("top")       
+       .anchor("top")
        .add(pv.Label).text(function(d) { return d.name;});
 
-//quadrant lines -- vertical
+// Quadrant lines -- vertical.
 radar.add(pv.Line)
         .data([(h/2-radar_arcs[radar_arcs.length-1].r),h-(h/2-radar_arcs[radar_arcs.length-1].r)])
-        .lineWidth(1)
-        .left(w/2)        
-        .bottom(function(d) {return d;})       
+        .lineWidth(1.5)
+        .left(w/2)
+        .bottom(function(d) {return d;})
         .strokeStyle("#bbb");
 
-//quadrant lines -- horizontal 
+// Quadrant lines -- horizontal.
 radar.add(pv.Line)
         .data([(w/2-radar_arcs[radar_arcs.length-1].r),w-(w/2-radar_arcs[radar_arcs.length-1].r)])
-        .lineWidth(1)
+        .lineWidth(1.5)
         .bottom(h/2)
-        .left(function(d) {return d;})       
+        .left(function(d) {return d;})
         .strokeStyle("#bbb");
 
 
@@ -61,31 +61,31 @@ radar.add(pv.Line)
 // }
 
 
-//Quadrant Ledgends
-var radar_quadrant_ctr=1;
-var quadrantFontSize = 18;
-var headingFontSize = 14;
+// Quadrant Ledgends.
+var radar_quadrant_ctr = 1;
+var quadrantFontSize = 22;
+var headingFontSize = 20;
 var stageHeadingCount = 0;
 var lastRadius = 0;
-var lastQuadrant='';
+var lastQuadrant = '';
 var spacer = 6;
-var fontSize = 10;
+var fontSize = 16;
 var total_index = 1;
 
-//TODO: Super fragile: re-order the items, by radius, in order to logically group by the rings.
+// TODO: Super fragile: re-order the items, by radius, in order to logically group by the rings.
 for (var i = 0; i < radar_data.length; i++) {
-    //adjust top by the number of headings.
+    // Adjust top by the number of headings.
     if (lastQuadrant != radar_data[i].quadrant) {
-        radar.add(pv.Label)         
-            .left( radar_data[i].left )         
-            .top( radar_data[i].top )  
-            .text(  radar_data[i].quadrant )		 
-            .strokeStyle( radar_data[i].color )
-            .fillStyle( radar_data[i].color )                    
+        radar.add(pv.Label)
+            .left(radar_data[i].left)
+            .top(radar_data[i].top)
+            .text(radar_data[i].quadrant)
+            .strokeStyle(radar_data[i].color)
+            .fillStyle(radar_data[i].color)
+            .lineWidth(1.5) // XXX
             .font(quadrantFontSize + "px sans-serif");
-         
-        lastQuadrant = radar_data[i].quadrant;
 
+        lastQuadrant = radar_data[i].quadrant;
     }
 
     var itemsByStage = _.groupBy(radar_data[i].items, function(item) {return Math.floor(item.pc.r / 100)});
@@ -93,64 +93,62 @@ for (var i = 0; i < radar_data.length; i++) {
     for (var stageIdx in _(itemsByStage).keys()) {
 
         if (stageIdx > 0) {
-            offsetIndex = offsetIndex + itemsByStage[stageIdx-1].length + 1; 
-            console.log("offsetIndex = " + itemsByStage[stageIdx-1].length, offsetIndex );
+            var x = itemsByStage[stageIdx-1];
+            var l = x? x.length : 0;
+            offsetIndex = offsetIndex + l + 1;
         }
 
-        radar.add(pv.Label)         
-            .left( radar_data[i].left + headingFontSize )
-            .top( radar_data[i].top + quadrantFontSize + spacer + (stageIdx * headingFontSize) + (offsetIndex * fontSize) )
+        radar.add(pv.Label)
+            .left(radar_data[i].left + headingFontSize)
+            .top(radar_data[i].top + quadrantFontSize + spacer + (stageIdx * headingFontSize) + (offsetIndex * fontSize))
             .text( radar_arcs[stageIdx].name)
-            .strokeStyle( '#cccccc' )
-            .fillStyle( '#cccccc')                    
+            .strokeStyle('#cccccc')
+            .fillStyle('#cccccc')
             .font(headingFontSize + "px Courier New");
 
-    radar.add(pv.Label)             
-        .left( radar_data[i].left )         
-        .top( radar_data[i].top + quadrantFontSize + spacer + (stageIdx * headingFontSize) + (offsetIndex * fontSize) )
-        .strokeStyle( radar_data[i].color )
-        .fillStyle( radar_data[i].color )                    
-        .add( pv.Dot )            
-            .def("i", radar_data[i].top + quadrantFontSize + spacer + (stageIdx * headingFontSize) + spacer  + (offsetIndex * fontSize) )
-            .data(itemsByStage[stageIdx])            
-            .top( function() { return ( this.i() + (this.index * fontSize) );} )   
-            .shape( function(d) {return (d.movement === 't' ? "triangle" : "circle");})                 
-            .cursor( function(d) { return ( d.url !== undefined ? "pointer" : "auto" ); })                                                            
-            .event("click", function(d) { if ( d.url !== undefined ){self.location =  d.url}}) 
-            .size(fontSize) 
-            .angle(45)            
-            .anchor("right")                
-                .add(pv.Label)                
+    radar.add(pv.Label)
+        .left(radar_data[i].left)
+        .top(radar_data[i].top + quadrantFontSize + spacer + (stageIdx * headingFontSize) + (offsetIndex * fontSize))
+        .strokeStyle(radar_data[i].color)
+        .fillStyle(radar_data[i].color)
+        .add(pv.Dot)
+            .def("i", radar_data[i].top + quadrantFontSize + spacer + (stageIdx * headingFontSize) + spacer  + (offsetIndex * fontSize))
+            .data(itemsByStage[stageIdx])
+            .top(function() { return ( this.i() + (this.index * fontSize) );})
+            .shape(function(d) {return (d.movement === 't' ? "triangle" : "circle");})
+            .cursor(function(d) { return ( d.url !== undefined ? "pointer" : "auto" ); })
+            .event("click", function(d) { if ( d.url !== undefined ){self.location =  d.url}})
+            .size(fontSize)
+            .angle(45)
+            .anchor("right")
+                .add(pv.Label)
                 .text(function(d) {return radar_quadrant_ctr++ + ". " + d.name;} );
 
-    radar.add(pv.Dot)       
+    radar.add(pv.Dot)
       .def("active", false)
       .data(itemsByStage[stageIdx])
       .size( function(d) { return ( d.blipSize !== undefined ? d.blipSize : 70 ); })
       .left(function(d) { var x = polar_to_raster(d.pc.r, d.pc.t)[0];
                           //console.log("name:" + d.name + ", x:" + x); 
                           return x;})
-      .bottom(function(d) { var y = polar_to_raster(d.pc.r, d.pc.t)[1];                                 
-                            //console.log("name:" + d.name + ", y:" + y); 
+      .bottom(function(d) { var y = polar_to_raster(d.pc.r, d.pc.t)[1];
+                            //console.log("name:" + d.name + ", y:" + y);
                             return y;})
-      .title(function(d) { return d.name;})		 
-      .cursor( function(d) { return ( d.url !== undefined ? "pointer" : "auto" ); })                                                            
-      .event("click", function(d) { if ( d.url !== undefined ){self.location =  d.url}}) 
+      .title(function(d) { return d.name;})
+      .cursor(function(d) { return ( d.url !== undefined ? "pointer" : "auto" ); })
+      .event("click", function(d) { if ( d.url !== undefined ){self.location =  d.url}})
       .angle(Math.PI)  // 180 degrees in radians !
       .strokeStyle(radar_data[i].color)
       .fillStyle(radar_data[i].color)
-      .shape(function(d) {return (d.movement === 't' ? "triangle" : "circle");})         
+      .shape(function(d) {return (d.movement === 't' ? "triangle" : "circle");})
       .anchor("center")
           .add(pv.Label)
-          .text(function(d) {return total_index++;}) 
+          .text(function(d) {return total_index++;})
           .textBaseline("middle")
-          .textStyle("white");            
-
-
+          .textStyle("white");
     }
-}      
-       
- radar.anchor('radar');
- radar.render();
-     
-  };
+}
+
+  radar.anchor('radar');
+  radar.render();
+};
