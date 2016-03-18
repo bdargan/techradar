@@ -23,3 +23,7 @@ Appears in the Lower Left Quadrant, in the second "Trial" Sector.
 Where r = radius, and t = theta; the degrees in radians. with 0/360 degrees being the typical right hand x line rotating in an anti-clockwise direction.
 
 See http://en.wikipedia.org/wiki/Polar_coordinates for more details.
+
+## Similar Projects
+
+[andyw8/techradar](https://github.com/andyw8/techradar) (the Rails app behind [techradar.io](http://techradar.io).
