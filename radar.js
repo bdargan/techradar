@@ -88,7 +88,17 @@ for (var i = 0; i < radar_data.length; i++) {
 
     }
 
-    var itemsByStage = _.groupBy(radar_data[i].items, function(item) {return Math.floor(item.pc.r / 100)});
+    // group items by stage based on how far they are from each arc
+    var itemsByStage = _.groupBy(radar_data[i].items, function(item) {
+      for(var arc_i = 0; arc_i < radar_arcs.length; arc_i++) {
+        if (item.pc.r < radar_arcs[arc_i].r)
+        {
+          return arc_i;
+        }
+      }
+      return 0;
+    });
+    
     var offsetIndex = 0;
     for (var stageIdx in _(itemsByStage).keys()) {
 
