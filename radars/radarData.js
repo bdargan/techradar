@@ -1,7 +1,6 @@
 //This is the title for your window tab, and your Radar
 document.title = "SFW's Technology Radar (July 2016)";
 
-
 //This is the concentic circles that want on your radar
 var radar_arcs = [
   {'r': 100,'name': 'Adopt'}, 
@@ -49,18 +48,18 @@ var w = 1200;
 
 var radar_data = [
   {
-    "quadrant": "Back-end / Modern architectures",
+    "quadrant": "Back-end & Modern architectures",
     "left": 45,
     "top": 18,
     "color": "#8FA227",
     "items": [
         {
-            name: 'Elixir + Phoenix',
-            pc: {
-                r: 330,
-                t: 133
+            "name": "Elixir + Phoenix",
+            "pc": {
+                "r": 330,
+                "t": 133
             },
-            movement: 't'
+            "movement": "t"
         }, {
             "name": ".NET Core",
             "pc": {
@@ -68,28 +67,56 @@ var radar_data = [
                 "t": 165
             },
             "movement": "t"
+        }, {
+            "name": "Kotlin",
+            "pc": {
+                "r": 110,
+                "t": 135
+            },
+            "movement": "t"
+        }, {
+            "name": "Spring Boot",
+            "pc": {
+                "r": 30,
+                "t": 145
+            },
+            "movement": "t"
         }
     ]
 }, {
     "quadrant": "Front-end",
-    "left": w - 200 + 30,
+    "left": (w - 200 + 30),
     "top": 18,
     "color": "#587486",
     "items": [
         {
-            name: 'Ruby-on-Rails',
-            pc: {
-                r: 370,
-                t: 19
+            "name": 'Ruby-on-Rails',
+            "pc": {
+                "r": 370,
+                "t": 19
             },
-            movement: 'c'
+            "movement": "c"
         }, {
-            name: 'React/Redux',
-            pc: {
-                r: 150,
-                t: 69
+            "name": "Play Framework",
+            "pc": {
+                "r": 210,
+                "t": 44
             },
-            movement: 't'
+            "movement": "t"
+        }, {
+            "name": "React + Redux",
+            "pc": {
+                "r": 150,
+                "t": 69
+            },
+            "movement": "t"
+        }, {
+            "name": "Thymeleaf",
+            "pc": {
+                "r": 70,
+                "t": 49
+            },
+            "movement": "c"
         }
     ]
 }, {
@@ -99,6 +126,27 @@ var radar_data = [
     "color": "#DC6F1D",
     "items": [
         {
+            "name": "Habitat",
+            "pc": {
+                "r": 302,
+                "t": 242
+            },
+            "movement": "t"
+        }, {
+            "name": "Concourse CI",
+            "pc": {
+                "r": 235,
+                "t": 208
+            },
+            "movement": "t"
+        }, {
+            "name": "ELK Stack (ElasticSearch/Logstash/Kibana)",
+            "pc": {
+                "r": 113,
+                "t": 228
+            },
+            "movement": "t"
+        }, {
             "name": "Docker",
             "pc": {
                 "r": 30,
@@ -121,12 +169,33 @@ var radar_data = [
     "top": (h / 2 + 18),
     "items": [
         {
-            name: 'A thing',
-            pc: {
-                r: 60,
-                t: 290
+            "name": "Hold this",
+            "pc": {
+                "r": 302,
+                "t": 300
             },
-            movement: 'c'
+            "movement": "t"
+        }, {
+            "name": "Assess this",
+            "pc": {
+                "r": 235,
+                "t": 325
+            },
+            "movement": "t"
+        }, {
+            "name": "Trial something",
+            "pc": {
+                "r": 113,
+                "t": 336
+            },
+            "movement": "t"
+        }, {
+            "name": "Do this now!",
+            "pc": {
+                "r": 30,
+                "t": 309
+            },
+            "movement": "t"
         }
     ]
 }];
