@@ -306,7 +306,14 @@ var radar_data = [
                 "t": 78
             },
             "movement": "c"
-        }
+        }, {
+            "name": "Joomla!",
+            "pc": {
+                "r": 83,
+                "t": 61
+            },
+            "movement": "c"
+        },
     ]
 }, {
     "quadrant": "Tools", // t 180-270
@@ -322,10 +329,38 @@ var radar_data = [
             },
             "movement": "t"
         }, {
+            "name": "Spectre",
+            "pc": {
+                "r": 250,
+                "t": 220
+            },
+            "movement": "t"
+        }, {
+            "name": "Protractor",
+            "pc": {
+                "r": 250,
+                "t": 214
+            },
+            "movement": "t"
+        }, {
+            "name": "Nightwatch.js",
+            "pc": {
+                "r": 390,
+                "t": 230
+            },
+            "movement": "t"
+        }, {
             "name": "Docker Swarm",
             "pc": {
                 "r": 288,
                 "t": 258
+            },
+            "movement": "t"
+        }, {
+            "name": "Applitools",
+            "pc": {
+                "r": 270,
+                "t": 238
             },
             "movement": "t"
         }, {
@@ -339,7 +374,7 @@ var radar_data = [
             "name": "Puppet",
             "pc": {
                 "r": 266,
-                "t": 269
+                "t": 264
             },
             "movement": "c"
         }, {
@@ -369,7 +404,7 @@ var radar_data = [
                 "r": 284,
                 "t": 209
             },
-            "movement": "c"
+            "movement": "t"
         }, {
             "name": "Kubernetes",
             "pc": {
@@ -397,7 +432,7 @@ var radar_data = [
                 "r": 243,
                 "t": 248
             },
-            "movement": "t"
+            "movement": "c"
         }, {
             "name": "Docker",
             "pc": {
@@ -460,6 +495,20 @@ var radar_data = [
             "pc": {
                 "r": 152,
                 "t": 358
+            },
+            "movement": "t"
+        }, {
+            "name": "Session-Based Testing",
+            "pc": {
+                "r": 110,
+                "t": 325
+            },
+            "movement": "c"
+        }, {
+            "name": "Model-Based Testing",
+            "pc": {
+                "r": 278,
+                "t": 325
             },
             "movement": "t"
         }, {
