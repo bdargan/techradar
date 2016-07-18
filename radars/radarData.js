@@ -88,7 +88,7 @@ var radar_data = [
     "quadrant": "Platforms", // t 0-90
     "left": (w - 200 + 30),
     "top": 18,
-    "color": "#B1B3B3",
+    "color": "#CB6015",
     "items": [
         //  Adopt
         {"pc": {"r":  22, "t":  61}, "movement": "t", "name": "Azure App Services",}, 
@@ -164,7 +164,7 @@ var radar_data = [
     ]
 }, {
     "quadrant": "Approaches", // t 270-360
-    "color": "#00A9E0",
+    "color": "#64B044",
     "left": (w - 200 + 30),
     "top": (h / 2 + 18),
     "items": [
