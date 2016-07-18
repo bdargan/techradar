@@ -1,5 +1,14 @@
 function init(h,w) {
-  $('#title').text(document.title);  
+  $('#title').text(document.title);
+  
+var legend = new pv.Panel()
+    .width(w)
+    .height(h/5)
+    .canvas('legend')
+
+legend.add(pv.Dot)
+    .shape("circle")
+
 	   
  var radar = new pv.Panel()
       .width(w)
@@ -24,7 +33,7 @@ radar.add(pv.Line)
         .bottom(function(d) {return d;})       
         .strokeStyle("#bbb");
 
-//quadrant lines -- horizontal 
+//quadrant lines -- horizontal
 radar.add(pv.Line)
         .data([(w/2-radar_arcs[radar_arcs.length-1].r),w-(w/2-radar_arcs[radar_arcs.length-1].r)])
         .lineWidth(1)
@@ -82,7 +91,7 @@ for (var i = 0; i < radar_data.length; i++) {
             .text(  radar_data[i].quadrant )		 
             .strokeStyle( radar_data[i].color )
             .fillStyle( radar_data[i].color )                    
-            .font(quadrantFontSize + "px sans-serif");
+            .font(quadrantFontSize + "px Arial");
          
         lastQuadrant = radar_data[i].quadrant;
 
@@ -103,6 +112,9 @@ for (var i = 0; i < radar_data.length; i++) {
     for (var stageIdx in _(itemsByStage).keys()) {
 
         if (stageIdx > 0) {
+            console.log("stageIdx = "+stageIdx)
+            console.log("itemsByStage.length = "+itemsByStage.length)
+            console.log("itemsByStage[stageIdx-1] = "+itemsByStage[stageIdx-1])
             offsetIndex = offsetIndex + itemsByStage[stageIdx-1].length + 1; 
             console.log("offsetIndex = " + itemsByStage[stageIdx-1].length, offsetIndex );
         }
@@ -113,7 +125,7 @@ for (var i = 0; i < radar_data.length; i++) {
             .text( radar_arcs[stageIdx].name)
             .strokeStyle( '#cccccc' )
             .fillStyle( '#cccccc')                    
-            .font(headingFontSize + "px Courier New");
+            .font(headingFontSize + "px Arial");
 
     radar.add(pv.Label)             
         .left( radar_data[i].left )         
@@ -138,10 +150,8 @@ for (var i = 0; i < radar_data.length; i++) {
       .data(itemsByStage[stageIdx])
       .size( function(d) { return ( d.blipSize !== undefined ? d.blipSize : 70 ); })
       .left(function(d) { var x = polar_to_raster(d.pc.r, d.pc.t)[0];
-                          //console.log("name:" + d.name + ", x:" + x); 
                           return x;})
       .bottom(function(d) { var y = polar_to_raster(d.pc.r, d.pc.t)[1];                                 
-                            //console.log("name:" + d.name + ", y:" + y); 
                             return y;})
       .title(function(d) { return d.name;})		 
       .cursor( function(d) { return ( d.url !== undefined ? "pointer" : "auto" ); })                                                            

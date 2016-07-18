@@ -51,7 +51,7 @@ var radar_data = [
     "quadrant": "Languages & Frameworks", // t 90-180
     "left": 45,
     "top": 18,
-    "color": "#8FA227",
+    "color": "#00A499",
     "items": [
         //  Adopt
         {"pc": {"r":  30, "t": 100}, "movement": "t", "name": "Spring Boot",}, 
@@ -88,7 +88,7 @@ var radar_data = [
     "quadrant": "Platforms", // t 0-90
     "left": (w - 200 + 30),
     "top": 18,
-    "color": "#587486",
+    "color": "#B1B3B3",
     "items": [
         //  Adopt
         {"pc": {"r":  22, "t":  61}, "movement": "t", "name": "Azure App Services",}, 
@@ -115,7 +115,7 @@ var radar_data = [
     "quadrant": "Tools", // t 180-270
     "left": 45,
     "top": (h / 2 + 18),
-    "color": "#DC6F1D",
+    "color": "#893CA2",
     "items": [
         //  Adopt
         {"pc": {"r":  20, "t": 228}, "movement": "c", "name": "Git",},
@@ -164,7 +164,7 @@ var radar_data = [
     ]
 }, {
     "quadrant": "Approaches", // t 270-360
-    "color": "#B70062",
+    "color": "#00A9E0",
     "left": (w - 200 + 30),
     "top": (h / 2 + 18),
     "items": [
