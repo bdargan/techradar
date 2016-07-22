@@ -2,7 +2,7 @@
 
 Inspired by the ThoughtWorks Tech Radar: http://www.thoughtworks.com/radar/. Forked from @bdargan's implementation, after reading the post here http://nealford.com/memeagora/2013/05/28/build_your_own_technology_radar.html
 
-TODO: Link to real latest SFW technology radar
+The latest radar can be found at http://sfwtechradar.azurewebsites.net/
 
 This Technology Radar has pretty simple functionality, uses json data source and renders SVG within html.
 
