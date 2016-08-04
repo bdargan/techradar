@@ -2,7 +2,9 @@
 <head>
   <meta http-equiv="Content-type" content="text/html; charset=utf-8">  
 
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.0/themes/smoothness/jquery-ui.css">
 <script type="text/javascript" src="lib/protovis-3.2/protovis-d3.2.js"></script>
 <script type="text/javascript" charset="utf-8" src="utils.js"></script>
 <script type="text/javascript" charset="utf-8" src="lib/lodash.underscore.min.js"></script>
@@ -24,8 +26,19 @@
 </head>
 
 <body onload="init(h,w);">
-<h1 id="title" style="text-align: left; color: #6E6E6E; font-family:Arial"></h1>
-<div id="radar"></div>
-<h2 id="legend"></h2>
+  <div id="dialog" title="SFW's TechRadar" style="font-size: small;" ></div>
+  <h1 id="title" style="text-align: left; color: #6E6E6E; font-family:Arial"></h1>
+  <div id="radar"></div>
+  <h2 id="legend"></h2>
+
+  <script>
+  $( "#dialog" ).dialog({ 
+    autoOpen: false, 
+    closeOnEscape: true, 
+    position: { my: "center", at: "center", of: window, collision:"fit" }, 
+    buttons: [ { text: "Close", click: function() { $( this ).dialog( "close" ); } } ] 
+    });
+  </script> 
+
 </body>
 </html>
