@@ -171,7 +171,7 @@ function init(h, w) {
                 .shape(function (d) { return (d.movement === 't' ? "triangle" : "circle"); })
                 //.cursor(function (d) { return (d.url !== undefined ? "pointer" : "auto"); })
                 .cursor("auto")
-                .event("click", function (d) { showInfoPopup(d.name, d.resources, d.repository, d.changeReason, d.cotactPersons) })
+                .event("click", function (d) { showInfoPopup(d.name, d.reason, d.topic) })
                 .size(fontSize)
                 .angle(45)
                 .anchor("right")
@@ -193,7 +193,7 @@ function init(h, w) {
                 .title(function (d) { return d.name; })
                 //.cursor(function (d) { return (d.url !== undefined ? "pointer" : "auto"); })
                 .cursor("pointer")
-                .event("click", function (d) { showInfoPopup(d.name, d.resources, d.repository, d.changeReason, d.contactPersons) })
+                .event("click", function (d) { showInfoPopup(d.name, d.reason, d.topic) })
                 .angle(Math.PI)  // 180 degrees in radians !
                 .strokeStyle(radar_data[i].color)
                 .fillStyle(radar_data[i].color)
@@ -213,40 +213,27 @@ function init(h, w) {
 };
 
 
-function showInfoPopup(tech, resources, repository, changeReason, contactPersons){
+function showInfoPopup(name, reason, topic){
     var popupHtml = '';
-    
-    if(resources != undefined && resources != ''){
-        popupHtml = '<b>Resources:</b>';
-        var urls = resources.split(',');
-        urls.forEach(function(item){
-            popupHtml += '<br /><a href="" onclick="window.open(\'' + item.trim() +  '\');">' + item + '</a>'; 
-        })
+
+    if(reason != undefined && reason != ''){
+        popupHtml += '<br /><b>Reason for change:</b><br />';
+        popupHtml += reason;
     }
 
-    
-    if(repository != undefined && repository != ''){
-        popupHtml += '<br /><br /><b>Repository:</b><br />';
-        popupHtml += '<a href="" onclick="window.open(\'' + repository.trim() + '\');">' + repository + '</a>';
-    }
-
-    if(changeReason != undefined && changeReason != ''){
-        popupHtml += '<br /><br /><b>Reason for change:</b><br />';
-        popupHtml += changeReason;
-    }
-
-    if(contactPersons != undefined && contactPersons != ''){
-        popupHtml += '<br /><br /><b>Contact Person(s):</b><br />';
-        popupHtml += contactPersons;        
+    // Replace this with a look up of Yammer topic to Yammer topic id...
+    if(topic != undefined && topic != ''){
+        popupHtml += '<br /><b>More information:</b><br />';
+        popupHtml += '<a href="" onclick="window.open(\'https://www.yammer.com/sfwltd.co.uk/topics/' + topic.trim() + '\');">Yammer articles for ' + name + '</a>';        
     }
 
     if(popupHtml == ''){
-        popupHtml = 'Sorry there is no additional information available for this technology.';
+        popupHtml = 'No information about this yet. Start <a href="" onclick="window.open(\'https://www.yammer.com/sfwltd.co.uk/\');"> contributing today!! </a>';
     }
 
     $('#dialog').children().remove();
     $('#dialog').append('<div>' + popupHtml + "</div>");
-    $('#dialog').dialog('option','title', tech);
+    $('#dialog').dialog('option','title', name);
     $('#dialog').dialog('open')
 }
 

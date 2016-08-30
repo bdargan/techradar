@@ -57,26 +57,18 @@ var radar_data = [
         {"pc": {"r":  30, "t": 100}, "movement": "c", "name": "Spring Boot",}, 
         {"pc": {"r":  38, "t": 162}, "movement": "c", "name": "SASS",}, 
         {"pc": {"r":  53, "t": 140}, "movement": "t", "name": "Gradle",},  
-        {"pc": {"r":  66, "t": 120}, "movement": "c", "name": "Swagger",
-            changeReason: "Swagger has been tried with SiiS services. It looks promising. It is moving to adopt.", 
-            contactPersons : "David Raine", 
-            resources: "http://swagger.io/,http://source.main.sfwltd.co.uk/internal-hackery/siis-api", 
-            repository:  "https://github.com/swagger-api/swagger.io/blob/wordpress//home.md", }, 
+        {"pc": {"r":  66, "t": 120}, "movement": "c", "name": "Swagger", reason: "Great tool for documenting APIs and speeding up API development", topic: "13683108" }, 
         {"pc": {"r":  70, "t": 167}, "movement": "c", "name": "Thymeleaf",}, 
-        {"pc": {"r":  78, "t": 138}, "movement": "t", "name": "node.js (for micro-services or simple front-ends)",}, 
+        {"pc": {"r":  78, "t": 138}, "movement": "t", "name": "node.js (for micro-services or simple front-ends)", topic: "12342592"}, 
 
         //  Trial
-        {"pc": {"r": 110, "t": 125}, "movement": "c", "name": "Kotlin", 
-            changeReason: "David and Saurabh tried Kotlin. Gives us option to use C# skills on JVM platform. Moving to trial for more experiments.", 
-            contactPersons: "David Raine, Saurabh Soni", 
-            resources: "http://try.kotlinlang.org/", 
-            repository: "" }, 
+        {"pc": {"r": 110, "t": 125}, "movement": "c", "name": "Kotlin", reason: "Used for a number of internal projects. Looks a good option for JVM development for people more comfortable with C#", topic: "12008290"}, 
         {"pc": {"r": 132, "t": 139}, "movement": "c", "name": "Grunt",}, 
         {"pc": {"r": 150, "t": 159}, "movement": "c", "name": "React + Redux",}, 
         {"pc": {"r": 180, "t": 125}, "movement": "c", "name": "Scala",}, 
 
         //  Assess
-        {"pc": {"r": 210, "t": 115}, "movement": "t", "name": ".NET Core",}, 
+        {"pc": {"r": 210, "t": 115}, movement: "t", name: ".NET Core", topic: "16265842"}, 
         {"pc": {"r": 217, "t": 120}, "movement": "c", "name": "TypeScript",}, 
         {"pc": {"r": 222, "t": 140}, "movement": "c", "name": "Angular 2.0",}, 
         {"pc": {"r": 259, "t": 132}, "movement": "t", "name": "Python",},
@@ -131,11 +123,7 @@ var radar_data = [
     "items": [
         //  Adopt
         {"pc": {"r":  20, "t": 228}, "movement": "c", "name": "Git",},
-        {"pc": {"r":  62, "t": 192}, "movement": "c", "name": "SurveyMonkey", 
-            changeReason: "", 
-            contactPersons : "Helen Shore", 
-            resources: "https://wiki.sfwltd.co.uk/wiki/index.php?title=Creating_a_survey_in_SurveyMonkey", 
-            repository:  "",}, 
+        {"pc": {"r":  62, "t": 192}, "movement": "c", "name": "SurveyMonkey"}, 
         {"pc": {"r":  75, "t": 240}, "movement": "t", "name": "Docker",}, 
         {"pc": {"r":  78, "t": 208}, "movement": "c", "name": "Sketch",}, 
         {"pc": {"r":  88, "t": 202}, "movement": "c", "name": "UXpin",}, 
