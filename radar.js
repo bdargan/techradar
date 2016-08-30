@@ -169,8 +169,9 @@ function init(h, w) {
                 .data(itemsByStage[stageIdx])
                 .top(function () { return (this.i() + (this.index * fontSize)); })
                 .shape(function (d) { return (d.movement === 't' ? "triangle" : "circle"); })
-                .cursor(function (d) { return (d.url !== undefined ? "pointer" : "auto"); })
-                .event("click", function (d) { if (d.url !== undefined) { self.location = d.url } })
+                //.cursor(function (d) { return (d.url !== undefined ? "pointer" : "auto"); })
+                .cursor("auto")
+                .event("click", function (d) { showInfoPopup(d.name, d.resources, d.repository, d.changeReason, d.cotactPersons) })
                 .size(fontSize)
                 .angle(45)
                 .anchor("right")
@@ -190,8 +191,9 @@ function init(h, w) {
                     return y;
                 })
                 .title(function (d) { return d.name; })
-                .cursor(function (d) { return (d.url !== undefined ? "pointer" : "auto"); })
-                .event("click", function (d) { if (d.url !== undefined) { self.location = d.url } })
+                //.cursor(function (d) { return (d.url !== undefined ? "pointer" : "auto"); })
+                .cursor("pointer")
+                .event("click", function (d) { showInfoPopup(d.name, d.resources, d.repository, d.changeReason, d.contactPersons) })
                 .angle(Math.PI)  // 180 degrees in radians !
                 .strokeStyle(radar_data[i].color)
                 .fillStyle(radar_data[i].color)
@@ -209,3 +211,46 @@ function init(h, w) {
     radar.anchor('radar');
     radar.render();
 };
+
+
+function showInfoPopup(tech, resources, repository, changeReason, contactPersons){
+    var popupHtml = '';
+    
+    if(resources != undefined && resources != ''){
+        popupHtml = '<b>Resources:</b>';
+        var urls = resources.split(',');
+        urls.forEach(function(item){
+            popupHtml += '<br /><a href="" onclick="window.open(\'' + item.trim() +  '\');">' + item + '</a>'; 
+        })
+    }
+
+    
+    if(repository != undefined && repository != ''){
+        popupHtml += '<br /><br /><b>Repository:</b><br />';
+        popupHtml += '<a href="" onclick="window.open(\'' + repository.trim() + '\');">' + repository + '</a>';
+    }
+
+    if(changeReason != undefined && changeReason != ''){
+        popupHtml += '<br /><br /><b>Reason for change:</b><br />';
+        popupHtml += changeReason;
+    }
+
+    if(contactPersons != undefined && contactPersons != ''){
+        popupHtml += '<br /><br /><b>Contact Person(s):</b><br />';
+        popupHtml += contactPersons;        
+    }
+
+    if(popupHtml == ''){
+        popupHtml = 'Sorry there is no additional information available for this technology.';
+    }
+
+    $('#dialog').children().remove();
+    $('#dialog').append('<div>' + popupHtml + "</div>");
+    $('#dialog').dialog('option','title', tech);
+    $('#dialog').dialog('open')
+}
+
+function openLink(url){
+    alert(url);
+    window.open(url);
+}
