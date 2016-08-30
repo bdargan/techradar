@@ -54,23 +54,23 @@ var radar_data = [
     "color": "#00A499",
     "items": [
         //  Adopt
-        {"pc": {"r":  30, "t": 100}, "movement": "c", "name": "Spring Boot",}, 
+        {"pc": {"r":  30, "t": 100}, "movement": "c", "name": "Spring Boot", topic: "16277305"}, 
         {"pc": {"r":  38, "t": 162}, "movement": "c", "name": "SASS",}, 
-        {"pc": {"r":  53, "t": 140}, "movement": "t", "name": "Gradle",},  
+        {"pc": {"r":  53, "t": 140}, "movement": "t", "name": "Gradle", topic: "11642700"},  
         {"pc": {"r":  66, "t": 120}, "movement": "c", "name": "Swagger", reason: "Great tool for documenting APIs and speeding up API development", topic: "13683108" }, 
-        {"pc": {"r":  70, "t": 167}, "movement": "c", "name": "Thymeleaf",}, 
+        {"pc": {"r":  70, "t": 167}, "movement": "c", "name": "Thymeleaf", topic: "16277344"}, 
         {"pc": {"r":  78, "t": 138}, "movement": "t", "name": "node.js (for micro-services or simple front-ends)", topic: "12342592"}, 
 
         //  Trial
         {"pc": {"r": 110, "t": 125}, "movement": "c", "name": "Kotlin", reason: "Used for a number of internal projects. Looks a good option for JVM development for people more comfortable with C#", topic: "12008290"}, 
         {"pc": {"r": 132, "t": 139}, "movement": "c", "name": "Grunt",}, 
-        {"pc": {"r": 150, "t": 159}, "movement": "c", "name": "React + Redux",}, 
-        {"pc": {"r": 180, "t": 125}, "movement": "c", "name": "Scala",}, 
+        {"pc": {"r": 150, "t": 159}, "movement": "c", "name": "React + Redux", topic: "16277357"}, 
+        {"pc": {"r": 180, "t": 125}, "movement": "c", "name": "Scala", topic: "11449457"}, 
 
         //  Assess
-        {"pc": {"r": 210, "t": 115}, movement: "t", name: ".NET Core", topic: "16265842"}, 
-        {"pc": {"r": 217, "t": 120}, "movement": "c", "name": "TypeScript",}, 
-        {"pc": {"r": 222, "t": 140}, "movement": "c", "name": "Angular 2.0",}, 
+        {"pc": {"r": 210, "t": 115}, movement: "t", name: ".NET Core", topic: "16265842", }, 
+        {"pc": {"r": 217, "t": 120}, "movement": "c", "name": "TypeScript", topic: "16277404", }, 
+        {"pc": {"r": 222, "t": 140}, "movement": "c", "name": "Angular 2.0", topic: "16277359"}, 
         {"pc": {"r": 259, "t": 132}, "movement": "t", "name": "Python",},
         {"pc": {"r": 274, "t": 154}, "movement": "c", "name": "Ember",}, 
         {"pc": {"r": 282, "t": 149}, "movement": "c", "name": "Knockout.js",},
@@ -93,15 +93,15 @@ var radar_data = [
     "color": "#CB6015",
     "items": [
         //  Adopt
-        {"pc": {"r":  22, "t":  61}, "movement": "c", "name": "Azure App Services",}, 
+        {"pc": {"r":  22, "t":  61}, "movement": "c", "name": "Azure App Services", topic: "12342594"}, 
         {"pc": {"r":  57, "t":  35}, "movement": "c", "name": "MariaDB",}, 
         {"pc": {"r":  83, "t":  61}, "movement": "c", "name": "Joomla!",},
         
         //  Trial
-        {"pc": {"r": 112, "t":  58}, "movement": "c", "name": "VSTS",}, 
+        {"pc": {"r": 112, "t":  58}, "movement": "c", "name": "VSTS", topic: "11331403"}, 
         {"pc": {"r": 118, "t":  24}, "movement": "c", "name": "MongoDB",}, 
         {"pc": {"r": 158, "t":  21}, "movement": "c", "name": "Azure SQL",}, 
-        {"pc": {"r": 188, "t":  31}, "movement": "c", "name": "AWS Lambda & Azure Functions",},
+        {"pc": {"r": 188, "t":  31}, "movement": "c", "name": "AWS Lambda & Azure Functions", topic: "16277475"},
 
         //  Assess 
         {"pc": {"r": 209, "t":  68}, "movement": "c", "name": "Powershell DSC",},
@@ -122,9 +122,9 @@ var radar_data = [
     "color": "#893CA2",
     "items": [
         //  Adopt
-        {"pc": {"r":  20, "t": 228}, "movement": "c", "name": "Git",},
-        {"pc": {"r":  62, "t": 192}, "movement": "c", "name": "SurveyMonkey"}, 
-        {"pc": {"r":  75, "t": 240}, "movement": "t", "name": "Docker",}, 
+        {"pc": {"r":  20, "t": 228}, "movement": "c", "name": "Git", topic: "12342590"},
+        {"pc": {"r":  62, "t": 192}, "movement": "c", "name": "SurveyMonkey", topic: "16276858"}, 
+        {"pc": {"r":  75, "t": 240}, "movement": "t", "name": "Docker", topic: "14695438"}, 
         {"pc": {"r":  78, "t": 208}, "movement": "c", "name": "Sketch",}, 
         {"pc": {"r":  88, "t": 202}, "movement": "c", "name": "UXpin",}, 
 
@@ -180,16 +180,16 @@ var radar_data = [
         {"pc": {"r":  64, "t": 343}, "movement": "c", "name": "Lean UX",}, 
         {"pc": {"r":  70, "t": 288}, "movement": "c", "name": "TDD",}, 
         {"pc": {"r":  86, "t": 300}, "movement": "c", "name": "BuildVNext with TFS/VSTS",}, 
-        {"pc": {"r":  88, "t": 336}, "movement": "c", "name": "Service Design",},
+        {"pc": {"r":  88, "t": 336}, "movement": "c", "name": "Service Design", topic: "16277562"},
         
         //  Trial
-        {"pc": {"r": 110, "t": 325}, "movement": "c", "name": "Session-Based Testing",}, 
+        {"pc": {"r": 110, "t": 325}, "movement": "c", "name": "Session-Based Testing", topic: "16277512"}, 
         {"pc": {"r": 152, "t": 358}, "movement": "c", "name": "Micro-service architecture",}, 
         {"pc": {"r": 176, "t": 328}, "movement": "c", "name": "Eye Tracking",},
 
         //  Assess
         {"pc": {"r": 228, "t": 335}, "movement": "t", "name": "VSTS for Release Management",},
-        {"pc": {"r": 247, "t": 316}, "movement": "c", "name": "Reactive Architectures",}, 
+        {"pc": {"r": 247, "t": 316}, "movement": "c", "name": "Reactive Architectures", topic: "14697886"}, 
         {"pc": {"r": 262, "t": 338}, "movement": "c", "name": "Backend for Front-Ends",}, 
         {"pc": {"r": 278, "t": 325}, "movement": "c", "name": "Model-Based Testing",},
         {"pc": {"r": 238, "t": 345}, "movement": "t", "name": "CRM collaborative development without relying on TFVC",},
