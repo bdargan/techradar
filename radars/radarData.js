@@ -1,15 +1,13 @@
 //This is the title for your window tab, and your Radar
-document.title = "WotifGroup's Technology Radar (December 2014)";
-
+document.title = "SFW's TechRadar (July 2016)";
 
 //This is the concentic circles that want on your radar
 var radar_arcs = [
-                   {'r':100,'name':'Adopt'}
-                  ,{'r':200,'name':'Trial'}
-                  ,{'r':300,'name':'Assess'}
-                  ,{'r':400,'name':'Hold'}
-                 // ,{'r':500,'name':'Possible Extra if you want it'}
-                 ];
+  {'r': 100,'name': 'Adopt'}, 
+  {'r': 200,'name': 'Trial'}, 
+  {'r': 300,'name': 'Assess'}, 
+  {'r': 400,'name': 'Hold'}
+];
 
 //This is your raw data
 //
@@ -49,153 +47,156 @@ var h = 1000;
 var w = 1200;
 
 var radar_data = [
-    { "quadrant": "Techniques",
-        "left" : 45,
-        "top" : 18,
-        "color" : "#8FA227",
-        "items" : [ 
-            { name: 'Git flow / Pull Requests ^', pc: { r: 230, t: 133 }, movement: 'c' },
-            {"name":"Incremental data warehousing", "pc":{"r":250,"t":165},"movement":"c"},    
-            {"name":"Events for messages - CQRS", "pc":{"r":225,"t":120},"movement":"c"},
-            {"name":"Measure Pipeline disruptions", "pc":{"r":280,"t":110},"movement":"c"}, 
-            {"name":"Continuous Experimentation", "pc":{"r":230,"t":110},"movement":"c"},
-            { name: 'Reduce iRules dependence ^', pc: { r: 280, t: 133 }, movement: 'c' },
-            {"name":"SaaS for non-core systems", "pc":{"r":170,"t":150},"movement":"c"},   
-            {"name":"Pair Programming", "pc":{"r":130,"t":170},"movement":"c"}, 
-            {"name":"iOS Accessibility", "pc":{"r":170,"t":110},"movement":"c"},
-            {"name":"Single Page App", "pc":{"r":150,"t":95},"movement":"c", "url":"http://www.google.com"},
-            {"name":"iOS Adaptivity", "pc":{"r":180,"t":105},"movement":"c"},   
-            {"name":"Build Pipelines", "pc":{"r":180,"t":100},"movement":"c"},   
-            {"name":"Data Informed Decion Making", "pc":{"r":130,"t":110},"movement":"c"},
-            {"name":"Polygot Programming", "pc":{"r":180,"t":170},"movement":"c"},
-            { name: 'internal load balancing off F5^', pc: { r: 180, t: 133 }, movement: 'c' },
-            {"name":"Isolated dev envs", "pc":{"r":180,"t":125},"movement":"c"},  
-            {"name":"Edge Services", "pc":{"r":130,"t":160},"movement":"c"}, 
-            {"name":"Clean Code", "pc":{"r":130,"t":120},"movement":"c"},
-            {"name":"Wide and Thin Front-Ends", "pc":{"r":180,"t":160},"movement":"c"},
-            {"name":"Zookeeper for App Config", "pc":{"r":130,"t":130},"movement":"c"}, 
-            {"name":"Property based testing", "pc":{"r":130,"t":165},"movement":"c"},
-            {"name":"Evolutionary architecture", "pc":{"r":120,"t":95},"movement":"c"},
-            {"name":"Code Reviews", "pc":{"r":110,"t":110},"movement":"c"},
-            {"name":"Valuable, cheap tests", "pc":{"r":130,"t":150},"movement":"c"},
-            {"name":"Sacrificial Architecture", "pc":{"r":80,"t":100},"movement":"c"},   
-            {"name":"Sensible defaults", "pc":{"r":80,"t":150},"movement":"c"},   
-            {"name":"Dependency Injection", "pc":{"r":80,"t":130},"movement":"c"},   
-            {"name":"Coding architects", "pc":{"r":90,"t":170},"movement":"c"}
+  {
+    "quadrant": "Languages & Frameworks", // t 90-180
+    "left": 45,
+    "top": 18,
+    "color": "#00A499",
+    "items": [
+        //  Adopt
+        {"pc": {"r":  30, "t": 100}, "movement": "c", "name": "Spring Boot",}, 
+        {"pc": {"r":  38, "t": 162}, "movement": "c", "name": "SASS",}, 
+        {"pc": {"r":  53, "t": 140}, "movement": "t", "name": "Gradle",},  
+        {"pc": {"r":  66, "t": 120}, "movement": "c", "name": "Swagger",},
+        {"pc": {"r":  70, "t": 167}, "movement": "c", "name": "Thymeleaf",}, 
+        {"pc": {"r":  78, "t": 138}, "movement": "t", "name": "node.js (for micro-services or simple front-ends)",}, 
 
-        ]
-    },
-    { "quadrant": "Tools",
-        "left": w-200+30,
-        "top" : 18,
-        "color" : "#587486",
-        "items" : [ 
+        //  Trial
+        {"pc": {"r": 110, "t": 125}, "movement": "c", "name": "Kotlin",}, 
+        {"pc": {"r": 132, "t": 139}, "movement": "c", "name": "Grunt",}, 
+        {"pc": {"r": 150, "t": 159}, "movement": "c", "name": "React + Redux",}, 
+        {"pc": {"r": 180, "t": 125}, "movement": "c", "name": "Scala",}, 
 
-{ name: 'Docker', pc: { r: 170, t: 19 }, movement: 't' },
-  { name: 'bind',    pc: { r: 150, t: 69 },    movement: 'c' },
-  { name: 'Appium',    pc: { r: 110, t: 70 },    movement: 'c',    domain: 'mobile, front-end' }, 
- { name: 'Android Studio',    pc: { r: 180, t: 66 },    movement: 'c',    domain: 'mobile, dev' },
-  { name: 'Responsive Android',    pc: { r: 150, t: 14 },    movement: 'c' },
-  { name: 'AutoLayout - iOS',    pc: { r: 180, t: 55 },    movement: 'c',    domain: '' },
-  { name: 'Kiwi - iOS unit test',    pc: { r: 120, t: 14 },    movement: 'c',    domain: '' },
-  { name: 'BEM',    pc: { r: 160, t: 60 },    movement: 'c',    domain: 'front-end' },
-  { name: 'Crashlytics',    pc: { r: 180, t: 5 },    movement: 'c',    domain: 'mobile' },
-  { name: 'Consul',    pc: { r: 170, t: 29 },    movement: 't' }, 
-   { name: 'Swagger Code-Gen',    pc: { r: 180, t: 82 },    movement: 'c' },
-   { name: 'PowerMock ^',    pc: { r: 180, t: 46 },    movement: 'c' },
-   { name: 'Mockito',    pc: { r: 170, t: 84 },    movement: 'c',    domain: 'back-end' },
-   { name: 'Json Web Tokens (JWT)',    pc: { r: 180, t: 77 },    movement: 'c' },
-   { name: 'Lemming',    pc: { r: 160, t: 82 },    movement: 'c' },
-   { name: 'Hystrix',    pc: { r: 150, t: 36 },    movement: 'c' },
-  { name: 'Git',    pc: { r: 130, t: 73 },    movement: 'c' },
+        //  Assess
+        {"pc": {"r": 210, "t": 115}, "movement": "t", "name": ".NET Core",}, 
+        {"pc": {"r": 217, "t": 120}, "movement": "c", "name": "TypeScript",}, 
+        {"pc": {"r": 222, "t": 140}, "movement": "c", "name": "Angular 2.0",}, 
+        {"pc": {"r": 259, "t": 132}, "movement": "t", "name": "Python",},
+        {"pc": {"r": 274, "t": 154}, "movement": "c", "name": "Ember",}, 
+        {"pc": {"r": 282, "t": 149}, "movement": "c", "name": "Knockout.js",},
+        {"pc": {"r": 289, "t": 127}, "movement": "c", "name": "Akka",},
 
-  { name: 'Ansible',    pc: { r: 280, t: 74 },    movement: 'c' },  
-  { name: 'Hip Chat',    pc: { r: 280, t: 78 },    movement: 'c' },
-  { name: 'Trello',    pc: { r: 260, t: 75 },    movement: 'c' },
-  { name: 'Charles HTTP Proxy',    pc: { r: 260, t: 48 },    movement: 'c' },
-  { name: 'Xamarin', pc: { r: 280, t: 51 }, movement: 'c' },
-  { name: 'Android Annotations',    pc: { r: 280, t: 25 },    movement: 'c' },
-  { name: 'GenyMotion',    pc: { r: 210, t: 31 },    movement: 'c' },
+        //  Hold 
+        {"pc": {"r": 344, "t": 138}, "movement": "c", "name": "Django",}, 
+        {"pc": {"r": 349, "t": 115}, "movement": "c", "name": ".NET for new bespoke development",}, 
+        {"pc": {"r": 370, "t": 108}, "movement": "c", "name": "Ruby-on-Rails",}, 
+        {"pc": {"r": 372, "t": 143}, "movement": "t", "name": "Play Framework",},
+        {"pc": {"r": 378, "t": 133}, "movement": "c", "name": "Go (lang)",}, 
+        {"pc": {"r": 388, "t": 125}, "movement": "c", "name": "Java EE",}, 
+        {"pc": {"r": 390, "t":  98}, "movement": "c", "name": "Elixir + Phoenix",}, 
+        {"pc": {"r": 392, "t": 166}, "movement": "c", "name": "LESS (CSS)",}, 
+    ]
+}, {
+    "quadrant": "Platforms", // t 0-90
+    "left": (w - 200 + 30),
+    "top": 18,
+    "color": "#CB6015",
+    "items": [
+        //  Adopt
+        {"pc": {"r":  22, "t":  61}, "movement": "c", "name": "Azure App Services",}, 
+        {"pc": {"r":  57, "t":  35}, "movement": "c", "name": "MariaDB",}, 
+        {"pc": {"r":  83, "t":  61}, "movement": "c", "name": "Joomla!",},
+        
+        //  Trial
+        {"pc": {"r": 112, "t":  58}, "movement": "c", "name": "VSTS",}, 
+        {"pc": {"r": 118, "t":  24}, "movement": "c", "name": "MongoDB",}, 
+        {"pc": {"r": 158, "t":  21}, "movement": "c", "name": "Azure SQL",}, 
+        {"pc": {"r": 188, "t":  31}, "movement": "c", "name": "AWS Lambda & Azure Functions",},
 
-  { name: 'JDBI ^',    pc: { r: 80, t: 56 },    movement: 'c' },
-  { name: 'Kafka',    pc: { r: 12, t: 25 },    movement: 'c',    domain: 'back-end' },
-  { name: 'ELK',    pc: { r: 30, t: 72 },    movement: 'c',    domain: 'back-end' },
-  { name: 'Liquibase',    pc: { r: 80, t: 76 },    movement: 'c' },
-  { name: 'haproxy',    pc: { r: 80, t: 46 },    movement: 'c' },
+        //  Assess 
+        {"pc": {"r": 209, "t":  68}, "movement": "c", "name": "Powershell DSC",},
+        {"pc": {"r": 225, "t":  38}, "movement": "t", "name": "Cloud Foundry",}, 
+        {"pc": {"r": 244, "t":  42}, "movement": "c", "name": "Amazon SNS & SQS",}, 
+        {"pc": {"r": 274, "t":  14}, "movement": "c", "name": "Azure DocumentDB",}, 
+        {"pc": {"r": 284, "t":  78}, "movement": "c", "name": "Windows Server Nano",}, 
+        {"pc": {"r": 285, "t":   5}, "movement": "c", "name": "Amazon DynamoDB",}, 
+        {"pc": {"r": 296, "t":  38}, "movement": "c", "name": "Azure Notification Hub",},
 
-  { name: 'AppManager ^',    pc: { r: 360, t: 82 },    movement: 'c' },
-  { name: 'Hibernate ^',    pc: { r: 380, t: 56 },    movement: 'c' },
-  { name: 'mongoDB',    pc: { r: 330, t: 5 },    movement: 'c' }, 
-  { name: 'Subversion',    pc: { r: 330, t: 18 },    movement: 'c' }
-  ]
-    },
-    { "quadrant": "Platforms",
-        "left" :45,
-         "top" : (h/2 + 18),
-        "color" : "#DC6F1D",
-        "items" : [
+        //  Hold 
+        {"pc": {"r": 354, "t":  78}, "movement": "c", "name": "Windows Server Deployments",}, 
+    ]
+}, {
+    "quadrant": "Tools", // t 180-270
+    "left": 45,
+    "top": (h / 2 + 18),
+    "color": "#893CA2",
+    "items": [
+        //  Adopt
+        {"pc": {"r":  20, "t": 228}, "movement": "c", "name": "Git",},
+        {"pc": {"r":  62, "t": 192}, "movement": "c", "name": "SurveyMonkey",}, 
+        {"pc": {"r":  75, "t": 240}, "movement": "c", "name": "Docker",}, 
+        {"pc": {"r":  78, "t": 208}, "movement": "c", "name": "Sketch",}, 
+        {"pc": {"r":  88, "t": 202}, "movement": "c", "name": "UXpin",}, 
 
-            {"name":"OpenId Connect", "pc":{"r":130,"t":260},"movement":"t"},   
-            {"name":"Location based services", "pc":{"r":130,"t":230},"movement":"c"},
-            {"name":"Openstack", "pc":{"r":190,"t":190},"movement":"c"},
-            {"name":"RHEL 7", "pc":{"r":170,"t":215},"movement":"c"},      
+        //  Trial
+        {"pc": {"r": 123, "t": 258}, "movement": "c", "name": "ELK Stack (ElasticSearch/Logstash/Kibana)",}, 
+        {"pc": {"r": 146, "t": 259}, "movement": "c", "name": "Vagrant",},
+        {"pc": {"r": 160, "t": 185}, "movement": "c", "name": "Balsamiq",}, 
+        {"pc": {"r": 166, "t": 190}, "movement": "c", "name": "Axure",}, 
+        {"pc": {"r": 167, "t": 216}, "movement": "c", "name": "Loop11",}, 
+        {"pc": {"r": 177, "t": 205}, "movement": "c", "name": "Optimal Workshop",}, 
+        {"pc": {"r": 181, "t": 210}, "movement": "c", "name": "Zoom",}, 
+        {"pc": {"r": 187, "t": 215}, "movement": "c", "name": "InVision App",}, 
+        {"pc": {"r": 192, "t": 251}, "movement": "t", "name": "Rancher",}, 
 
-            {"name":"App containers", "pc":{"r":250,"t":260},"movement":"c"},
-            {"name":"Google Cloud Data Flow", "pc":{"r":275,"t":260},"movement":"t"},
-            { name: 'Postgres as NoSQL',              pc: { r: 220, t: 255 },              movement: 'c' },
-            {"name":"AWS 2014 Innovations", "pc":{"r":270,"t":195},"movement":"c"},
-            {"name":"Azure", "pc":{"r":290,"t":265},"movement":"c"},   
-            { name: 'Mesos',              pc: { r: 260, t: 265 },              movement: 't' },
-            { name: 'Marathon',              pc: { r: 240, t: 268 },              movement: 't' },
-            { name: 'Kubernetes',              pc: { r: 270, t: 236 },              movement: 't' },
-            {"name":"Google App Engine", "pc":{"r":290,"t":255},"movement":"c"},   
-            {"name":"Google as corporate platform", "pc":{"r":290,"t":200},"movement":"c"},   
+        //  Assess
+        {"pc": {"r": 214, "t": 261}, "movement": "c", "name": "Chef",}, 
+        {"pc": {"r": 216, "t": 266}, "movement": "c", "name": "Puppet",}, 
+        {"pc": {"r": 223, "t": 220}, "movement": "c", "name": "Tobii Eyetracker",},
+        {"pc": {"r": 232, "t": 184}, "movement": "c", "name": "Jenkins 2.0",}, 
+        {"pc": {"r": 243, "t": 258}, "movement": "c", "name": "New Relic",}, 
+        {"pc": {"r": 250, "t": 204}, "movement": "c", "name": "Protractor",}, 
+        {"pc": {"r": 250, "t": 220}, "movement": "c", "name": "Spectre",}, 
+        {"pc": {"r": 255, "t": 189}, "movement": "c", "name": "Concourse CI",}, 
+        {"pc": {"r": 259, "t": 200}, "movement": "t", "name": "Tenon.io",},  
+        {"pc": {"r": 267, "t": 225}, "movement": "c", "name": "Nuivo (For Qualitative Analysis)",}, 
+        {"pc": {"r": 269, "t": 190}, "movement": "c", "name": "LambdaCD",}, 
+        {"pc": {"r": 270, "t": 238}, "movement": "c", "name": "Applitools",}, 
+        {"pc": {"r": 276, "t": 234}, "movement": "c", "name": "SPSS (For Quantitative Analysis)",}, 
+        {"pc": {"r": 277, "t": 220}, "movement": "c", "name": "Video editing software",},
+        {"pc": {"r": 278, "t": 258}, "movement": "c", "name": "Docker Swarm",}, 
+        {"pc": {"r": 279, "t": 253}, "movement": "c", "name": "Kubernetes",}, 
+        {"pc": {"r": 281, "t": 210}, "movement": "c", "name": "Techsmith Morae",}, 
+        {"pc": {"r": 283, "t": 228}, "movement": "c", "name": "Rocket.Chat",}, 
+        {"pc": {"r": 294, "t": 240}, "movement": "c", "name": "BaseCamp",},
 
+        //  Hold
+        {"pc": {"r": 309, "t": 215}, "movement": "c", "name": "JIRA",}, 
+        {"pc": {"r": 322, "t": 252}, "movement": "c", "name": "Habitat",}, 
+        {"pc": {"r": 388, "t": 259}, "movement": "t", "name": "Otto",},
+        {"pc": {"r": 390, "t": 230}, "movement": "c", "name": "Nightwatch.js",}, 
+        {"pc": {"r": 399, "t": 220}, "movement": "c", "name": "TFVC (except for CRM)",}, 
+    ]
+}, {
+    "quadrant": "Approaches", // t 270-360
+    "color": "#64B044",
+    "left": (w - 200 + 30),
+    "top": (h / 2 + 18),
+    "items": [
+        //  Adopt
+        {"pc": {"r":  44, "t": 340}, "movement": "c", "name": "User-Centred Design",},
+        {"pc": {"r":  47, "t": 311}, "movement": "c", "name": "Responsive Design",}, 
+        {"pc": {"r":  56, "t": 281}, "movement": "c", "name": "BDD",}, 
+        {"pc": {"r":  64, "t": 343}, "movement": "c", "name": "Lean UX",}, 
+        {"pc": {"r":  70, "t": 288}, "movement": "c", "name": "TDD",}, 
+        {"pc": {"r":  86, "t": 300}, "movement": "c", "name": "BuildVNext with TFS/VSTS",}, 
+        {"pc": {"r":  88, "t": 336}, "movement": "c", "name": "Service Design",},
+        
+        //  Trial
+        {"pc": {"r": 110, "t": 325}, "movement": "c", "name": "Session-Based Testing",}, 
+        {"pc": {"r": 152, "t": 358}, "movement": "c", "name": "Micro-service architecture",}, 
+        {"pc": {"r": 176, "t": 328}, "movement": "c", "name": "Eye Tracking",},
 
-            {"name":"Google Play - (alpha/beta builds)", "pc":{"r":30,"t":225},"movement":"c"},
-            {"name":"JVM as platform", "pc":{"r":90,"t":265},"movement":"c"},   
-            {"name":"AWS", "pc":{"r":90,"t":250},"movement":"c"},   
-            { name: 'BigIP v11',              pc: { r: 50, t: 257 },              movement: 'c' },
+        //  Assess
+        {"pc": {"r": 228, "t": 335}, "movement": "t", "name": "VSTS for Release Management",},
+        {"pc": {"r": 247, "t": 316}, "movement": "c", "name": "Reactive Architectures",}, 
+        {"pc": {"r": 262, "t": 338}, "movement": "c", "name": "Backend for Front-Ends",}, 
+        {"pc": {"r": 278, "t": 325}, "movement": "c", "name": "Model-Based Testing",},
+        {"pc": {"r": 238, "t": 345}, "movement": "t", "name": "CRM collaborative development without relying on TFVC",},
 
-
-
-            {"name":"Ruby On Rails", "pc":{"r":390,"t":215},"movement":"c"},
-            {"name":"Everest", "pc":{"r":390,"t":185},"movement":"c"},   
-            {"name":"Magnolia CMS", "pc":{"r":390,"t":235},"movement":"c"},   
-            {"name":"Java EE - the Bad Parts", "pc":{"r":390,"t":245},"movement":"c"},   
-            {"name":"MS SqlServer", "pc":{"r":390,"t":190},"movement":"c"},
-            {"name":"RHEL 5", "pc":{"r":370,"t":195},"movement":"c"}
-
-        ]
-    },
-    { "quadrant": "Languages & Frameworks",
-        "color" : "#B70062",
-        "left"  : (w-200+30),
-        "top" :   (h/2 + 18),
-        "items" : [ 
-            { name: 'CDI', pc: { r: 60, t: 290 },  movement: 'c' },
-            { name: 'Jersey', pc: { r: 60, t: 310 },  movement: 'c' },
-
-            { name: 'Guice', pc: { r: 60, t: 278 },  movement: 'c' },
-            { name: 'RxJava', pc: { r: 150, t: 298 },              movement: 'c',  domain: 'template' },          
-
-            {"name":"Java 8", "pc":{"r":130,"t":355},"movement":"c"},   
-            {"name":"Groovy ^", "pc":{"r":190,"t":280},"movement":"c"},
-
-            {"name":"Swift", "pc":{"r":280,"t":300},"movement":"c"},
-            {"name":"Scala - the good parts ^", "pc":{"r":290,"t":320},"movement":"c"},   
-            {"name":"Serverside Javascript", "pc":{"r":220,"t":275},"movement":"c"},   
-            {"name":"Coffeescript", "pc":{"r":270,"t":282},"movement":"c"},
-            {"name":"Functional Reactive Programming", "pc":{"r":285,"t":330},"movement":"c"},   
-            {"name":"Clojure", "pc":{"r":280,"t":310},"movement":"c"},
-            { name: 'RxJs',              pc: { r: 250, t: 338 },              movement: 'c',              domain: 'template' },
-            { name: 'Web Components', pc: { r: 260, t: 330 },  movement: 'c' },
-
-            { name: 'Mustache/Handlebars template',   pc: { r: 50, t: 298 },              movement: 'c',              domain: 'template' },
-            { name: 'Spring ^', pc: { r: 360, t: 330 },  movement: 'c' },
-            {"name":"Web Objects", "pc":{"r":390,"t":290},"movement":"c"},
-            {"name":"ASP Classic", "pc":{"r":375,"t":330},"movement":"c"},
-            {"name":"Java 6 and earlier", "pc":{"r":390,"t":350},"movement":"c"}
-        ]
-    }
-];
+        //  Hold 
+        {"pc": {"r": 358, "t": 277}, "movement": "c", "name": "Native Mobile",}, 
+        {"pc": {"r": 378, "t": 299}, "movement": "c", "name": "SAFe",}, 
+        {"pc": {"r": 386, "t": 330}, "movement": "c", "name": "XAML builds with TFS",}, 
+    ]
+}];
