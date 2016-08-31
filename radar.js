@@ -171,7 +171,7 @@ function init(h, w) {
                 .shape(function (d) { return (d.movement === 't' ? "triangle" : "circle"); })
                 //.cursor(function (d) { return (d.url !== undefined ? "pointer" : "auto"); })
                 .cursor("auto")
-                .event("click", function (d) { showInfoPopup(d.name, d.reason, d.topic, d.pc.r) })
+                .event("click", function (d) { showInfoPopup(d.name, d.reason, d.topic, d.investigators, d.pc.r) })
                 .size(fontSize)
                 .angle(45)
                 .anchor("right")
@@ -193,7 +193,7 @@ function init(h, w) {
                 .title(function (d) { return d.name; })
                 //.cursor(function (d) { return (d.url !== undefined ? "pointer" : "auto"); })
                 .cursor("pointer")
-                .event("click", function (d) { showInfoPopup(d.name, d.reason, d.topic, d.pc.r) })
+                .event("click", function (d) { showInfoPopup(d.name, d.reason, d.topic, d.investigators, d.pc.r) })
                 .angle(Math.PI)  // 180 degrees in radians !
                 .strokeStyle(radar_data[i].color)
                 .fillStyle(radar_data[i].color)
@@ -213,7 +213,7 @@ function init(h, w) {
 };
 
 
-function showInfoPopup(name, reason, topic, radial){
+function showInfoPopup(name, reason, topic, collaborators, radial){
     var popupHtml = '';
     var status = "HOLD"
 
@@ -227,13 +227,17 @@ function showInfoPopup(name, reason, topic, radial){
 
     popupHtml += '<br /><b>' + status + '</b><br />'
 
-    if(reason != undefined && reason != ''){
+    if(reason != undefined && reason != '') {
         popupHtml += '<br /><b>Reason for change:</b><br />';
         popupHtml += reason;
     }
 
+    if(collaborators != undefined && collaborators != '') {
+        popupHtml += '<br /><b>Currently investigating:</b> ' + collaborators + '<br />';
+    }
+
     // Replace this with a look up of Yammer topic to Yammer topic id...
-    if(topic != undefined && topic != ''){
+    if(topic != undefined && topic != '') {
         popupHtml += '<br /><b>More information:</b><br />';
         popupHtml += '<a href="" onclick="window.open(\'https://www.yammer.com/sfwltd.co.uk/topics/' + topic.trim() + '\');">Yammer articles for ' + name + '</a>';        
     } else {
