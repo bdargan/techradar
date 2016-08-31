@@ -171,7 +171,7 @@ function init(h, w) {
                 .shape(function (d) { return (d.movement === 't' ? "triangle" : "circle"); })
                 //.cursor(function (d) { return (d.url !== undefined ? "pointer" : "auto"); })
                 .cursor("auto")
-                .event("click", function (d) { showInfoPopup(d.name, d.reason, d.topic) })
+                .event("click", function (d) { showInfoPopup(d.name, d.reason, d.topic, d.pc.r) })
                 .size(fontSize)
                 .angle(45)
                 .anchor("right")
@@ -193,7 +193,7 @@ function init(h, w) {
                 .title(function (d) { return d.name; })
                 //.cursor(function (d) { return (d.url !== undefined ? "pointer" : "auto"); })
                 .cursor("pointer")
-                .event("click", function (d) { showInfoPopup(d.name, d.reason, d.topic) })
+                .event("click", function (d) { showInfoPopup(d.name, d.reason, d.topic, d.pc.r) })
                 .angle(Math.PI)  // 180 degrees in radians !
                 .strokeStyle(radar_data[i].color)
                 .fillStyle(radar_data[i].color)
@@ -213,8 +213,19 @@ function init(h, w) {
 };
 
 
-function showInfoPopup(name, reason, topic){
+function showInfoPopup(name, reason, topic, radial){
     var popupHtml = '';
+    var status = "HOLD"
+
+    if (radial < 100) {
+        status = "ADOPT"
+    } else if (radial < 200) {
+        status = "TRIAL"
+    } else if (radial < 300) {
+        status = "ASSESS"
+    }
+
+    popupHtml += '<br /><b>' + status + '</b><br />'
 
     if(reason != undefined && reason != ''){
         popupHtml += '<br /><b>Reason for change:</b><br />';
@@ -225,10 +236,8 @@ function showInfoPopup(name, reason, topic){
     if(topic != undefined && topic != ''){
         popupHtml += '<br /><b>More information:</b><br />';
         popupHtml += '<a href="" onclick="window.open(\'https://www.yammer.com/sfwltd.co.uk/topics/' + topic.trim() + '\');">Yammer articles for ' + name + '</a>';        
-    }
-
-    if(popupHtml == ''){
-        popupHtml = 'No information about this yet. Start <a href="" onclick="window.open(\'https://www.yammer.com/sfwltd.co.uk/\');"> contributing today!! </a>';
+    } else {
+        popupHtml += '<br />No information about this yet. Start <a href="" onclick="window.open(\'https://www.yammer.com/sfwltd.co.uk/\');"> contributing today!! </a>';
     }
 
     $('#dialog').children().remove();
