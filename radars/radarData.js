@@ -76,6 +76,7 @@ var radar_data = [
         {pc: {r: 274, t: 154}, movement: "c", name: "Ember",}, 
         {pc: {r: 282, t: 149}, movement: "c", name: "Knockout.js",},
         {pc: {r: 289, t: 127}, movement: "c", name: "Akka",},
+        {pc: {r: 293, t: 167}, movement: "t", name: "Webpack",},
 
         //  Hold 
         {pc: {r: 344, t: 138}, movement: "c", name: "Django",}, 

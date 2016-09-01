@@ -182,6 +182,7 @@ function init(h, w) {
                 .def("active", false)
                 .data(itemsByStage[stageIdx])
                 .size(function (d) { return (d.blipSize !== undefined ? d.blipSize : 70); })
+                .angle(50)
                 .left(function (d) {
                     var x = polar_to_raster(d.pc.r, d.pc.t)[0];
                     return x;
