@@ -73,6 +73,7 @@ var radar_data = [
         {pc: {r: 222, t: 140}, movement: "c", name: "Angular 2.0", topic: "16277359"},
         {pc: {r: 244, t: 144}, movement: "t", name: "SharePoint framework", topic: "16157669", reason: "New upcoming approach for developing web parts to SharePoint sites"},  
         {pc: {r: 259, t: 132}, movement: "t", name: "Python", topic: "16322391", reason: "Have seen a number of sales opportunities for Python in the past month"},
+        {pc: {r: 268, t: 162}, movement: "t", name: "Symfony", topic: "16422850", reason: "Have seen a number of sales opportunities for PHP and Symfony over the past month"},
         {pc: {r: 274, t: 154}, movement: "c", name: "Ember",}, 
         {pc: {r: 282, t: 149}, movement: "c", name: "Knockout.js",},
         {pc: {r: 289, t: 127}, movement: "c", name: "Akka",},
