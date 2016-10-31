@@ -162,7 +162,7 @@ var radar_data = [
         {pc: {r: 309, t: 215}, movement: "c", name: "JIRA",}, 
         {pc: {r: 316, t: 259}, movement: "t", name: "Vagrant", reason: "Unsure of the value of this with Docker preferred"},
         {pc: {r: 322, t: 252}, movement: "c", name: "Habitat",}, 
-        {pc: {r: 283, t: 228}, movement: "t", name: "Rocket.Chat", topic: "16323383", reason: "Unsure of value add over TFS/VSTS team rooms", investigators: "Richard Press, David Raine"}, 
+        {pc: {r: 383, t: 228}, movement: "t", name: "Rocket.Chat", topic: "16323383", reason: "Unsure of value add over TFS/VSTS team rooms", investigators: "Richard Press, David Raine"}, 
         {pc: {r: 390, t: 230}, movement: "c", name: "Nightwatch.js",}, 
         {pc: {r: 399, t: 220}, movement: "c", name: "TFVC (except for CRM)", reason: "Microsoft are mainly using Git in-house now. A lack of dogfooding will likely result in lesser suppot for TFVC in the future"}, 
     ]
