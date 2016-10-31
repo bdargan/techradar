@@ -67,7 +67,7 @@ var radar_data = [
         {pc: {r: 160, t: 140}, movement: "c", name: "Angular 2.0", topic: "16277359", reason: "Seems pretty simple and powerful following Matthew George's Show & Tell. Less of a learning curve over React"},
         {pc: {r: 180, t: 125}, movement: "c", name: "Scala", topic: "11449457"}, 
         {pc: {r: 189, t: 137}, movement: "t", name: "Cake (C# Make)",},        
-        {pc: {r: 194, t: 167}, movement: "t", name: "Webpack", reason: "Can see obvious potential for prototyping along with React"},
+        {pc: {r: 194, t: 167}, movement: "t", name: "Browser Sync", reason: "Can see obvious potential for prototyping along with Angular"},
 
         //  Assess
         {pc: {r: 203, t: 144}, movement: "c", name: "SharePoint framework", topic: "16157669", reason: "New upcoming approach for developing web parts to SharePoint sites"},  
@@ -135,7 +135,7 @@ var radar_data = [
         {pc: {r:  88, t: 202}, movement: "c", name: "UXpin",}, 
 
         //  Trial
-        {pc: {r: 123, t: 258}, movement: "c", name: "ELK Stack (ElasticSearch/Logstash/Kibana)", topic: "16322856"}, 
+        {pc: {r: 123, t: 258}, movement: "c", name: "ELK Stack (ElasticSearch/Logstash/Kibana)", topic: "16322856"},
         {pc: {r: 160, t: 185}, movement: "c", name: "Balsamiq",}, 
         {pc: {r: 166, t: 190}, movement: "c", name: "Axure",}, 
         {pc: {r: 167, t: 216}, movement: "c", name: "Loop11",}, 
