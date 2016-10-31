@@ -57,13 +57,11 @@ var radar_data = [
         {pc: {r:  30, t: 100}, movement: "c", name: "Spring Boot", topic: "16277305"}, 
         {pc: {r:  38, t: 162}, movement: "c", name: "SASS", topic: "16322377"}, 
         {pc: {r:  53, t: 140}, movement: "c", name: "Gradle", topic: "11642700", reason: "Configuration management for JVM (Java, Kotlin, Scala) projects"},  
-        {pc: {r:  66, t: 120}, movement: "c", name: "Swagger", reason: "Great tool for documenting APIs and speeding up API development", topic: "13683108" }, 
-        {pc: {r:  70, t: 167}, movement: "c", name: "Thymeleaf", topic: "16277344"}, 
+        {pc: {r:  66, t: 120}, movement: "c", name: "Swagger", reason: "Great tool for documenting APIs and speeding up API development", topic: "13683108" },
         {pc: {r:  78, t: 138}, movement: "c", name: "node.js (for micro-services or simple front-ends)", topic: "12342592", reason: "Concerned about its usage for a whole application, but certainly proven benefits for prototyping, simple web applications, and potentially for microservices"}, 
 
         //  Trial
         {pc: {r: 103, t: 125}, movement: "c", name: "Kotlin", reason: "Used for a number of internal projects. Looks a good option for JVM development for people more comfortable with C#", topic: "12008290"}, 
-        {pc: {r: 132, t: 139}, movement: "t", name: "Grunt", topic: "14740191", reason: "Build system for JS/TS (node) projects. Should go with either this or Gulp"},
         {pc: {r: 132, t: 139}, movement: "t", name: "Gulp", topic: "14740191", reason: "Build system for JS/TS (node) projects. Should go with either this or Grunt"},  
         {pc: {r: 143, t: 120}, movement: "t", name: "TypeScript", reason: "Prefered choice for Angular2 development and SharePoint Framework. Gaining traction in community", topic: "16277404", }, 
         {pc: {r: 160, t: 140}, movement: "c", name: "Angular 2.0", topic: "16277359", reason: "Seems pretty simple and powerful following Matthew George's Show & Tell. Less of a learning curve over React"},
@@ -75,15 +73,19 @@ var radar_data = [
         {pc: {r: 203, t: 144}, movement: "c", name: "SharePoint framework", topic: "16157669", reason: "New upcoming approach for developing web parts to SharePoint sites"},  
         {pc: {r: 210, t: 115}, movement: "c", name: ".NET Core", topic: "16265842", reason: "Trialling this predominantly with the Travel Desk application in India. Still questions about its maturity, particularly around tooling", investigators: "Dhirajsinh Rajeshirke, Saurabh Soni"}, 
         {pc: {r: 222, t: 159}, movement: "t", name: "React + Redux", topic: "16277357", reason: "Initial thoughts are that Angular 2.0 seems a better fit for our needs, and less learning curve than React"},
+        {pc: {r: 233, t: 160}, movement: "c", name: "Flight framework", reason: "New front-end JS framework from Twitter. Seems to be generating some interest. URL: <a href='https://flightjs.github.io/'>https://flightjs.github.io/</a>."},
         {pc: {r: 259, t: 132}, movement: "c", name: "Python", topic: "16322391", reason: "Have seen a number of sales opportunities for Python in the past month"},
         {pc: {r: 268, t: 162}, movement: "c", name: "Symfony", topic: "16422850", reason: "Have seen a number of sales opportunities for PHP and Symfony over the past month"},
+        {pc: {r: 270, t: 167}, movement: "t", name: "Thymeleaf", topic: "16277344", reason: "Downgraded due to potentially better JVM MV* frameworks available (like Spark or Grails)"},
         {pc: {r: 274, t: 154}, movement: "c", name: "Ember",}, 
-        {pc: {r: 278, t: 127}, movement: "c", name: "Grails",},
+        {pc: {r: 278, t: 127}, movement: "t", name: "Grails",},
+        {pc: {r: 280, t: 120}, movement: "t", name: "Spark",},
         {pc: {r: 282, t: 149}, movement: "c", name: "Knockout.js", topic: "17711509"},
         {pc: {r: 285, t: 159}, movement: "t", name: "TestCafe",},
         {pc: {r: 289, t: 127}, movement: "c", name: "Akka",},
 
         //  Hold 
+        {pc: {r: 332, t: 139}, movement: "t", name: "Grunt", topic: "14740191", reason: "Gulp seems to be gaining more traction than Grunt. Gulp now supports sequentially running tasks rendering this less useful."},
         {pc: {r: 370, t: 108}, movement: "c", name: "Ruby-on-Rails",}, 
         {pc: {r: 372, t: 143}, movement: "c", name: "Play Framework", reason: "Massive difficulties deploying this to Azure have put this on hold"},
         {pc: {r: 390, t:  98}, movement: "c", name: "Elixir + Phoenix",}, 
@@ -183,9 +185,8 @@ var radar_data = [
         {pc: {r:  56, t: 281}, movement: "c", name: "BDD",}, 
         {pc: {r:  64, t: 343}, movement: "c", name: "Lean UX",}, 
         {pc: {r:  70, t: 288}, movement: "c", name: "TDD", topic: "11979406"}, 
-        {pc: {r:  86, t: 300}, movement: "c", name: "BuildVNext with TFS/VSTS",}, 
+        {pc: {r:  86, t: 300}, movement: "t", name: "Build and Release Management with TFS/VSTS", reason: "Looks promising, Plaza and Home Office are starting to use this, could be a good way of managing releases to environments", investigators: "Nikhil Patel, Adam Londero"}, 
         {pc: {r:  88, t: 336}, movement: "c", name: "Service Design", topic: "16277562"},
-        {pc: {r:  98, t: 335}, movement: "t", name: "TFS/VSTS for Release Management", reason: "Looks promising, Plaza and Home Office are starting to use this, could be a good way of managing releases to environments", investigators: "Nikhil Patel, Adam Londero"},
         
         //  Trial
         {pc: {r: 110, t: 325}, movement: "c", name: "Session-Based Testing", topic: "16277512"}, 
