@@ -1,12 +1,8 @@
-Build Your Own Technology Radar.
+#SFW's Technology Radar.
 
-Inspired by the ThoughtWorks Tech Radar: http://www.thoughtworks.com/radar/.
+Inspired by the ThoughtWorks Tech Radar: http://www.thoughtworks.com/radar/. Forked from @bdargan's implementation, after reading the post here http://nealford.com/memeagora/2013/05/28/build_your_own_technology_radar.html
 
-I love the ThoughtWorks Radar. But it is for all clients, averaged out across industries, organisational maturity and risk adverseness.
-
-![Technology Radar Sample](/techradar_example.png?raw=true)
-
-It is a powerful talking point, but I need it to be customised for particular circumstances.
+The latest radar can be found at http://sfwtechradar.azurewebsites.net/
 
 This Technology Radar has pretty simple functionality, uses json data source and renders SVG within html.
 
