@@ -69,7 +69,7 @@ function init(h, w) {
     var lastRadius = 0;
     var lastQuadrant = '';
     var spacer = 6;
-    var fontSize = 10;
+    var fontSize = 12;
     var total_index = 1;
 
     //TODO: Super fragile: re-order the items, by radius, in order to logically group by the rings.
@@ -135,7 +135,7 @@ function init(h, w) {
             radar.add(pv.Dot)
                 .def("active", false)
                 .data(itemsByStage[stageIdx])
-                .size(function (d) { return (d.blipSize !== undefined ? d.blipSize : 70); })
+                .size(function (d) { return (d.blipSize !== undefined ? d.blipSize : 100); })
                 .left(function (d) {
                     var x = polar_to_raster(d.pc.r, d.pc.t)[0];
                     //console.log("name:" + d.name + ", x:" + x); 

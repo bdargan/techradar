@@ -14,6 +14,15 @@
 			height: 1000px;
 			width: 1200px;
 		}
+
+		.header {
+			margin: 0 15px;
+			padding: 6px;
+		}
+
+		#radar {
+			margin-top: 10px;
+		}
 	</style>
 	<script type="text/javascript" src="radar.js" charset="utf-8"></script>
 	<script type="text/javascript" charset="utf-8">
@@ -23,10 +32,13 @@
 </head>
 
 <body onload="init(h,w);">
-	<h1 id="title" style="text-align: center;"></h1>
+	<div class="header">
+		<h1 id="title" style="text-align: center;"></h1>
+		<h1 style="text-align: center;">(Nov 2016)</h1>
+	</div>
+	<hr>
 	<div id="radar"></div>
 	<div>
-		<p>^ Item in dispute, additional discussion and context to be provided.</p>
 	</div>
 </body>
 

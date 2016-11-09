@@ -1,12 +1,12 @@
 //This is the title for your window tab, and your Radar
-document.title = "WotifGroup's Technology Radar (December 2014)";
+document.title = "Customer Domain Technology Radar";
 
 
 //This is the concentic circles that want on your radar
 var radar_arcs = [
-    { 'r': 100, 'name': 'Adopt' }
-    , { 'r': 200, 'name': 'Trial' }
-    , { 'r': 300, 'name': 'Assess' }
+    { 'r': 200, 'name': 'Adopt' }
+    , { 'r': 300, 'name': 'Trial' }
+    , { 'r': 360, 'name': 'Assess' }
     , { 'r': 400, 'name': 'Hold' }
     // ,{'r':500,'name':'Possible Extra if you want it'}
 ];
@@ -45,7 +45,7 @@ var radar_arcs = [
 // - Hold: things that are getting attention in the industry, but not ready for use; sometimes they are not mature enough yet, sometimes they are irredeemably flawed
 //      Note: there's no "avoid" ring, but throw things in the hold ring that people shouldn't use.
 
-var h = 1000;
+var h = 1100;
 var w = 1200;
 
 var radar_data = [
@@ -55,34 +55,22 @@ var radar_data = [
         "top": 18,
         "color": "#8FA227",
         "items": [
-            { name: 'Git flow / Pull Requests ^', pc: { r: 230, t: 133 }, movement: 'c' },
-            { "name": "Incremental data warehousing", "pc": { "r": 250, "t": 165 }, "movement": "c" },
-            { "name": "Events for messages - CQRS", "pc": { "r": 225, "t": 120 }, "movement": "c" },
-            { "name": "Measure Pipeline disruptions", "pc": { "r": 280, "t": 110 }, "movement": "c" },
-            { "name": "Continuous Experimentation", "pc": { "r": 230, "t": 110 }, "movement": "c" },
-            { name: 'Reduce iRules dependence ^', pc: { r: 280, t: 133 }, movement: 'c' },
-            { "name": "SaaS for non-core systems", "pc": { "r": 170, "t": 150 }, "movement": "c" },
-            { "name": "Pair Programming", "pc": { "r": 130, "t": 170 }, "movement": "c" },
-            { "name": "iOS Accessibility", "pc": { "r": 170, "t": 110 }, "movement": "c" },
-            { "name": "Single Page App", "pc": { "r": 150, "t": 95 }, "movement": "c", "url": "http://www.google.com" },
-            { "name": "iOS Adaptivity", "pc": { "r": 180, "t": 105 }, "movement": "c" },
-            { "name": "Build Pipelines", "pc": { "r": 180, "t": 100 }, "movement": "c" },
-            { "name": "Data Informed Decion Making", "pc": { "r": 130, "t": 110 }, "movement": "c" },
-            { "name": "Polygot Programming", "pc": { "r": 180, "t": 170 }, "movement": "c" },
-            { name: 'internal load balancing off F5^', pc: { r: 180, t: 133 }, movement: 'c' },
-            { "name": "Isolated dev envs", "pc": { "r": 180, "t": 125 }, "movement": "c" },
-            { "name": "Edge Services", "pc": { "r": 130, "t": 160 }, "movement": "c" },
-            { "name": "Clean Code", "pc": { "r": 130, "t": 120 }, "movement": "c" },
-            { "name": "Wide and Thin Front-Ends", "pc": { "r": 180, "t": 160 }, "movement": "c" },
-            { "name": "Zookeeper for App Config", "pc": { "r": 130, "t": 130 }, "movement": "c" },
-            { "name": "Property based testing", "pc": { "r": 130, "t": 165 }, "movement": "c" },
-            { "name": "Evolutionary architecture", "pc": { "r": 120, "t": 95 }, "movement": "c" },
-            { "name": "Code Reviews", "pc": { "r": 110, "t": 110 }, "movement": "c" },
-            { "name": "Valuable, cheap tests", "pc": { "r": 130, "t": 150 }, "movement": "c" },
-            { "name": "Sacrificial Architecture", "pc": { "r": 80, "t": 100 }, "movement": "c" },
-            { "name": "Sensible defaults", "pc": { "r": 80, "t": 150 }, "movement": "c" },
-            { "name": "Dependency Injection", "pc": { "r": 80, "t": 130 }, "movement": "c" },
-            { "name": "Coding architects", "pc": { "r": 90, "t": 170 }, "movement": "c" }
+            { "name": "Git flow", "pc": { "r": 160, "t": 100 }, "movement": "c" },
+            { "name": "RESTful Web Services", "pc": { "r": 140, "t": 150 }, "movement": "c" },
+            { "name": "Feature Toggle", "pc": { "r": 160, "t": 130 }, "movement": "c" },
+            { "name": "JMS", "pc": { "r": 180, "t": 150 }, "movement": "c" },
+            { "name": "JPA", "pc": { "r": 180, "t": 170 }, "movement": "c" },
+            { "name": "Test Driven Development", "pc": { "r": 100, "t": 140 }, "movement": "c" },
+            { "name": "Behavior Driven Development", "pc": { "r": 100, "t": 160 }, "movement": "c" },
+            { "name": "Pair Programming", "pc": { "r": 100, "t": 110 }, "movement": "c" },
+
+            { "name": "NoSQL", "pc": { "r": 270, "t": 150 }, "movement": "c" },
+            { "name": "DevOps", "pc": { "r": 250, "t": 170 }, "movement": "c" },
+            { "name": "OSGi", "pc": { "r": 270, "t": 110 }, "movement": "c" },
+
+            { name: 'Contract Testing', pc: { r: 340, t: 133 }, movement: 'c' },
+
+            { name: 'SOAP', pc: { r: 390, t: 133 }, movement: 'c' }
 
         ]
     },
@@ -92,43 +80,43 @@ var radar_data = [
         "top": 18,
         "color": "#587486",
         "items": [
+            { name: 'Go CD', pc: { r: 40, t: 76 }, movement: 'c' },
+            { name: 'Ansible', pc: { r: 90, t: 8 }, movement: 'c' },
+            { name: 'Git', pc: { r: 80, t: 46 }, movement: 'c' },
+            { name: 'Squirrel', pc: { r: 160, t: 33 }, movement: 'c' },
+            { name: 'HornetQ', pc: { r: 110, t: 46 }, movement: 'c' },
+            { name: 'Bitronix', pc: { r: 180, t: 70 }, movement: 'c' },
+            { name: 'Hystrix', pc: { r: 186, t: 83 }, movement: 'c' },
+            { name: 'Ensighten', pc: { r: 180, t: 10 }, movement: 'c' },
+            { name: 'Gradle', pc: { r: 60, t: 6 }, movement: 'c' },
+            { name: 'Swagger', pc: { r: 168, t: 58 }, movement: 'c' },
+            { name: 'Splunk', pc: { r: 140, t: 60 }, movement: 'c' },
+            { name: 'SOAP UI', pc: { r: 146, t: 84 }, movement: 'c' },
+            { name: 'Hermes', pc: { r: 120, t: 65 }, movement: 'c' },
+            { name: 'Postman', pc: { r: 140, t: 73 }, movement: 'c' },
+            { name: 'Gatlin', pc: { r: 120, t: 11 }, movement: 'c' },
+            { name: 'Easy Mock', pc: { r: 148, t: 17 }, movement: 'c' },
+            { name: 'JUnit', pc: { r: 120, t: 30 }, movement: 'c' },
+            { name: 'JBehave', pc: { r: 24, t: 25 }, movement: 'c', domain: 'back-end' },
+            { name: 'Selenium Web Driver', pc: { r: 60, t: 72 }, movement: 'c', domain: 'back-end' },
 
-            { name: 'Docker', pc: { r: 170, t: 19 }, movement: 't' },
-            { name: 'bind', pc: { r: 150, t: 69 }, movement: 'c' },
-            { name: 'Appium', pc: { r: 110, t: 70 }, movement: 'c', domain: 'mobile, front-end' },
-            { name: 'Android Studio', pc: { r: 180, t: 66 }, movement: 'c', domain: 'mobile, dev' },
-            { name: 'Responsive Android', pc: { r: 150, t: 14 }, movement: 'c' },
-            { name: 'AutoLayout - iOS', pc: { r: 180, t: 55 }, movement: 'c', domain: '' },
-            { name: 'Kiwi - iOS unit test', pc: { r: 120, t: 14 }, movement: 'c', domain: '' },
-            { name: 'BEM', pc: { r: 160, t: 60 }, movement: 'c', domain: 'front-end' },
-            { name: 'Crashlytics', pc: { r: 180, t: 5 }, movement: 'c', domain: 'mobile' },
-            { name: 'Consul', pc: { r: 170, t: 29 }, movement: 't' },
-            { name: 'Swagger Code-Gen', pc: { r: 180, t: 82 }, movement: 'c' },
-            { name: 'PowerMock ^', pc: { r: 180, t: 46 }, movement: 'c' },
-            { name: 'Mockito', pc: { r: 170, t: 84 }, movement: 'c', domain: 'back-end' },
-            { name: 'Json Web Tokens (JWT)', pc: { r: 180, t: 77 }, movement: 'c' },
-            { name: 'Lemming', pc: { r: 160, t: 82 }, movement: 'c' },
-            { name: 'Hystrix', pc: { r: 150, t: 36 }, movement: 'c' },
-            { name: 'Git', pc: { r: 130, t: 73 }, movement: 'c' },
+            { name: 'RxJava', pc: { r: 260, t: 14 }, movement: 'c' },
+            { name: 'jQuery', pc: { r: 285, t: 19 }, movement: 'c' },
+            { name: 'LiquiBase', pc: { r: 270, t: 60 }, movement: 'c', domain: 'front-end' },
+            { name: 'JMeter', pc: { r: 290, t: 55 }, movement: 'c', domain: '' },
+            { name: 'Spock', pc: { r: 230, t: 14 }, movement: 'c', domain: '' },
+            { name: 'Velocity', pc: { r: 290, t: 5 }, movement: 'c', domain: 'mobile' },
+            { name: 'Cucumber', pc: { r: 260, t: 69 }, movement: 'c' },
+            { name: 'Mockito', pc: { r: 220, t: 70 }, movement: 'c', domain: 'mobile, front-end' },
+            { name: 'Moco', pc: { r: 290, t: 66 }, movement: 'c', domain: 'mobile, dev' },
 
-            { name: 'Ansible', pc: { r: 280, t: 74 }, movement: 'c' },
-            { name: 'Hip Chat', pc: { r: 280, t: 78 }, movement: 'c' },
-            { name: 'Trello', pc: { r: 260, t: 75 }, movement: 'c' },
-            { name: 'Charles HTTP Proxy', pc: { r: 260, t: 48 }, movement: 'c' },
-            { name: 'Xamarin', pc: { r: 280, t: 51 }, movement: 'c' },
-            { name: 'Android Annotations', pc: { r: 280, t: 25 }, movement: 'c' },
-            { name: 'GenyMotion', pc: { r: 210, t: 31 }, movement: 'c' },
+            { name: 'Node', pc: { r: 340, t: 15 }, movement: 'c' },
+            { name: 'Flyway', pc: { r: 340, t: 78 }, movement: 'c' },
+            { name: 'Eclipse', pc: { r: 330, t: 44 }, movement: 'c' },
 
-            { name: 'JDBI ^', pc: { r: 80, t: 56 }, movement: 'c' },
-            { name: 'Kafka', pc: { r: 12, t: 25 }, movement: 'c', domain: 'back-end' },
-            { name: 'ELK', pc: { r: 30, t: 72 }, movement: 'c', domain: 'back-end' },
-            { name: 'Liquibase', pc: { r: 80, t: 76 }, movement: 'c' },
-            { name: 'haproxy', pc: { r: 80, t: 46 }, movement: 'c' },
-
-            { name: 'AppManager ^', pc: { r: 360, t: 82 }, movement: 'c' },
-            { name: 'Hibernate ^', pc: { r: 380, t: 56 }, movement: 'c' },
-            { name: 'mongoDB', pc: { r: 330, t: 5 }, movement: 'c' },
-            { name: 'Subversion', pc: { r: 330, t: 18 }, movement: 'c' }
+            { name: 'iBatis', pc: { r: 380, t: 82 }, movement: 'c' },
+            { name: 'Subversion', pc: { r: 380, t: 56 }, movement: 'c' },
+            { name: 'Maven', pc: { r: 370, t: 5 }, movement: 'c' }  
         ]
     },
     {
@@ -137,69 +125,45 @@ var radar_data = [
         "top": (h / 2 + 18),
         "color": "#DC6F1D",
         "items": [
+            { "name": "AWS", "pc": { "r": 60, "t": 225 }, "movement": "c" },
+            { "name": "JVM as platform", "pc": { "r": 73, "t": 200 }, "movement": "c" },
+            { "name": "Tomcat", "pc": { "r": 180, "t": 250 }, "movement": "c" },
+            { "name": 'PostgreSQL', "pc": { r: 100, t: 257 }, "movement": 'c' },
+            { "name": 'Linux', "pc": { r: 100, t: 240 }, "movement": 'c' },
 
-            { "name": "OpenId Connect", "pc": { "r": 130, "t": 260 }, "movement": "t" },
-            { "name": "Location based services", "pc": { "r": 130, "t": 230 }, "movement": "c" },
-            { "name": "Openstack", "pc": { "r": 190, "t": 190 }, "movement": "c" },
-            { "name": "RHEL 7", "pc": { "r": 170, "t": 215 }, "movement": "c" },
+            { "name": "Redis", "pc": { "r": 260, "t": 240 }, "movement": "c" },
 
-            { "name": "App containers", "pc": { "r": 250, "t": 260 }, "movement": "c" },
-            { "name": "Google Cloud Data Flow", "pc": { "r": 275, "t": 260 }, "movement": "t" },
-            { name: 'Postgres as NoSQL', pc: { r: 220, t: 255 }, movement: 'c' },
-            { "name": "AWS 2014 Innovations", "pc": { "r": 270, "t": 195 }, "movement": "c" },
-            { "name": "Azure", "pc": { "r": 290, "t": 265 }, "movement": "c" },
-            { name: 'Mesos', pc: { r: 260, t: 265 }, movement: 't' },
-            { name: 'Marathon', pc: { r: 240, t: 268 }, movement: 't' },
-            { name: 'Kubernetes', pc: { r: 270, t: 236 }, movement: 't' },
-            { "name": "Google App Engine", "pc": { "r": 290, "t": 255 }, "movement": "c" },
-            { "name": "Google as corporate platform", "pc": { "r": 290, "t": 200 }, "movement": "c" },
+            { "name": "WebSphere", "pc": { "r": 340, "t": 245 }, "movement": "c" },
+            { "name": "Oracle", "pc": { "r": 350, "t": 210 }, "movement": "c" },
 
-
-            { "name": "Google Play - (alpha/beta builds)", "pc": { "r": 30, "t": 225 }, "movement": "c" },
-            { "name": "JVM as platform", "pc": { "r": 90, "t": 265 }, "movement": "c" },
-            { "name": "AWS", "pc": { "r": 90, "t": 250 }, "movement": "c" },
-            { name: 'BigIP v11', pc: { r: 50, t: 257 }, movement: 'c' },
-
-
-
-            { "name": "Ruby On Rails", "pc": { "r": 390, "t": 215 }, "movement": "c" },
-            { "name": "Everest", "pc": { "r": 390, "t": 185 }, "movement": "c" },
-            { "name": "Magnolia CMS", "pc": { "r": 390, "t": 235 }, "movement": "c" },
-            { "name": "Java EE - the Bad Parts", "pc": { "r": 390, "t": 245 }, "movement": "c" },
-            { "name": "MS SqlServer", "pc": { "r": 390, "t": 190 }, "movement": "c" },
-            { "name": "RHEL 5", "pc": { "r": 370, "t": 195 }, "movement": "c" }
+            { "name": "DB2", "pc": { "r": 390, "t": 185 }, "movement": "c" },
+            { "name": "JBoss AS", "pc": { "r": 390, "t": 215 }, "movement": "c" },
 
         ]
     },
     {
-        "quadrant": "Languages & Frameworks",
+        "quadrant": "Lang & Frameworks",
         "color": "#B70062",
         "left": (w - 200 + 30),
         "top": (h / 2 + 18),
         "items": [
-            { name: 'CDI', pc: { r: 60, t: 290 }, movement: 'c' },
-            { name: 'Jersey', pc: { r: 60, t: 310 }, movement: 'c' },
+            { name: 'Java 8', pc: { r: 120, t: 290 }, movement: 'c' },
+            { name: 'Groovy', pc: { r: 120, t: 310 }, movement: 'c' },
+            { name: 'PL/SQL', pc: { r: 120, t: 278 }, movement: 'c' },
+            { name: 'Spring Boot', pc: { r: 40, t: 320 }, movement: 'c', domain: 'template' },
+            { name: 'Spring Batch', pc: { r: 160, t: 320 }, movement: 'c', domain: 'template' },
+            { name: 'JavaScript', pc: { r: 160, t: 298 }, movement: 'c', domain: 'template' },
+            { name: 'Bootstrap', pc: { r: 100, t: 335 }, movement: 'c', domain: 'template' },
+            { name: 'StyleGuide', pc: { r: 70, t: 335 }, movement: 'c', domain: 'template' },
+            { name: 'YAML', pc: { r: 100, t: 298 }, movement: 'c', domain: 'template' },
 
-            { name: 'Guice', pc: { r: 60, t: 278 }, movement: 'c' },
-            { name: 'RxJava', pc: { r: 150, t: 298 }, movement: 'c', domain: 'template' },
+            { "name": "Scala", "pc": { "r": 240, "t": 355 }, "movement": "c" },
+            { "name": "Shell Script", "pc": { "r": 300, "t": 280 }, "movement": "c" },
 
-            { "name": "Java 8", "pc": { "r": 130, "t": 355 }, "movement": "c" },
-            { "name": "Groovy ^", "pc": { "r": 190, "t": 280 }, "movement": "c" },
+            { "name": "AngularJS", "pc": { "r": 340, "t": 300 }, "movement": "c" },
 
-            { "name": "Swift", "pc": { "r": 280, "t": 300 }, "movement": "c" },
-            { "name": "Scala - the good parts ^", "pc": { "r": 290, "t": 320 }, "movement": "c" },
-            { "name": "Serverside Javascript", "pc": { "r": 220, "t": 275 }, "movement": "c" },
-            { "name": "Coffeescript", "pc": { "r": 270, "t": 282 }, "movement": "c" },
-            { "name": "Functional Reactive Programming", "pc": { "r": 285, "t": 330 }, "movement": "c" },
-            { "name": "Clojure", "pc": { "r": 280, "t": 310 }, "movement": "c" },
-            { name: 'RxJs', pc: { r: 250, t: 338 }, movement: 'c', domain: 'template' },
-            { name: 'Web Components', pc: { r: 260, t: 330 }, movement: 'c' },
-
-            { name: 'Mustache/Handlebars template', pc: { r: 50, t: 298 }, movement: 'c', domain: 'template' },
-            { name: 'Spring ^', pc: { r: 360, t: 330 }, movement: 'c' },
-            { "name": "Web Objects", "pc": { "r": 390, "t": 290 }, "movement": "c" },
-            { "name": "ASP Classic", "pc": { "r": 375, "t": 330 }, "movement": "c" },
-            { "name": "Java 6 and earlier", "pc": { "r": 390, "t": 350 }, "movement": "c" }
+            { name: 'Spring MVC', pc: { r: 390, t: 280 }, movement: 'c' },
+            { "name": "JSP", "pc": { "r": 380, "t": 315 }, "movement": "c" },
         ]
     }
 ];
