@@ -1,0 +1,19 @@
+{
+  "name": "kenzan-tech-radar",
+  "version": "0.0.1",
+  "description": "A web based tech radar",
+  "main": "index.html",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/paul-barry-kenzan/techradar.git"
+  },
+  "author": "Paul Barry <pbarry@kenzan.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/paul-barry-kenzan/techradar/issues"
+  },
+  "homepage": "https://github.com/paul-barry-kenzan/techradar#readme"
+}
