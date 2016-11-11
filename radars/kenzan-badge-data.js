@@ -181,29 +181,20 @@ var radar_data = [
     "left"  : (w-200+30),
     "top" :   (h/2 + 18),
     "items" : [
-      { name: 'CDI', pc: { r: 60, t: 290 },  movement: 'c' },
-      { name: 'Jersey', pc: { r: 60, t: 310 },  movement: 'c' },
-
-      { name: 'Guice', pc: { r: 60, t: 278 },  movement: 'c' },
-      { name: 'RxJava', pc: { r: 150, t: 298 },              movement: 'c',  domain: 'template' },
-
-      {"name":"Java 8", "pc":{"r":130,"t":355},"movement":"c"},
-      {"name":"Groovy ^", "pc":{"r":190,"t":280},"movement":"c"},
-
-      {"name":"Swift", "pc":{"r":280,"t":300},"movement":"c"},
-      {"name":"Scala - the good parts ^", "pc":{"r":290,"t":320},"movement":"c"},
-      {"name":"Serverside Javascript", "pc":{"r":220,"t":275},"movement":"c"},
+      { name: 'Docker', pc: { r: 60, t: 290 },  movement: 'c' },
+      { name: 'Maven', pc: { r: 60, t: 310 },  movement: 'c' },
+      { name: 'Asgard', pc: { r: 60, t: 278 },  movement: 'c' },
+      { name: 'Eureka', pc: { r: 150, t: 298 },              movement: 'c',  domain: 'template' },
+      {"name":"Zuul", "pc":{"r":130,"t":355},"movement":"c"},
+      {"name":"Bower", "pc":{"r":190,"t":280},"movement":"c"},
+      {"name":"Gradle", "pc":{"r":280,"t":300},"movement":"c"},
+      {"name":"Nexus", "pc":{"r":290,"t":320},"movement":"c"},
+      {"name":"Vagrant", "pc":{"r":220,"t":275},"movement":"c"},
       {"name":"Coffeescript", "pc":{"r":270,"t":282},"movement":"c"},
-      {"name":"Functional Reactive Programming", "pc":{"r":285,"t":330},"movement":"c"},
-      {"name":"Clojure", "pc":{"r":280,"t":310},"movement":"c"},
-      { name: 'RxJs',              pc: { r: 250, t: 338 },              movement: 'c',              domain: 'template' },
-      { name: 'Web Components', pc: { r: 260, t: 330 },  movement: 'c' },
-
-      { name: 'Mustache/Handlebars template',   pc: { r: 50, t: 298 },              movement: 'c',              domain: 'template' },
-      { name: 'Spring ^', pc: { r: 360, t: 330 },  movement: 'c' },
-      {"name":"Web Objects", "pc":{"r":390,"t":290},"movement":"c"},
-      {"name":"ASP Classic", "pc":{"r":375,"t":330},"movement":"c"},
-      {"name":"Java 6 and earlier", "pc":{"r":390,"t":350},"movement":"c"}
+      {"name":"Homebrew", "pc":{"r":285,"t":330},"movement":"c"},
+      {"name":"Jenkins", "pc":{"r":280,"t":310},"movement":"c"},
+      { name: 'Spinnaker',              pc: { r: 250, t: 338 },              movement: 'c',              domain: 'template' },
+      { name: 'ElastiCache', pc: { r: 260, t: 330 },  movement: 'c' },
     ]
   }
 ];
