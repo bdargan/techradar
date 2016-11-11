@@ -159,37 +159,21 @@ var radar_data = [
     "color" : "#DC6F1D",
     "items" : [
 
-      {"name":"OpenId Connect", "pc":{"r":130,"t":260},"movement":"t"},
-      {"name":"Location based services", "pc":{"r":130,"t":230},"movement":"c"},
-      {"name":"Openstack", "pc":{"r":190,"t":190},"movement":"c"},
-      {"name":"RHEL 7", "pc":{"r":170,"t":215},"movement":"c"},
+      {"name":"Docker", "pc":{"r":130,"t":260},"movement":"t"},
+      {"name":"Maven", "pc":{"r":130,"t":230},"movement":"c"},
+      {"name":"Asgard", "pc":{"r":190,"t":190},"movement":"c"},
+      {"name":"Eureka", "pc":{"r":170,"t":215},"movement":"c"},
 
-      {"name":"App containers", "pc":{"r":250,"t":260},"movement":"c"},
-      {"name":"Google Cloud Data Flow", "pc":{"r":275,"t":260},"movement":"t"},
-      { name: 'Postgres as NoSQL',              pc: { r: 220, t: 255 },              movement: 'c' },
-      {"name":"AWS 2014 Innovations", "pc":{"r":270,"t":195},"movement":"c"},
-      {"name":"Azure", "pc":{"r":290,"t":265},"movement":"c"},
-      { name: 'Mesos',              pc: { r: 260, t: 265 },              movement: 't' },
-      { name: 'Marathon',              pc: { r: 240, t: 268 },              movement: 't' },
-      { name: 'Kubernetes',              pc: { r: 270, t: 236 },              movement: 't' },
-      {"name":"Google App Engine", "pc":{"r":290,"t":255},"movement":"c"},
-      {"name":"Google as corporate platform", "pc":{"r":290,"t":200},"movement":"c"},
-
-
-      {"name":"Google Play - (alpha/beta builds)", "pc":{"r":30,"t":225},"movement":"c"},
-      {"name":"JVM as platform", "pc":{"r":90,"t":265},"movement":"c"},
-      {"name":"AWS", "pc":{"r":90,"t":250},"movement":"c"},
-      { name: 'BigIP v11',              pc: { r: 50, t: 257 },              movement: 'c' },
-
-
-
-      {"name":"Ruby On Rails", "pc":{"r":390,"t":215},"movement":"c"},
-      {"name":"Everest", "pc":{"r":390,"t":185},"movement":"c"},
-      {"name":"Magnolia CMS", "pc":{"r":390,"t":235},"movement":"c"},
-      {"name":"Java EE - the Bad Parts", "pc":{"r":390,"t":245},"movement":"c"},
-      {"name":"MS SqlServer", "pc":{"r":390,"t":190},"movement":"c"},
-      {"name":"RHEL 5", "pc":{"r":370,"t":195},"movement":"c"}
-
+      {"name":"Zuul", "pc":{"r":250,"t":260},"movement":"c"},
+      {"name":"Bower", "pc":{"r":275,"t":260},"movement":"t"},
+      { name: 'Gradle',              pc: { r: 220, t: 255 },              movement: 'c' },
+      {"name":"Nexus", "pc":{"r":270,"t":195},"movement":"c"},
+      {"name":"Vagrant", "pc":{"r":290,"t":265},"movement":"c"},
+      { name: 'Homebrew',              pc: { r: 260, t: 265 },              movement: 't' },
+      { name: 'Jenkins',              pc: { r: 240, t: 268 },              movement: 't' },
+      { name: 'Spinnaker',              pc: { r: 270, t: 236 },              movement: 't' },
+      {"name":"Varnish", "pc":{"r":290,"t":255},"movement":"c"},
+      {"name":"ElastiCache", "pc":{"r":290,"t":200},"movement":"c"},
     ]
   },
   { "quadrant": "Languages & Frameworks",
