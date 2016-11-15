@@ -155,29 +155,29 @@ var radar_data = [
     ]
   },
 
-  { "quadrant": "Platforms",
-    "left" :45,
-    "top" : (h/2 + 18),
-    "color" : "#DC6F1D",
-    "items" : [
-
-      {"name":"Docker", "pc":{"r":130,"t":260},"movement":"t"}
-      //{"name":"Maven", "pc":{"r":130,"t":230},"movement":"c"},
-      //{"name":"Asgard", "pc":{"r":190,"t":190},"movement":"c"},
-      //{"name":"Eureka", "pc":{"r":170,"t":215},"movement":"c"},
-      //
-      //{"name":"Zuul", "pc":{"r":250,"t":260},"movement":"c"},
-      //{"name":"Bower", "pc":{"r":275,"t":260},"movement":"t"},
-      //{ name: 'Gradle',              pc: { r: 220, t: 255 },              movement: 'c' },
-      //{"name":"Nexus", "pc":{"r":270,"t":195},"movement":"c"},
-      //{"name":"Vagrant", "pc":{"r":290,"t":265},"movement":"c"},
-      //{ name: 'Homebrew',              pc: { r: 260, t: 265 },              movement: 't' },
-      //{ name: 'Jenkins',              pc: { r: 240, t: 268 },              movement: 't' },
-      //{ name: 'Spinnaker',              pc: { r: 270, t: 236 },              movement: 't' },
-      //{"name":"Varnish", "pc":{"r":290,"t":255},"movement":"c"},
-      //{"name":"ElastiCache", "pc":{"r":290,"t":200},"movement":"c"},
+  {
+    quadrant: "Platforms",
+    left: 45,
+    top: (h / 2 + 18),
+    color: "#DC6F1D",
+    items: [
+      { name: 'Docker', pc: { r: 0, t: 260 }, movement: 'c' },
+      { name: 'Maven', pc: { r: 0, t: 230 }, movement: 'c' },
+      { name: 'Asgard', pc: { r: 0, t: 190 }, movement: 'c' },
+      { name: 'Eureka', pc: { 'r': 0, 'c': 215 }, movement: 'c' },
+      { name: 'Zuul', pc: { 'r': 0, 'c': 260 }, movement: 'c' },
+      { name: 'Bower', pc: { 'r': 0, 'c': 260 }, movement: 'c' },
+      { name: 'Gradle', pc: { r: 0, t: 255 }, movement: 'c' },
+      { name: 'Nexus', pc: { 'r': 0, 'c': 195 }, movement: 'c' },
+      { name: 'Vagrant', pc: { 'r': 0, 'c': 265 }, movement: 'c' },
+      { name: 'Homebrew', pc: { r: 0, t: 265 }, movement: 'c' },
+      { name: 'Jenkins', pc: { r: 0, t: 268 }, movement: 'c' },
+      { name: 'Spinnaker', pc: { r: 0, t: 236 }, movement: 'c' },
+      { name: 'Varnish', pc: { 'r': 0, 'c': 255 }, movement: 'c' },
+      { name: 'ElastiCache', pc: { 'r': 0, 'c': 200 }, movement: 'c' }
     ]
   },
+
   { "quadrant": "Languages & Frameworks",
     "color" : "#B70062",
     "left"  : (w-200+30),
