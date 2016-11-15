@@ -1,6 +1,5 @@
 document.title = "Kenzan's Technology Radar (December 2016)";
 
-
 //This is the concentic circles that want on your radar
 var radar_arcs = [
   { 'r': 100, 'name': 'Not Yet Tested' },
@@ -50,10 +49,10 @@ var w = 1200;
 var radar_data = [
   {
     quadrant: 'Techniques',
-    left : 45,
-    top : 18,
-    color : '#8FA227',
-    items : [
+    left: 45,
+    top: 18,
+    color: '#8FA227',
+    items: [
       { name: 'REST Webservices', pc: { r: 0, t: 133 }, movement: 'c' },
       { name: 'Object Oriented Development', pc: { r: 0, t: 165 }, movement: 'c' },
       { name: 'Top Down Designing', pc: { r: 0, t: 120 }, movement: 'c' },
@@ -178,25 +177,44 @@ var radar_data = [
     ]
   },
 
-  { "quadrant": "Languages & Frameworks",
-    "color" : "#B70062",
-    "left"  : (w-200+30),
-    "top" :   (h/2 + 18),
-    "items" : [
-      { name: 'Docker', pc: { r: 60, t: 290 },  movement: 'c' }
-      //{ name: 'Maven', pc: { r: 60, t: 310 },  movement: 'c' },
-      //{ name: 'Asgard', pc: { r: 60, t: 278 },  movement: 'c' },
-      //{ name: 'Eureka', pc: { r: 150, t: 298 },              movement: 'c',  domain: 'template' },
-      //{"name":"Zuul", "pc":{"r":130,"t":355},"movement":"c"},
-      //{"name":"Bower", "pc":{"r":190,"t":280},"movement":"c"},
-      //{"name":"Gradle", "pc":{"r":280,"t":300},"movement":"c"},
-      //{"name":"Nexus", "pc":{"r":290,"t":320},"movement":"c"},
-      //{"name":"Vagrant", "pc":{"r":220,"t":275},"movement":"c"},
-      //{"name":"Coffeescript", "pc":{"r":270,"t":282},"movement":"c"},
-      //{"name":"Homebrew", "pc":{"r":285,"t":330},"movement":"c"},
-      //{"name":"Jenkins", "pc":{"r":280,"t":310},"movement":"c"},
-      //{ name: 'Spinnaker',              pc: { r: 250, t: 338 },              movement: 'c',              domain: 'template' },
-      //{ name: 'ElastiCache', pc: { r: 260, t: 330 },  movement: 'c' },
+  {
+    quadrant: 'Languages & Frameworks',
+    color: '#B70062',
+    left: (w - 200 + 30),
+    top: (h / 2 + 18),
+    items: [
+      { name: 'Redux', pc: { r: 0, t: 260 }, movement: 'c' },
+      { name: 'React.js', pc: { r: 0, t: 230 }, movement: 'c' },
+      { name: 'HTML5', pc: { r: 0, t: 190 }, movement: 'c' },
+      { name: 'Angular 2.0', pc: { r: 0, 'c': 215 }, movement: 'c' },
+      { name: 'JS ES5', pc: { r: 0, 'c': 260 }, movement: 'c' },
+      { name: 'Express.js', pc: { r: 0, 'c': 260 }, movement: 'c' },
+      { name: 'Actionscript', pc: { r: 0, t: 255 }, movement: 'c' },
+      { name: 'Dart', pc: { r: 0, 'c': 195 }, movement: 'c' },
+      { name: 'Objective C', pc: { r: 0, 'c': 265 }, movement: 'c' },
+      { name: 'Android', pc: { r: 0, t: 265 }, movement: 'c' },
+      { name: 'Ionic', pc: { r: 0, t: 268 }, movement: 'c' },
+      { name: 'Linux Shell', pc: { r: 0, t: 236 }, movement: 'c' },
+      { name: 'Python', pc: { r: 0, 'c': 255 }, movement: 'c' },
+      { name: 'PHP', pc: { r: 0, 'c': 200 }, movement: 'c' },
+      { name: 'Java', pc: { r: 0, t: 290 }, movement: 'c' },
+      { name: 'Ribbon', pc: { r: 0, t: 310 }, movement: 'c' },
+      { name: 'Hystrix', pc: { r: 0, t: 278 }, movement: 'c' },
+      { name: 'CQL', pc: { r: 0, t: 298 }, movement: 'c', domain: 'template' },
+      { name: 'SQL', pc: { r: 0, 'c': 355 }, movement: 'c' },
+      { name: 'ARIA', pc: { r: 0, 'c': 280 }, movement: 'c' },
+      { name: 'Archaius', pc: { r: 0, 'c': 300 }, movement: 'c' },
+      { name: 'XSLT', pc: { r: 0, 'c': 320 }, movement: 'c' },
+      { name: 'Grails', pc: { r: 0, 'c': 275 }, movement: 'c' },
+      { name: 'CSS', pc: { r: 0, 'c': 282 }, movement: 'c' },
+      { name: 'Sass', pc: { r: 0, 'c': 330 }, movement: 'c' },
+      { name: 'LESS', pc: { r: 0, 'c': 310 }, movement: 'c' },
+      { name: 'JS ES6', pc: { r: 0, t: 338 }, movement: 'c', domain: 'template' },
+      { name: 'TypeScript', pc: { r: 0, t: 330 }, movement: 'c' },
+      { name: 'Angular 1.x', pc: { r: 0, t: 298 }, movement: 'c', domain: 'template' },
+      { name: 'GWT', pc: { r: 0, t: 330 }, movement: 'c' },
+      { name: 'Groovy', pc: { r: 0, 'c': 290 }, movement: 'c' },
+      { name: 'Scala', pc: { r: 0, 'c': 350 }, movement: 'c' }
     ]
   }
 ];
