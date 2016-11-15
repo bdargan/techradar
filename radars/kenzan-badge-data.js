@@ -3,11 +3,11 @@ document.title = "Kenzan's Technology Radar (December 2016)";
 
 //This is the concentic circles that want on your radar
 var radar_arcs = [
-  {'r':100,'name':'Not Yet Tested'}
-  ,{'r':200,'name':'Beginner'}
-  ,{'r':300,'name':'Intermediate'}
-  ,{'r':400,'name':'Expert'}
-  //,{'r':500,'name':'Mentor'}
+  { 'r': 100, 'name': 'Not Yet Tested' },
+  { 'r': 200, 'name': 'Beginner' },
+  { 'r': 300, 'name': 'Intermediate' },
+  { 'r': 400, 'name': 'Expert' }
+  //, {'r':500,'name':'Mentor'}
 ];
 
 //This is your raw data
@@ -48,36 +48,37 @@ var h = 1000;
 var w = 1200;
 
 var radar_data = [
-  { "quadrant": "Techniques",
-    "left" : 45,
-    "top" : 18,
-    "color" : "#8FA227",
-    "items" : [
-      { name: 'REST Webservices', pc: { r: 230, t: 133 }, movement: 'c' },
-      //{"name":"Object Oriented Development", "pc":{"r":250,"t":165},"movement":"c"},
-      //{"name":"Top Down Designing", "pc":{"r":225,"t":120},"movement":"c"},
-      //{"name":"Structural Programming", "pc":{"r":280,"t":110},"movement":"c"},
-      //{"name":"Procedural Programming", "pc":{"r":230,"t":110},"movement":"c"},
-      //{ name: 'TCP', pc: { r: 280, t: 133 }, movement: 'c' },
-      //{"name":"Long Polling", "pc":{"r":170,"t":150},"movement":"c"},
-      //{"name":"Web Sockets", "pc":{"r":130,"t":170},"movement":"c"},
-      //{"name":"SOAP Webservices", "pc":{"r":170,"t":110},"movement":"c"},
-      //{"name":"Modular Design", "pc":{"r":150,"t":95},"movement":"c", "url":"http://www.google.com"},
-      //{"name":"Bottom Up Designing", "pc":{"r":180,"t":105},"movement":"c"},
-      //{"name":"Video Streaming and DRM", "pc":{"r":180,"t":100},"movement":"c"},
-      //{"name":"PCI Compliance", "pc":{"r":130,"t":110},"movement":"c"},
-      //{"name":"Polling", "pc":{"r":180,"t":170},"movement":"c"},
-      //{ name: 'Server Sent Events (SSE)', pc: { r: 180, t: 133 }, movement: 'c' },
-
+  {
+    quadrant: 'Techniques',
+    left : 45,
+    top : 18,
+    color : '#8FA227',
+    items : [
+      { name: 'REST Webservices', pc: { r: 0, t: 133 }, movement: 'c' },
+      { name: 'Object Oriented Development', pc: { r: 0, t: 165 }, movement: 'c' },
+      { name: 'Top Down Designing', pc: { r: 0, t: 120 }, movement: 'c' },
+      { name: 'Structural Programming', 'pc': { r: 0, 'c': 110 }, 'movement': 'c' },
+      { name: 'Procedural Programming', 'pc': { r: 0, 'c': 110 }, 'movement': 'c' },
+      { name: 'TCP', pc: { r: 0, t: 133 }, movement: 'c' },
+      { name: 'Long Polling', 'pc': { r: 0, 'c': 150 }, movement: 'c' },
+      { name: 'Web Sockets', 'pc': { r: 0, 'c': 170 }, movement: 'c' },
+      { name: 'SOAP Webservices', 'pc': { r: 0, 'c': 110 }, movement: 'c' },
+      { name: 'Modular Design', 'pc': { r: 0, 'c': 95 }, movement: 'c', 'url': 'http://www.google.com' },
+      { name: 'Bottom Up Designing', 'pc': { r: 0, 'c': 105 }, movement: 'c' },
+      { name: 'Video Streaming and DRM', 'pc': { r: 0, 'c': 100 }, movement: 'c' },
+      { name: 'PCI Compliance', 'pc': { r: 0, 'c': 0 }, movement: 'c' },
+      { name: 'Polling', 'pc': { r: 0, 'c': 170 }, movement: 'c' },
+      { name: 'Server Sent Events (SSE)', pc: { r: 0, t: 133 }, movement: 'c' }
     ]
   },
+
   { "quadrant": "Tools",
     "left": w-200+30,
     "top" : 18,
     "color" : "#587486",
     "items" : [
 
-      { name: 'npm', pc: { r: 170, t: 19 }, movement: 't' },
+      { name: 'npm', pc: { r: 170, t: 19 }, movement: 't' }
       //{ name: 'Swagger',    pc: { r: 150, t: 69 },    movement: 'c' },
       //{ name: 'Node.js',    pc: { r: 110, t: 70 },    movement: 'c',    domain: 'mobile, front-end' },
       //{ name: 'Yeoman',    pc: { r: 180, t: 66 },    movement: 'c',    domain: 'mobile, dev' },
@@ -159,7 +160,7 @@ var radar_data = [
     "color" : "#DC6F1D",
     "items" : [
 
-      {"name":"Docker", "pc":{"r":130,"t":260},"movement":"t"},
+      {"name":"Docker", "pc":{"r":130,"t":260},"movement":"t"}
       //{"name":"Maven", "pc":{"r":130,"t":230},"movement":"c"},
       //{"name":"Asgard", "pc":{"r":190,"t":190},"movement":"c"},
       //{"name":"Eureka", "pc":{"r":170,"t":215},"movement":"c"},
@@ -181,7 +182,7 @@ var radar_data = [
     "left"  : (w-200+30),
     "top" :   (h/2 + 18),
     "items" : [
-      { name: 'Docker', pc: { r: 60, t: 290 },  movement: 'c' },
+      { name: 'Docker', pc: { r: 60, t: 290 },  movement: 'c' }
       //{ name: 'Maven', pc: { r: 60, t: 310 },  movement: 'c' },
       //{ name: 'Asgard', pc: { r: 60, t: 278 },  movement: 'c' },
       //{ name: 'Eureka', pc: { r: 150, t: 298 },              movement: 'c',  domain: 'template' },
