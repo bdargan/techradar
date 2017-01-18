@@ -16,22 +16,18 @@ radar.add(pv.Dot)
        .anchor("top")       
        .add(pv.Label).text(function(d) { return d.name;});
 
-//quadrant lines -- vertical
-radar.add(pv.Line)
-        .data([(h/2-radar_arcs[radar_arcs.length-1].r),h-(h/2-radar_arcs[radar_arcs.length-1].r)])
-        .lineWidth(1)
-        .left(w/2)        
-        .bottom(function(d) {return d;})       
-        .strokeStyle("#bbb");
+var numberOfQuadrants = radar_data.length;
+var step = 360/radar_data.length;
+var outerWidth = radar_arcs[radar_arcs.length-1].r;
 
-//quadrant lines -- horizontal 
-radar.add(pv.Line)
-        .data([(w/2-radar_arcs[radar_arcs.length-1].r),w-(w/2-radar_arcs[radar_arcs.length-1].r)])
-        .lineWidth(1)
-        .bottom(h/2)
-        .left(function(d) {return d;})       
-        .strokeStyle("#bbb");
-
+for (var i=0;i<=numberOfQuadrants;++i) {
+   radar.add(pv.Line)
+     .data([0,step*i])
+     .lineWidth(1)
+     .top(function(d) { return d===0 ? h/2 : h/2 + Math.cos(pv.radians(d)) * outerWidth; })
+     .left(function(d) { return d===0 ? w/2 : w/2 + Math.sin(pv.radians(d)) * outerWidth; })
+     .strokeStyle("#bbb");
+}
 
 // blips
 // var total_index=1;
