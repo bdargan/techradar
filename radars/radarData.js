@@ -66,7 +66,6 @@ var radar_data = [
 
             { "name": "NoSQL", "pc": { "r": 270, "t": 150 }, "movement": "c" },
             { "name": "DevOps", "pc": { "r": 250, "t": 170 }, "movement": "c" },
-            { "name": "OSGi", "pc": { "r": 270, "t": 110 }, "movement": "c" },
 
             { name: 'Contract Testing', pc: { r: 340, t: 133 }, movement: 'c' },
 
@@ -129,7 +128,6 @@ var radar_data = [
             { "name": "JVM as platform", "pc": { "r": 73, "t": 200 }, "movement": "c" },
             { "name": "Tomcat", "pc": { "r": 180, "t": 250 }, "movement": "c" },
             { "name": 'PostgreSQL', "pc": { r: 100, t: 257 }, "movement": 'c' },
-            { "name": 'Linux', "pc": { r: 100, t: 240 }, "movement": 'c' },
 
             { "name": "Redis", "pc": { "r": 260, "t": 240 }, "movement": "c" },
 
