@@ -99,6 +99,13 @@ for (var i = 0; i < radar_data.length; i++) {
       return 0;
     });
     
+    // In the case where a quadrant doesn't have an item, group_by will return undefined
+    // To avoid this, fill in the blanks with an empty array
+    for (var j=0;j<radar_arcs.length;++j) {
+        if (!itemsByStage[j]) itemsByStage[j] = [];
+    }
+
+    
     var offsetIndex = 0;
     for (var stageIdx in _(itemsByStage).keys()) {
 
