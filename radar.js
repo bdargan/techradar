@@ -138,7 +138,8 @@ for (var i = 0; i < radar_data.length; i++) {
             .angle(45)            
             .anchor("right")                
                 .add(pv.Label)                
-                .text(function(d) {return radar_quadrant_ctr++ + ". " + d.name;} );
+                .text(function(d) {return radar_quadrant_ctr++ + ". " + d.name;} )
+                .font(fontSize + "px sans-serif");
 
     radar.add(pv.Dot)       
       .def("active", false)
